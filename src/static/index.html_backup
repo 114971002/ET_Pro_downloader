@@ -1,0 +1,65 @@
+Created At: 2026-06-03T03:15:58Z
+Completed At: 2026-06-03T03:15:58Z
+The following changes were made by the multi_replace_file_content tool to: C:\Users\user\codex-test\etpro_auto_downloader\src\static\index.html. If relevant, proactively run terminal commands to execute this code for the USER. Don't ask for permission.
+[diff_block_start]
+@@ -838,14 +838,49 @@
+ 
+         <!-- Right IoC List Table Card -->
+         <div class="card" style="flex: 2.5; display: flex; flex-direction: column; overflow: hidden; padding: 1.5rem;">
+-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; gap: 1rem;">
+-            <h2 style="font-size: 1.1rem; display: flex; align-items: center; gap: 0.5rem;">
+-              <i class="fa-solid fa-list-check"></i>
+-              <span>IoC 阻斷清單 (Active Blocklist)</span>
+-            </h2>
+-            <div class="search-bar-wrapper" style="width: 300px; margin-bottom: 0;">
+-              <i class="fa-solid fa-magnifying-glass"></i>
+-              <input type="text" id="cti-search" class="input-field" placeholder="搜尋 IoC 數值、來源、類型..." oninput="onCtiSearchInput()">
++          <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1rem;">
++            <div style="display: flex; justify-content: space-between; align-items: center;">
++              <h2 style="font-size: 1.1rem; display: flex; align-items: center; gap: 0.5rem;">
++                <i class="fa-solid fa-list-check"></i>
++                <span>IoC 阻斷清單 (Active Blocklist)</span>
++              </h2>
++              <div class="search-bar-wrapper" style="width: 300px; margin-bottom: 0;">
++                <i class="fa-solid fa-magnifying-glass"></i>
++                <input type="text" id="cti-search" class="input-field" placeholder="搜尋 IoC 數值、來源、類型..." oninput="onCtiSearchInput()">
++              </div>
++            </div>
++
++            <!-- Filters Bar -->
++            <div style="di
+<truncated 1172 bytes>
+: 0.8rem; color: var(--text-muted);">情資來源</label>
++                <select id="cti-filter-source" class="input-field" style="padding: 0.4rem; min-width: 120px;" onchange="applyCtiFilters()">
++                  <option value="">全部</option>
++                </select>
++              </div>
++              <div style="display: flex; flex-direction: column; gap: 0.25rem;">
++                <label style="font-size: 0.8rem; color: var(--text-muted);">起始日 (新增時間)</label>
++                <input type="date" id="cti-filter-start" class="input-field" style="padding: 0.4rem;" onchange="applyCtiFilters()">
++              </div>
++              <div style="display: flex; flex-direction: column; gap: 0.25rem;">
++                <label style="font-size: 0.8rem; color: var(--text-muted);">結束日 (新增時間)</label>
++                <input type="date" id="cti-filter-end" class="input-field" style="padding: 0.4rem;" onchange="applyCtiFilters()">
++              </div>
++              <div style="display: flex; align-items: flex-end; padding-bottom: 0.1rem;">
++                <button class="btn btn-secondary" style="padding: 0.5rem 1rem;" onclick="resetCtiFilters()">清除條件</button>
++              </div>
+             </div>
+           </div>
+ 
+@@ -856,9 +856,9 @@
+                   <th>類型 Type</th>
+                   <th>IoC 阻斷特徵 Value</th>
+                   <th>威脅群組 Threat Actor</th>
++                  <th>惡意軟體 Malware Tag</th>
+                   <th>情資來源 Source</th>
+-                  <th>規則 SID</th>
+-                  <th>編譯時間 Compiled</th>
++                  <th>更新時間 Updated</th>
+                 </tr>
+               </thead>
+               <tbody id="cti-ioc-table-body">
+[diff_block_end]
+
+Please note that the above snippet only shows the MODIFIED lines from the last change. It shows up to 3 lines of unchanged lines before and after the modified lines. The actual file contents may have many more lines not shown.

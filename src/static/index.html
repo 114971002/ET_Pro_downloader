@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ET Pro 自動下載器 - 控制後台</title>
+  <!-- Google Fonts: Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- CodeMirror for YAML Editor -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/theme/darcula.min.css">
+  
+  
+<link rel="stylesheet" href="/static/style.css?v=2">
+  <!-- Leaflet CSS & JS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://unpkg.com/leaflet-polylinedecorator/dist/leaflet.polylineDecorator.js"></script>
+  
+</head>
+<body>
+
+  <!-- Global Loading Overlay -->
+  <div id="global-loading-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.85); z-index: 9999; flex-direction: column; justify-content: center; align-items: center; color: var(--accent-cyan);">
+    <i class="fa-solid fa-database fa-flip" style="font-size: 4rem; margin-bottom: 1.5rem; --fa-animation-duration: 2s;"></i>
+    <h2 style="font-size: 2rem; font-weight: 600; letter-spacing: 2px;">系統正在背景優化與載入初始規則庫...</h2>
+    <p style="margin-top: 1rem; font-size: 1.2rem; color: var(--text-secondary);">這將包含 90,000+ 筆威脅情資，約需 30~40 秒，完成後將自動無縫刷新。</p>
+  </div>
+
+
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="brand">
+      <i class="fa-solid fa-cloud-arrow-down brand-logo"></i>
+      <span class="brand-title">ETPro Downloader</span>
+    </div>
+    
+    <nav>
+      <ul class="nav-list">
+        <li>
+          <a class="nav-item active" onclick="switchTab('dashboard')">
+            <i class="fa-solid fa-chart-line"></i>
+            <span>儀表板 Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a class="nav-item" onclick="switchTab('rules-tab')">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>已註解規則 Commented Rules</span>
+          </a>
+        </li>
+
+        <li>
+          <a class="nav-item" onclick="switchTab('deployed-rules-tab')">
+            <i class="fa-solid fa-shield-virus"></i>
+            <span>已部署規則 Deployed</span>
+          </a>
+        </li>
+        <!-- <li>
+          <a class="nav-item" onclick="switchTab('mitre-tab')">
+            <i class="fa-solid fa-network-wired"></i>
+            <span>MITRE ATT&CK 地圖</span>
+          </a>
+        </li> -->
+        <li>
+          <a class="nav-item" onclick="switchTab('intel-tab')">
+            <i class="fa-solid fa-users-gear"></i>
+            <span>威脅情資中心 Threat Intel</span>
+          </a>
+        </li>
+        <li>
+          <a class="nav-item" onclick="switchTab('cti-tab')">
+            <i class="fa-solid fa-ban"></i>
+            <span>IoC 情資防禦 CTI Blocklist</span>
+          </a>
+        </li>
+        <li>
+          <a class="nav-item" onclick="switchTab('rollback-tab')">
+            <i class="fa-solid fa-clock-rotate-left"></i>
+            <span>部署歷史 Rollback</span>
+          </a>
+        </li>
+        <li>
+          <a class="nav-item" onclick="switchTab('logs-tab')">
+            <i class="fa-solid fa-terminal"></i>
+            <span>系統日誌 Logs</span>
+          </a>
+        </li>
+        <li>
+          <a class="nav-item" onclick="switchTab('geoip-tab')">
+            <i class="fa-solid fa-globe"></i>
+            <span>IP 地理追蹤 GeoIP</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    
+    <div class="sidebar-footer">
+      <div>系統狀態: <span id="sidebar-status" class="status-badge idle">載入中...</span></div>
+      <div>最後更新: <span id="sidebar-last-run">無</span></div>
+      <div style="font-size: 0.75rem; color: #475569; margin-top: 0.25rem;">© 2026 Advanced Agentic Coding</div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="main-content">
+    
+    <!-- DASHBOARD TAB -->
+    <div id="dashboard" class="tab-content active">
+      <header>
+        <div>
+          <h1>資料統計</h1>
+        <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.25rem;">管理 Suricata 檢測規則</p>
+        </div>
+        <div class="header-actions">
+          <button id="btn-refresh-status" class="btn btn-secondary" onclick="fetchStatus()">
+            <i class="fa-solid fa-arrows-rotate"></i> 整理狀態
+          </button>
+          <button id="btn-trigger-pipeline" class="btn btn-primary" onclick="triggerPipeline()">
+            <i class="fa-solid fa-play"></i> 立即執行同步與下載
+          </button>
+        </div>
+      </header>
+
+      <!-- System Health Section -->
+      <section class="card" style="margin-bottom: 2rem; display: flex; flex-direction: row; gap: 1.5rem; align-items: center;">
+        <div style="font-size: 2.2rem; color: var(--accent-cyan); display: flex; align-items: center; justify-content: center; width: 55px; height: 55px; background: rgba(6, 182, 212, 0.1); border-radius: 1rem;">
+          <i class="fa-solid fa-hard-drive"></i>
+        </div>
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 0.4rem;">
+          <div style="display: flex; justify-content: space-between; font-size: 0.85rem;">
+            <span style="font-weight: 500; color: var(--text-secondary);">專案儲存空間 (Workspace Disk Space)</span>
+            <span id="disk-usage-percent" style="font-weight: 600; color: var(--accent-cyan);">0%</span>
+          </div>
+          <div style="width: 100%; height: 8px; background: rgba(255, 255, 255, 0.05); border-radius: 4px; overflow: hidden; border: 1px solid var(--card-border);">
+            <div id="disk-usage-bar" style="width: 0%; height: 100%; background: linear-gradient(to right, var(--accent-cyan), var(--accent-purple)); border-radius: 4px; transition: width 0.5s ease;"></div>
+          </div>
+          <div style="display: flex; justify-content: space-between; font-size: 0.75rem; color: var(--text-muted);">
+            <span id="disk-used-text">已使用: -</span>
+            <span id="disk-free-text">可用: -</span>
+            <span id="disk-total-text">總容量: -</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Stats Grid -->
+      <div class="dashboard-grid">
+        <div class="card">
+          <div class="card-header">
+            <span>情資來源狀態</span>
+            <i class="fa-solid fa-shield-virus"></i>
+          </div>
+          <div id="stat-active-rules" class="card-value">-</div>
+          <div class="card-desc">目前部署生效中的 Suricata 偵測特徵數量</div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <span>情資來源狀態</span>
+            <i class="fa-solid fa-heart-pulse"></i>
+          </div>
+          <div id="stat-disabled-rules" class="card-value" style="color: var(--accent-orange);">-</div>
+          <div class="card-desc">因 Suricata 語法不相容而被系統自動註解的規則</div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <span>情資來源狀態</span>
+            <i class="fa-solid fa-spinner"></i>
+          </div>
+          <div id="stat-run-status" class="card-value">載入中...</div>
+          <div id="stat-run-desc" class="card-desc">最後同步時間</div>
+        </div>
+        
+        <div class="card">
+          <div class="card-header">
+            <span>情資來源狀態</span>
+            <i class="fa-solid fa-hard-drive"></i>
+          </div>
+          <div id="stat-storage-size" class="card-value">-</div>
+          <div class="card-desc">情資庫狀態</div>
+        </div>
+      </div>
+
+      <!-- Threat Intel & Severity Distribution Dashboard -->
+      <div class="dashboard-grid-2x2">
+        <div class="card" style="display: flex; flex-direction: column;">
+          <div class="card-header">
+            <span>威脅群組防禦態勢 (Threat Actors)</span>
+            <i class="fa-solid fa-users-viewfinder"></i>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 1rem;">已部署規則關聯之威脅群組分佈比例 (點擊長條圖可過濾規則)</p>
+          <input type="text" id="search-threat-actors" placeholder="搜尋..." style="width: 100%; margin-bottom: 1rem; padding: 0.4rem 0.8rem; background: rgba(0,0,0,0.2); border: 1px solid var(--card-border); color: var(--text-primary); border-radius: 0.5rem; font-size: 0.85rem;" oninput="renderAllStats()">
+          <div id="threat-actor-stats-container" style="display: flex; flex-direction: column; gap: 0.75rem; max-height: 350px; overflow-y: auto; padding-right: 0.5rem;">
+            <div style="text-align: center; color: var(--text-muted); padding: 2rem;">載入中...</div>
+          </div>
+        </div>
+
+        <div class="card" style="display: flex; flex-direction: column;">
+          <div class="card-header">
+            <span>危害等級佔比 (Severity Levels)</span>
+            <i class="fa-solid fa-triangle-exclamation"></i>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 1rem;">已部署規則之危害等級分佈統計 (點擊長條圖可過濾規則)</p>
+          <div style="height: 33px; margin-bottom: 1rem;" class="mobile-hide"></div>
+          <div id="severity-stats-container" style="display: flex; flex-direction: column; gap: 0.75rem; max-height: 350px; overflow-y: auto; padding-right: 0.5rem;">
+            <div style="text-align: center; color: var(--text-muted); padding: 2rem;">載入中...</div>
+          </div>
+        </div>
+
+        <div class="card" style="display: flex; flex-direction: column;">
+          <div class="card-header">
+            <span>MITRE ATT&CK 威脅戰術分佈</span>
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 1rem;">已部署規則關聯之 MITRE ATT&CK 戰術分佈統計 (點擊可過濾)</p>
+          <input type="text" id="search-mitre-tactics" placeholder="搜尋..." style="width: 100%; margin-bottom: 1rem; padding: 0.4rem 0.8rem; background: rgba(0,0,0,0.2); border: 1px solid var(--card-border); color: var(--text-primary); border-radius: 0.5rem; font-size: 0.85rem;" oninput="renderAllStats()">
+          <div id="mitre-tactic-stats-container" style="display: flex; flex-direction: column; gap: 0.75rem; max-height: 350px; overflow-y: auto; padding-right: 0.5rem;">
+            <div style="text-align: center; color: var(--text-muted); padding: 2rem;">載入中...</div>
+          </div>
+        </div>
+
+        <div class="card" style="display: flex; flex-direction: column;">
+          <div class="card-header">
+            <span>熱門漏洞年份統計 (Top CVE Years)</span>
+            <i class="fa-solid fa-bug"></i>
+          </div>
+          <p style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 1rem;">已部署規則關聯之 CVE 漏洞年份統計 (點擊可過濾)</p>
+          <input type="text" id="search-cve-years" placeholder="搜尋年份 (例如 2026)..." style="width: 100%; margin-bottom: 1rem; padding: 0.4rem 0.8rem; background: rgba(0,0,0,0.2); border: 1px solid var(--card-border); color: var(--text-primary); border-radius: 0.5rem; font-size: 0.85rem;" oninput="renderAllStats()">
+          <div id="cve-year-stats-container" style="display: flex; flex-direction: column; gap: 0.75rem; max-height: 350px; overflow-y: auto; padding-right: 0.5rem;">
+            <div style="text-align: center; color: var(--text-muted); padding: 2rem;">載入中...</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Environment config stats -->
+      <section style="margin-bottom: 2.5rem;">
+        <h2 class="section-title"><i class="fa-solid fa-gears"></i> 核心系統環境設定</h2>
+        <div class="env-grid">
+          <div class="env-item">
+            <span class="env-key">部署輸出目標路徑 (Deploy Target)</span>
+            <span id="env-deploy-path" class="env-val">-</span>
+          </div>
+          <div class="env-item">
+            <span class="env-key">授權代碼狀態 (Oinkcode)</span>
+            <span id="env-oinkcode-status" class="env-val">-</span>
+          </div>
+          <div class="env-item">
+            <span class="env-key">威脅情資自動更新 (Intel Sync)</span>
+            <span id="env-intel-sync" class="env-val">-</span>
+          </div>
+          <div class="env-item">
+            <span class="env-key">Suricata 語法沙盒校驗 (Dry-run Validation)</span>
+            <span id="env-validation" class="env-val">-</span>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- SURICATA CONFIG TAB -->
+    <div id="suricata-config-tab" class="tab-content">
+      <header class="section-header">
+        <div>
+          <h1>Suricata 設定檔管理</h1>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.25rem;">直接編輯並測試 suricata.yaml 設定檔。</p>
+        </div>
+        <div class="header-actions">
+          <button class="btn btn-secondary" onclick="fetchSuricataYaml()">
+            <i class="fa-solid fa-arrows-rotate"></i> 重新載入
+          </button>
+          <button class="btn btn-primary" onclick="saveSuricataYaml()">
+            <i class="fa-solid fa-floppy-disk"></i> 儲存設定 (自動備份)
+          </button>
+          <button class="btn btn-primary" onclick="testSuricataYaml()" style="background: rgba(139, 92, 246, 0.2); border-color: var(--accent-purple); color: var(--accent-purple);">
+            <i class="fa-solid fa-vial"></i> 執行設定檔測試
+          </button>
+        </div>
+      </header>
+
+      <section class="card" style="display: flex; flex-direction: column; gap: 1rem;">
+        <div style="color: var(--text-muted); font-size: 0.9rem;" id="suricata-yaml-path">
+          路徑載入中...
+        </div>
+        <textarea id="suricata-yaml-editor" spellcheck="false" style="width: 100%; height: 500px; background: rgba(0, 0, 0, 0.3); color: var(--text-primary); border: 1px solid var(--card-border); border-radius: 0.5rem; padding: 1rem; font-family: Consolas, 'Courier New', monospace; font-size: 0.9rem; line-height: 1.5; resize: vertical;" placeholder="搜尋..."></textarea>
+      </section>
+
+      <section class="card" style="margin-top: 1.5rem;">
+        <h2 style="font-size: 1.1rem; font-weight: 500; margin-bottom: 1rem; color: var(--text-primary);">自訂群組與標籤</h2>
+        <pre id="suricata-test-output" style="background: rgba(0,0,0,0.4); padding: 1rem; border-radius: 0.5rem; color: var(--text-secondary); font-size: 0.85rem; font-family: Consolas, monospace; overflow-x: auto; white-space: pre-wrap; min-height: 100px;">尚未執行測試...</pre>
+      </section>
+    </div>
+
+    <!-- CONFIG TAB -->
+    <div id="config-tab" class="tab-content">
+      <header>
+        <div>
+          <h1>系統日誌</h1>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.25rem;">編修本地 threat intelligence overrides 設定檔 (`intel_overrides.json`)</p>
+        </div>
+        <div class="header-actions">
+          <button class="btn btn-secondary" onclick="fetchConfig()">
+            <i class="fa-solid fa-arrows-rotate"></i> 放棄修改並重新載入
+          </button>
+          <button class="btn btn-primary" onclick="saveConfig()">
+            <i class="fa-solid fa-floppy-disk"></i> 儲存自訂設定
+          </button>
+        </div>
+      </header>
+
+      <div class="config-layout">
+        <!-- Threat Actor Mappings Section -->
+        <section class="card" style="display: flex; flex-direction: column;">
+          <h2 class="section-title"><i class="fa-solid fa-network-wired"></i> 威脅群組自訂別名對應 (Actor Mappings)</h2>
+          <p style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 1.5rem;">
+            在此配置不同威脅組織的識別別名。設定完成後，當下載的規則中包含別名關鍵字時，系統會自動歸類到對應的威脅群組中。
+          </p>
+          
+          <div class="tag-input-wrapper">
+            <input type="text" id="actor-input-group" class="input-field" placeholder="威脅群組主名稱 (例如: Lazarus)">
+            <input type="text" id="actor-input-alias" class="input-field" placeholder="別名關鍵字 (例如: hidden cobra)">
+            <button class="btn btn-secondary" style="padding: 0.65rem 1.25rem;" onclick="addActorMapping()">新增映射</button>
+          </div>
+
+          <div class="actor-mappings-list" id="actor-mappings-list">
+            <!-- Dynamically populated -->
+          </div>
+        </section>
+
+        <!-- Software Denylist Section -->
+        <section class="card" style="display: flex; flex-direction: column;">
+          <h2 class="section-title"><i class="fa-solid fa-ban"></i> 惡意軟體/工具黑名單 (Software Denylist)</h2>
+          <p style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 1.5rem;">
+            在此新增特定的工具或惡意軟體名稱。符合這些關鍵字的特徵將被標記在軟體黑名單內，以防止被系統的自學習引擎與威脅群組別名混淆。
+          </p>
+          
+          <div class="tag-input-wrapper">
+            <input type="text" id="software-tag-input" class="input-field" placeholder="輸入軟體或惡意程式名稱後點擊新增 (例如: mimikatz)" onkeypress="if(event.key === 'Enter') addSoftwareTag()">
+            <button class="btn btn-secondary" style="padding: 0.65rem 1.25rem;" onclick="addSoftwareTag()">新增標籤</button>
+          </div>
+
+          <div class="software-tags" id="software-tags">
+            <!-- Dynamically populated -->
+          </div>
+        </section>
+
+        <!-- CTI Feeds Section -->
+        <section class="card" style="display: none; flex-direction: column; grid-column: span 2;">
+          <h2 class="section-title"><i class="fa-solid fa-rss"></i> IoC 開源情資來源設定 (CTI Feeds Toggle)</h2>
+          <p style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 1.5rem;">
+            啟用或禁用特定的威脅情資來源。變更設定並點擊儲存後，系統將在下一次 CTI 同步時依此設定抓取。
+          </p>
+          
+          <div style="display: flex; flex-direction: column; gap: 1rem;">
+            <label style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer; user-select: none; padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">
+              <input type="checkbox" id="cti-feed-feodo" checked style="width: 1.2rem; height: 1.2rem; cursor: pointer;">
+              <div>
+                <strong style="display: block; color: var(--text-primary);">Feodo Tracker C2 IPs</strong>
+                <span style="font-size: 0.8rem; color: var(--text-muted);">來自 abuse.ch 的惡意殭屍網路 (C2) IP 位址列表。</span>
+              </div>
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer; user-select: none; padding: 0.5rem 0; border-bottom: 1px solid var(--border-color);">
+              <input type="checkbox" id="cti-feed-urlhaus" checked style="width: 1.2rem; height: 1.2rem; cursor: pointer;">
+              <div>
+                <strong style="display: block; color: var(--text-primary);">URLhaus Malicious Domains</strong>
+                <span style="font-size: 0.8rem; color: var(--text-muted);">來自 abuse.ch 惡意 DNS 域名阻斷數</span>
+              </div>
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.75rem; cursor: pointer; user-select: none; padding: 0.5rem 0;">
+              <input type="checkbox" id="cti-feed-et-compromised" checked style="width: 1.2rem; height: 1.2rem; cursor: pointer;">
+              <div>
+                <strong style="display: block; color: var(--text-primary);">ET Open Compromised IPs</strong>
+                <span style="font-size: 0.8rem; color: var(--text-muted);">Emerging Threats 開源之已被入侵/惡意 IP 阻斷數</span>
+              </div>
+            </label>
+          </div>
+        </section>
+
+        <!-- Malpedia Actor Intelligence Section -->
+        <section class="card" style="display: none; flex-direction: column; grid-column: span 2;">
+          <h2 class="section-title"><i class="fa-solid fa-spider"></i> Malpedia 威脅行為者擴充來源</h2>
+          <p style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 1.5rem;">
+            啟用後，系統將在每次 Intel 更新時從 <a href="https://malpedia.caad.fkie.fraunhofer.de/" target="_blank" style="color: var(--accent-blue);">Malpedia</a>
+            下載 900+ 個威脅行為者資料（包含 MITRE ATT&amp;CK 尚未收錄的組織，如 Flax Typhoon、Volt Typhoon 等），
+            補充至 <code>actor_mappings.json</code> 中，供規則比對與威脅歸因使用。
+          </p>
+          <div style="display: flex; flex-direction: column; gap: 1.25rem;">
+            <label style="display: flex; align-items: flex-start; gap: 0.75rem; cursor: pointer; user-select: none; padding-bottom: 1rem; border-bottom: 1px solid var(--border-color);">
+              <input type="checkbox" id="malpedia-enabled" checked style="width: 1.2rem; height: 1.2rem; cursor: pointer; margin-top: 0.2rem; flex-shrink: 0;">
+              <div>
+                <strong style="display: block; color: var(--text-primary);">啟用 Malpedia 威脅行為者同步</strong>
+                <span style="font-size: 0.8rem; color: var(--text-muted);">停用後，行為者資料將只來自 MITRE ATT&amp;CK 與自訂設定。同步約需 60–90 秒（限速批次請求）。</span>
+              </div>
+            </label>
+            <div>
+              <label style="display: block; font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 0.4rem;" for="malpedia-api-token">
+                <i class="fa-solid fa-key" style="margin-right: 0.4rem;"></i>Malpedia API Token <span style="font-size: 0.75rem; color: var(--text-muted);">(選填 — 免費版可留空)</span>
+              </label>
+              <input type="password" id="malpedia-api-token" placeholder="留空即使用公開免費 API" autocomplete="off"
+                style="width: 100%; max-width: 480px; background: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 6px; padding: 0.5rem 0.75rem; color: var(--text-primary); font-size: 0.85rem;">
+              <p style="font-size: 0.75rem; color: var(--text-muted); margin-top: 0.35rem;">
+                若擁有 Malpedia 帳戶，可至 <a href="https://malpedia.caad.fkie.fraunhofer.de/settings" target="_blank" style="color: var(--accent-blue);">Malpedia 設定頁</a> 取得 API Token，可解鎖更多詳細資訊。
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+
+    <!-- RULES TAB -->
+    <div id="rules-tab" class="tab-content">
+      <header>
+        <div>
+          <h1>已註解規則</h1>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.25rem;">檢視當前因語法沙盒驗證失敗，而被 Auto-Healing 自我修復機制暫時屏蔽的規則</p>
+        </div>
+        <div class="header-actions">
+          <button class="btn btn-secondary" onclick="fetchDisabledRules()">
+            <i class="fa-solid fa-arrows-rotate"></i> 整理清單
+          </button>
+        </div>
+      </header>
+
+      <section class="card">
+        <!-- Controls row: Search input, Reason Filter, Page Size Selector -->
+        <div class="controls-row" style="display: flex; gap: 1rem; margin-bottom: 1.25rem; flex-wrap: wrap;">
+          <div class="search-bar-wrapper" style="flex: 2; min-width: 250px; position: relative; margin-bottom: 0;">
+            <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
+            <input type="text" id="rule-search" class="input-field" style="padding-left: 2.5rem; width: 100%;" placeholder="輸入 SID、特徵內容、時間或原因進行搜尋..." oninput="filterDisabledRules(true)">
+          </div>
+          <div class="filter-wrapper" style="flex: 1; min-width: 200px;">
+            <select id="rule-reason-filter" class="input-field" style="width: 100%; height: 100%; cursor: pointer;" onchange="filterDisabledRules(true)">
+              <option value="">所有註解原因 (All Reasons)</option>
+            </select>
+          </div>
+          <div class="pagesize-wrapper" style="width: 130px;">
+            <select id="rule-pagesize" class="input-field" style="width: 100%; height: 100%; cursor: pointer;" onchange="changePageSize()">
+              <option value="10">每頁 10 筆</option>
+              <option value="25" selected>每頁 25 筆</option>
+              <option value="50">每頁 50 筆</option>
+              <option value="100">每頁 100 筆</option>
+            </select>
+          </div>
+        </div>
+        
+        <div class="table-container">
+          <table class="rules-table">
+            <thead>
+              <tr>
+                <th style="width: 80px;">狀態</th>
+                <th style="width: 100px;">SID</th>
+                <!-- <th style="width: 100px; text-align: center;">動作</th> -->
+                <th style="width: 160px;">來源</th>
+                <th style="width: 260px;">分類</th>
+                <th>被屏蔽的 Suricata 規則內容 (已被系統加 # 註解)</th>
+              </tr>
+            </thead>
+            <tbody id="disabled-rules-body">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Pagination Controls -->
+        <div class="pagination-row" style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.25rem; flex-wrap: wrap; gap: 1rem;">
+          <div id="pagination-info" style="font-size: 0.85rem; color: var(--text-secondary);">
+            顯示第 0 到 0 筆，共 0 筆資料
+          </div>
+          <div id="pagination-controls" style="display: flex; gap: 0.4rem; align-items: center;">
+            <!-- Buttons dynamically generated -->
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- DEPLOYED RULES TAB -->
+    <div id="deployed-rules-tab" class="tab-content">
+      <header>
+        <div>
+          <h1>已部署規則管理 (Deployed Rules)</h1>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.25rem;">檢視當前已成功部署並生效中的 Suricata 偵測規則</p>
+        </div>
+        <div class="header-actions">
+          <button class="btn btn-secondary" onclick="exportDeployedRulesCsv()" style="margin-right: 0.5rem; background: rgba(16, 185, 129, 0.1); color: var(--accent-green); border: 1px solid rgba(16, 185, 129, 0.2);">
+            <i class="fa-solid fa-file-export"></i> 匯出 CSV
+          </button>
+          <button class="btn btn-secondary" onclick="fetchDeployedRules(true)">
+            <i class="fa-solid fa-arrows-rotate"></i> 整理清單
+          </button>
+        </div>
+      </header>
+
+      <section class="card">
+        <!-- Controls row 1: Search input, Dataset, Classtype, Threat Actor -->
+        <div class="controls-row" style="display: flex; gap: 1rem; margin-bottom: 1.25rem; flex-wrap: wrap;">
+          <div class="search-bar-wrapper" style="flex: 2; min-width: 250px; position: relative; margin-bottom: 0;">
+            <i class="fa-solid fa-magnifying-glass" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
+            <input type="text" id="deployed-rule-search" class="input-field" style="padding-left: 2.5rem; width: 100%;" placeholder="搜尋 SID、特徵內容..." oninput="triggerDeployedRulesSearch()">
+          </div>
+          
+          <div class="filter-wrapper" style="flex: 1; min-width: 160px;">
+            <select id="filter-dataset" class="input-field" style="width: 100%; height: 100%; cursor: pointer;" onchange="fetchDeployedRules(true)">
+              <option value="">所有規則集 (All Datasets)</option>
+            </select>
+          </div>
+          
+          <div class="filter-wrapper" style="flex: 1; min-width: 160px;">
+            <select id="filter-threat-actor" class="input-field" style="width: 100%; height: 100%; cursor: pointer;" onchange="fetchDeployedRules(true)">
+              <option value="">所有威脅群組 (All Threat Actors)</option>
+            </select>
+          </div>
+          
+          <div class="filter-wrapper" style="flex: 1; min-width: 160px;">
+            <select id="filter-classtype" class="input-field" style="width: 100%; height: 100%; cursor: pointer;" onchange="fetchDeployedRules(true)">
+              <option value="">所有分類 (All Classtypes)</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Controls row 2: Product, Target, Confidence, Severity, MITRE, CVE, Page Size -->
+        <div class="controls-row" style="display: flex; gap: 1rem; margin-bottom: 1.25rem; flex-wrap: wrap;">
+          <div class="filter-wrapper" style="flex: 1; min-width: 130px;">
+            <select id="filter-affected-product" class="input-field" style="width: 100%; height: 100%; cursor: pointer;" onchange="fetchDeployedRules(true)">
+              <option value="">受影響產品 (Product)</option>
+            </select>
+          </div>
+
+          <div class="filter-wrapper" style="flex: 1; min-width: 130px;">
+            <select id="filter-attack-target" class="input-field" style="width: 100%; height: 100%; cursor: pointer;" onchange="fetchDeployedRules(true)">
+              <option value="">攻擊目標 (Target)</option>
+            </select>
+          </div>
+
+          <div class="filter-wrapper" style="flex: 1; min-width: 130px;">
+            <select id="filter-confidence" class="input-field" style="width: 100%; height: 100%; cursor: pointer;" onchange="fetchDeployedRules(true)">
+              <option value="">可信度 (Confidence)</option>
+            </select>
+          </div>
+
+          <div class="filter-wrapper" style="flex: 1; min-width: 130px;">
+            <select id="filter-severity" class="input-field" style="width: 100%; height: 100%; cursor: pointer;" onchange="fetchDeployedRules(true)">
+              <option value="">危害等級 (Severity)</option>
+            </select>
+          </div>
+
+          <div class="filter-wrapper" style="flex: 1; min-width: 130px;">
+            <select id="filter-mitre-tactic" class="input-field" style="width: 100%; height: 100%; cursor: pointer;" onchange="fetchDeployedRules(true)">
+              <option value="">MITRE 戰術 (Tactic)</option>
+            </select>
+          </div>
+
+          <div class="filter-wrapper" style="flex: 1; min-width: 130px;">
+            <select id="filter-cve-year" class="input-field" style="width: 100%; height: 100%; cursor: pointer;" onchange="fetchDeployedRules(true)">
+              <option value="">CVE 年份 (Year)</option>
+            </select>
+          </div>
+
+          <div class="filter-wrapper" style="flex: 1; min-width: 150px; position: relative;">
+            <i class="fa-solid fa-bug" style="position: absolute; left: 0.85rem; top: 50%; transform: translateY(-50%); color: var(--text-muted);"></i>
+            <input type="text" id="filter-cve-input" class="input-field" style="padding-left: 2.2rem; width: 100%; margin-bottom: 0;" placeholder="CVE 搜尋 (例如: 2024-3094)" oninput="triggerDeployedRulesSearch()">
+          </div>
+
+          <div class="pagesize-wrapper" style="width: 120px;">
+            <select id="deployed-rule-pagesize" class="input-field" style="width: 100%; height: 100%; cursor: pointer;" onchange="fetchDeployedRules(true)">
+              <option value="10">每頁 10 筆</option>
+              <option value="25" selected>每頁 25 筆</option>
+              <option value="50">每頁 50 筆</option>
+              <option value="100">每頁 100 筆</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- CVE Intel Card Container -->
+        <div id="cve-intel-card" class="card" style="display: none; margin-bottom: 1.5rem; background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(139, 92, 246, 0.05)); border-color: rgba(6, 182, 212, 0.25); flex-direction: row; flex-wrap: wrap; gap: 1.5rem; align-items: center; justify-content: space-between;">
+          <div style="flex: 2; min-width: 250px;">
+            <div style="display: flex; align-items: center; gap: 0.75rem;">
+              <span class="status-badge" style="background: rgba(6, 182, 212, 0.2); color: var(--accent-cyan); font-size: 0.85rem; padding: 0.35rem 0.75rem;" id="cve-card-id">CVE-XXXX-XXXX</span>
+              <h3 style="font-size: 1.15rem; font-weight: 700;" id="cve-card-title">CVE 漏洞情資探測</h3>
+            </div>
+            <p style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 0.5rem;" id="cve-card-desc">正在加載漏洞分析數據...</p>
+          </div>
+          
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: flex-end; align-items: center;">
+            <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--card-border); padding: 0.5rem 1rem; border-radius: 0.75rem; text-align: center; min-width: 90px;">
+              <div style="font-size: 0.7rem; color: var(--text-muted); font-weight: 500;">已啟用</div>
+              <div style="font-size: 1.25rem; font-weight: 700; color: var(--text-primary); margin-top: 0.1rem;" id="cve-card-rules-count">0</div>
+            </div>
+            <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--card-border); padding: 0.5rem 1rem; border-radius: 0.75rem; text-align: center; min-width: 110px;">
+              <div style="font-size: 0.7rem; color: var(--text-muted); font-weight: 500;">已停用</div>
+              <div style="font-size: 1.1rem; font-weight: 700; color: var(--accent-cyan); margin-top: 0.1rem;" id="cve-card-severity">-</div>
+            </div>
+            <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--card-border); padding: 0.5rem 1rem; border-radius: 0.75rem; text-align: center; min-width: 120px;">
+              <div style="font-size: 0.7rem; color: var(--text-muted); font-weight: 500;">阻斷</div>
+              <div style="font-size: 0.95rem; font-weight: 700; color: var(--text-primary); margin-top: 0.15rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 110px;" id="cve-card-target">-</div>
+            </div>
+            <button class="btn btn-secondary" style="padding: 0.5rem 1rem; font-size: 0.85rem;" onclick="clearCveFilter()">
+              <i class="fa-solid fa-xmark"></i> 清除過濾
+            </button>
+          </div>
+        </div>
+        
+        <div class="table-container">
+          <table class="rules-table">
+            <thead>
+              <tr>
+                <th style="width: 90px;">SID</th>
+                <!-- <th style="width: 100px; text-align: center;">動作</th> -->
+                <th style="width: 160px;">規則集 (Dataset)</th>
+                <th style="width: 160px;">分類 (Classtype)</th>
+                <th style="width: 250px;">特徵指標 (Metadata)</th>
+                <th>規則特徵內容 (Active Rule)</th>
+              </tr>
+            </thead>
+            <tbody id="deployed-rules-body">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Pagination Controls -->
+        <div class="pagination-row" style="display: flex; justify-content: space-between; align-items: center; margin-top: 1.25rem; flex-wrap: wrap; gap: 1rem;">
+          <div id="deployed-pagination-info" style="font-size: 0.85rem; color: var(--text-secondary);">
+            顯示第 0 到 0 筆，共 0 筆資料
+          </div>
+          <div id="deployed-pagination-controls" style="display: flex; gap: 0.4rem; align-items: center;">
+            <!-- Buttons dynamically generated -->
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ROLLBACK TAB -->
+    <div id="rollback-tab" class="tab-content">
+      <header>
+        <div>
+          <h1>規則管理</h1>
+        <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.25rem;">管理 Suricata 檢測規則</p>
+        </div>
+        <div class="header-actions">
+          <button class="btn btn-secondary" onclick="fetchDeployments()">
+            <i class="fa-solid fa-arrows-rotate"></i> 整理清單
+          </button>
+        </div>
+      </header>
+
+      <section class="card">
+        <div class="table-container">
+          <table class="rules-table">
+            <thead>
+              <tr>
+                <th style="width: 180px;">名稱</th>
+                <th style="width: 100px; text-align: center;">動作</th>
+                <th style="width: 140px;">群組</th>
+                <th style="width: 200px;">標籤</th>
+                <th>描述</th>
+                <th style="width: 150px; text-align: center;">操作</th>
+              </tr>
+            </thead>
+            <tbody id="deployments-body">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+
+    <!-- MITRE ATT&CK TAB -->
+    <div id="mitre-tab" class="tab-content">
+      <header>
+        <div>
+          <h1>MITRE ATT&CK 互動式防禦地圖與缺口分析</h1>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.25rem;">檢視當前已部署規則覆蓋的防禦技術與熱圖，並分析偵測缺口 (Gaps)</p>
+        </div>
+        <div class="header-actions">
+          <button class="btn btn-secondary" onclick="fetchMitreMatrix()">
+            <i class="fa-solid fa-arrows-rotate"></i> 重新載入地圖
+          </button>
+        </div>
+      </header>
+
+      <!-- Matrix Dashboard metrics -->
+      <section class="card" style="margin-bottom: 2rem; display: flex; flex-direction: row; gap: 2rem; align-items: center; padding: 1.5rem;">
+        <div style="flex: 1; display: flex; flex-direction: column; gap: 0.5rem; border-right: 1px solid var(--card-border); padding-right: 1.5rem;">
+          <span style="font-size: 0.9rem; color: var(--text-secondary); font-weight: 500;">防禦覆蓋率 (Technique Coverage)</span>
+          <div style="display: flex; align-items: baseline; gap: 0.5rem;">
+            <span id="mitre-coverage-percentage" style="font-size: 2.2rem; font-weight: 700; color: var(--accent-cyan);">0%</span>
+            <span style="color: var(--text-muted); font-size: 0.9rem;">(共 <span id="mitre-covered-count">0</span> / <span id="mitre-total-count">0</span> 個技術)</span>
+          </div>
+          <div style="width: 100%; height: 8px; background: rgba(255, 255, 255, 0.05); border-radius: 4px; overflow: hidden; border: 1px solid var(--card-border); margin-top: 0.2rem;">
+            <div id="mitre-coverage-bar" style="width: 0%; height: 100%; background: linear-gradient(to right, var(--accent-cyan), var(--accent-purple)); border-radius: 4px; transition: width 0.5s ease;"></div>
+          </div>
+        </div>
+        <div style="width: 180px; display: flex; flex-direction: column; gap: 0.25rem;">
+          <span style="font-size: 0.8rem; color: var(--text-muted);">自動重新整理</span>
+          <span id="mitre-gap-count" style="font-size: 2rem; font-weight: 700; color: var(--accent-orange);">-</span>
+          <span style="font-size: 0.75rem; color: var(--text-secondary);">取得最新日誌</span>
+        </div>
+      </section>
+
+      <!-- Matrix and Recommendations container -->
+      <div style="display: flex; gap: 1.5rem; align-items: stretch; height: calc(100vh - 280px); min-height: 500px;">
+        <!-- Left Matrix Panel -->
+        <div class="card" style="flex: 3; display: flex; flex-direction: column; overflow: hidden; padding: 1rem 0;">
+          <h2 style="font-size: 1.1rem; margin-bottom: 1rem; padding: 0 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+            <i class="fa-solid fa-table-cells"></i>
+            <span>MITRE ATT&CK 互動矩陣</span>
+            <span style="font-size: 0.8rem; font-weight: 400; color: var(--text-muted);">(點擊技術卡片即可跳轉過濾規則)</span>
+          </h2>
+          <!-- Horizontal scrollable tactic container -->
+          <div id="mitre-matrix-container" style="flex: 1; display: flex; gap: 0.75rem; overflow-x: auto; padding: 0 1.5rem 1rem 1.5rem; align-items: flex-start;">
+            <!-- Column tactics dynamically rendered here -->
+            <div style="text-align: center; color: var(--text-muted); width: 100%; padding: 4rem;">地圖載入中...</div>
+          </div>
+        </div>
+
+        <!-- Right Recommendations Panel -->
+        <div class="card" style="flex: 1; display: flex; flex-direction: column; overflow: hidden; padding: 1.5rem 1rem;">
+          <h2 style="font-size: 1.1rem; margin-bottom: 0.25rem; display: flex; align-items: center; gap: 0.5rem;">
+            <i class="fa-solid fa-wand-magic-sparkles" style="color: var(--accent-cyan);"></i>
+            <span>情資來源狀態</span>
+          </h2>
+          <p style="color: var(--text-muted); font-size: 0.8rem; margin-bottom: 1.5rem;">針對 0 覆蓋率技術的最佳化建議</p>
+          <div id="mitre-recommendations-container" style="flex: 1; display: flex; flex-direction: column; gap: 1rem; overflow-y: auto; padding-right: 0.25rem;">
+            <!-- Recommendations dynamically rendered here -->
+            <div style="text-align: center; color: var(--text-muted); padding: 4rem;">地圖載入中...</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- THREAT INTEL TAB -->
+    <div id="intel-tab" class="tab-content">
+      <header>
+        <div>
+          <h1>Threat Intelligence Hub</h1>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.25rem;">Search and analyze background, techniques, and Suricata rules coverage for 189 MITRE APT threat groups</p>
+        </div>
+      </header>
+
+      <div style="display: flex; gap: 1.5rem; align-items: stretch; height: calc(100vh - 200px); min-height: 550px;">
+        <!-- Left Threat Actors List Panel -->
+        <div class="card" style="flex: 1.2; display: flex; flex-direction: column; overflow: hidden; padding: 1.5rem 1rem;">
+          <h2 style="font-size: 1.1rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+            <i class="fa-solid fa-users"></i>
+            <span>Threat Groups List</span>
+          </h2>
+          
+          <div class="search-bar-wrapper" style="margin-bottom: 0.75rem;">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="intel-search" class="input-field" placeholder="Search group name, alias, ID..." oninput="filterThreatActors()">
+          </div>
+
+          <div style="margin-bottom: 1rem; display: flex; gap: 0.5rem;">
+            <select id="intel-status-filter" class="input-field" style="padding: 0.45rem 0.75rem; font-size: 0.85rem;" onchange="filterThreatActors()">
+              <option value="all">All Groups</option>
+              <option value="monitored">Monitored Groups</option>
+              <option value="unmonitored">Unmonitored Groups</option>
+            </select>
+          </div>
+
+          <div id="intel-list-container" style="flex: 1; display: flex; flex-direction: column; gap: 0.65rem; overflow-y: auto; padding-right: 0.25rem;">
+            <div style="text-align: center; color: var(--text-muted); padding: 4rem;">Loading...</div>
+          </div>
+        </div>
+
+        <!-- Right Detail Panel -->
+        <div class="card" style="flex: 2.8; display: flex; flex-direction: column; overflow: hidden; padding: 1.5rem 1.5rem;">
+          <div id="intel-detail-container" style="flex: 1; display: flex; flex-direction: column; overflow-y: auto; padding-right: 0.25rem;">
+            <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; color: var(--text-muted); text-align: center; padding: 4rem;">
+              <i class="fa-solid fa-user-shield" style="font-size: 4rem; margin-bottom: 1.5rem; background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"></i>
+              <h3>Select a Threat Group</h3>
+              <p style="font-size: 0.9rem; margin-top: 0.5rem; max-width: 400px;">Click a threat group from the list on the left to inspect its profile, techniques used, software, and active rules coverage.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTI BLOCKLIST TAB -->
+    <div id="cti-tab" class="tab-content">
+      <header>
+        <div>
+          <h1>IoC 情資防禦 CTI Blocklist</h1>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.25rem;">惡意 IP 阻斷數 Suricata 丟棄規則以實施自適應防禦</p>
+        </div>
+        <div class="header-actions">
+          <button class="btn btn-primary" id="cti-sync-btn" onclick="syncCtiFeeds()">
+            <i class="fa-solid fa-arrows-rotate"></i> 立即同步 CTI 情資
+          </button>
+        </div>
+      </header>
+
+      <!-- Status & Summary Cards -->
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 2rem;">
+        <div class="card status-card">
+          <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;"><i class="fa-solid fa-shield-halved"></i> 總防禦阻斷規則數</div>
+          <div id="cti-total-rules" style="font-size: 2rem; font-weight: bold; background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">0</div>
+        </div>
+        <div class="card status-card">
+          <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;"><i class="fa-solid fa-network-wired"></i> 惡意 IP 阻斷數</div>
+          <div id="cti-ip-rules" style="font-size: 2rem; font-weight: bold; color: var(--text-primary);">0</div>
+        </div>
+        <div class="card status-card">
+          <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;"><i class="fa-solid fa-globe"></i> 惡意 DNS 域名阻斷數</div>
+          <div id="cti-domain-rules" style="font-size: 2rem; font-weight: bold; color: var(--text-primary);">0</div>
+        </div>
+        <div class="card status-card">
+          <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;"><i class="fa-solid fa-clock"></i> 最後同步時間</div>
+          <div id="cti-sync-time" style="font-size: 1.1rem; font-weight: bold; height: 100%; display: flex; align-items: center; color: var(--text-primary);">無</div>
+        </div>
+      </div>
+
+      <!-- Feed Statuses & IoC List Panel -->
+      <div style="display: flex; gap: 1.5rem; align-items: stretch; height: calc(100vh - 320px); min-height: 450px;">
+        <!-- Left Feed Sources Panel -->
+        <div class="card" style="flex: 1; display: flex; flex-direction: column; gap: 1rem; overflow-y: auto;">
+          <h2 style="font-size: 1.1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+            <i class="fa-solid fa-rss"></i>
+            <span>情資來源狀態</span>
+          </h2>
+          <div id="cti-feeds-status-container" style="display: flex; flex-direction: column; gap: 1rem;">
+            <!-- Feeds status cards will be populated here -->
+          </div>
+        </div>
+
+        <!-- Right IoC List Table Card -->
+        <div class="card" style="flex: 2.5; display: flex; flex-direction: column; overflow: hidden; padding: 1.5rem;">
+          <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <h2 style="font-size: 1.1rem; display: flex; align-items: center; gap: 0.5rem;">
+                <i class="fa-solid fa-list-check"></i>
+                <span>IoC 阻斷清單 (Active Blocklist)</span>
+              </h2>
+              <div class="search-bar-wrapper" style="width: 300px; margin-bottom: 0;">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="cti-search" class="input-field" placeholder="搜尋 IoC 數值、來源、類型..." oninput="onCtiSearchInput()">
+              </div>
+            </div>
+
+            <!-- Filters Bar -->
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; background: rgba(0,0,0,0.2); padding: 1rem; border-radius: var(--border-radius-sm); border: 1px solid var(--card-border);">
+              <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+                <label style="font-size: 0.8rem; color: var(--text-muted);">類型 Type</label>
+                <select id="cti-filter-type" class="input-field" style="padding: 0.4rem; min-width: 120px;" onchange="applyCtiFilters()">
+                  <option value="">全部</option>
+                </select>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+                <label style="font-size: 0.8rem; color: var(--text-muted);">威脅群組</label>
+                <select id="cti-filter-actor" class="input-field" style="padding: 0.4rem; min-width: 120px;" onchange="applyCtiFilters()">
+                  <option value="">全部</option>
+                </select>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+                <label style="font-size: 0.8rem; color: var(--text-muted);">惡意軟體標籤</label>
+                <select id="cti-filter-malware" class="input-field" style="padding: 0.4rem; min-width: 120px;" onchange="applyCtiFilters()">
+                  <option value="">全部</option>
+                </select>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+                <label style="font-size: 0.8rem; color: var(--text-muted);">情資來源</label>
+                <select id="cti-filter-source" class="input-field" style="padding: 0.4rem; min-width: 120px;" onchange="applyCtiFilters()">
+                  <option value="">全部</option>
+                </select>
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+                <label style="font-size: 0.8rem; color: var(--text-muted);">起始日 (新增時間)</label>
+                <input type="date" id="cti-filter-start" class="input-field" style="padding: 0.4rem;" onchange="applyCtiFilters()">
+              </div>
+              <div style="display: flex; flex-direction: column; gap: 0.25rem;">
+                <label style="font-size: 0.8rem; color: var(--text-muted);">結束日 (新增時間)</label>
+                <input type="date" id="cti-filter-end" class="input-field" style="padding: 0.4rem;" onchange="applyCtiFilters()">
+              </div>
+              <div style="display: flex; align-items: flex-end; padding-bottom: 0.1rem;">
+                <button class="btn btn-secondary" style="padding: 0.5rem 1rem;" onclick="resetCtiFilters()">篩濾條件</button>
+                <button class="btn btn-primary" style="padding: 0.5rem 1rem; margin-left: 0.5rem; background: var(--accent-green); color: #000; border: none;" onclick="exportCtiCsv()"><i class="fa-solid fa-file-csv"></i> 匯出 CSV</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- IoC Table Container -->
+          <div style="flex: 1; overflow-y: auto; margin-bottom: 1rem; border: 1px solid var(--border-color); border-radius: var(--border-radius-sm);">
+            <table class="rules-table" style="width: 100%; border-collapse: collapse; text-align: left;">
+              <thead>
+                <tr>
+                  <th>類型 Type</th>
+                  <th>IoC 阻斷特徵 Value</th>
+                  <th>威脅群組 Threat Actor</th>
+                  <th>惡意軟體 Malware Tag</th>
+                  <th>情資來源 Source</th>
+                  <th>更新時間 Updated</th>
+                </tr>
+              </thead>
+              <tbody id="cti-ioc-table-body">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Pagination Controls -->
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div id="cti-pagination-info" style="font-size: 0.9rem; color: var(--text-secondary);">顯示第 0 至 0 筆，共 0 筆</div>
+            <div style="display: flex; align-items: center; gap: 0.5rem;">
+              <select id="cti-pagesize" class="input-field" style="width: auto; padding: 0.4rem 0.75rem;" onchange="changeCtiPageSize()">
+                <option value="10">10 筆/頁</option>
+                <option value="25" selected>25 筆/頁</option>
+                <option value="50">50 筆/頁</option>
+                <option value="100">100 筆/頁</option>
+              </select>
+              <div id="cti-pagination-controls" class="pagination-controls">
+                <!-- Pagination buttons -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LOGS TAB -->
+    <div id="logs-tab" class="tab-content">
+      <header>
+        <div>
+          <h1>規則管理</h1>
+        <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.25rem;">管理 Suricata 檢測規則</p>
+        </div>
+        <div class="header-actions" style="display: flex; align-items: center; gap: 1rem;">
+          <label style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; color: var(--text-secondary); cursor: pointer; user-select: none;">
+            <input type="checkbox" id="auto-refresh-logs" checked onchange="toggleLogAutoRefresh()">
+            <span>情資來源狀態</span>
+          </label>
+          <button class="btn btn-secondary" onclick="fetchLogs()">
+            <i class="fa-solid fa-arrows-rotate"></i> 重新載入日誌
+          </button>
+        </div>
+      </header>
+
+      <section class="card">
+        <div class="console-wrapper">
+          <div class="console-header">
+            <span><i class="fa-solid fa-terminal"></i> download.log</span>
+            <span id="log-status-text">串流準備中...</span>
+          </div>
+          <div class="console-body" id="console-body">
+            <!-- Logs will be populated here -->
+          </div>
+        </div>
+      </section>
+    </div>
+    <!-- GeoIP Tab -->
+    <div id="geoip-tab" class="tab-content">
+      <div class="header">
+        <h1>IP 地理追蹤與流量地圖 (GeoIP Flow Map)</h1>
+      </div>
+      
+      <div class="stats-grid" style="grid-template-columns: 1fr;">
+        <div class="card" style="padding: 1.5rem; display: flex; flex-direction: column; gap: 1.5rem;">
+          <div style="width: 100%;">
+            <label style="display: block; font-size: 1rem; color: var(--text-secondary); margin-bottom: 0.75rem;">追蹤模式 Mode</label>
+            <select id="geoip-mode" onchange="toggleGeoIPMode()" style="width: 100%; background: var(--bg-dark); color: var(--text-primary); border: 1px solid var(--card-border); padding: 0.8rem 1rem; border-radius: 0.5rem; font-size: 1rem;">
+              <option value="single">惡意 IP 阻斷數 (Single Node)</option>
+              <option value="flow">連線追蹤 (Source to Destination Flow)</option>
+            </select>
+          </div>
+          
+          <div id="geoip-single-input" style="display: block; width: 100%;">
+            <label style="display: block; font-size: 1rem; color: var(--text-secondary); margin-bottom: 0.75rem;">惡意 IP 阻斷數 (Target IP)</label>
+            <input type="text" id="geoip-ip" placeholder="例如: 8.8.8.8, 8.8.4.4 (可輸入多筆用逗號分隔)" style="width: 100%; background: var(--bg-dark); color: var(--text-primary); border: 1px solid var(--card-border); padding: 0.8rem 1rem; border-radius: 0.5rem; font-size: 1rem;">
+          </div>
+          
+          <div id="geoip-flow-inputs" style="display: none; width: 100%; gap: 1.5rem;">
+            <div style="flex: 1;">
+              <label style="display: block; font-size: 1rem; color: var(--accent-cyan); margin-bottom: 0.75rem;">來源 IP (Source)</label>
+              <input type="text" id="geoip-src-ip" placeholder="例如: 8.8.8.8, 8.8.4.4 (可輸入多筆用逗號分隔)" style="width: 100%; background: var(--bg-dark); color: var(--text-primary); border: 1px solid var(--card-border); padding: 0.8rem 1rem; border-radius: 0.5rem; font-size: 1rem;">
+            </div>
+            <div style="flex: 1;">
+              <label style="display: block; font-size: 1rem; color: #f87171; margin-bottom: 0.75rem;">目的 IP (Destination)</label>
+              <input type="text" id="geoip-dst-ip" placeholder="例如: 1.1.1.1, 1.0.0.1 (可輸入多筆用逗號分隔)" style="width: 100%; background: var(--bg-dark); color: var(--text-primary); border: 1px solid var(--card-border); padding: 0.8rem 1rem; border-radius: 0.5rem; font-size: 1rem;">
+            </div>
+          </div>
+          
+          <div style="width: 100%; margin-top: 0.5rem;">
+            <button onclick="runGeoIPQuery()" style="width: 100%; background: var(--accent-cyan); color: #000; font-weight: 600; font-size: 1.1rem; padding: 1rem; border: none; border-radius: 0.5rem; cursor: pointer; transition: 0.2s;">
+              <i class="fa-solid fa-satellite-dish"></i> 開始追蹤
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="card" style="margin-top: 1rem;">
+        <div id="geoip-map" style="height: 600px; width: 100%; border-radius: 0.5rem; background: #000;"></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- CodeMirror Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/yaml/yaml.min.js"></script>
+  <script src="/static/app.js?v=4"></script>
+</body>
+</html>

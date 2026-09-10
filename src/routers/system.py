@@ -1,0 +1,514 @@
+import json
+
+import logging
+
+import math
+
+import os
+
+import sqlite3
+
+import time
+
+from datetime import datetime
+
+from pathlib import Path
+
+from typing import Any, Dict, List, Optional
+
+from fastapi import APIRouter, Request, BackgroundTasks, HTTPException, Depends
+
+from fastapi.responses import HTMLResponse, StreamingResponse, Response
+
+from pydantic import BaseModel
+import anyio
+from core_state import *
+
+import maxminddb
+
+
+
+router = APIRouter()
+
+logger = logging.getLogger("web_server")
+
+
+
+@router.get("/", response_class=HTMLResponse)
+
+async def serve_index():
+
+    """Serves the decoupled dashboard interface index.html"""
+
+    static_dir = Path(__file__).resolve().parent.parent / "static"
+
+    index_file = static_dir / "index.html"
+
+    if index_file.exists():
+
+        return HTMLResponse(content=index_file.read_text(encoding="utf-8"), status_code=200, headers={"Cache-Control": "no-cache, no-store, must-revalidate", "Pragma": "no-cache", "Expires": "0"})
+
+    raise HTTPException(status_code=404, detail="static/index.html not found")
+
+
+
+
+
+
+
+@router.get("/api/status")
+
+async def api_get_status(request: Request, is_authorized: None = Depends(verify_api_key)):
+
+    """API to get current system statistics"""
+
+    project_root = PROJECT_ROOT
+
+    try:
+
+        from config import AppConfig
+
+        config = AppConfig.from_env(project_root)
+
+    except Exception as e:
+
+        raise HTTPException(status_code=500, detail=f"Configuration load failed: {e}")
+
+
+
+    deploy_path = config.deploy_target_path or (project_root / "deploy" / "deploy.rules")
+
+    rules_stats = parse_deployed_rules(deploy_path)
+
+    
+
+    return {
+
+        "status": RUN_STATUS["status"],
+
+        "last_run_time": RUN_STATUS["last_run_time"],
+
+        "last_run_success": RUN_STATUS["last_run_success"],
+
+        "last_run_error": RUN_STATUS["last_run_error"],
+
+        "downloads_dir_size": get_dir_size_str(config.downloads_dir),
+
+        "reports_dir_size": get_dir_size_str(config.reports_dir),
+
+        "logs_dir_size": get_dir_size_str(config.logs_dir),
+
+        "total_rules": rules_stats["active_count"],
+
+        "disabled_rules_count": rules_stats["disabled_count"],
+
+        "intel_sync_enabled": config.intel_sync_enabled,
+
+        "oinkcode_configured": bool(config.etpro_oinkcode),
+
+        "validation_enabled": config.suricata_validation_enabled,
+
+        "deploy_target_path": str(deploy_path)
+
+    }
+
+
+
+
+
+
+
+@router.get("/api/config")
+
+async def api_get_config(request: Request, is_authorized: None = Depends(verify_api_key)):
+
+    """API to get threat intelligence overrides"""
+
+    overrides_file = PROJECT_ROOT / "config" / "intel_overrides.json"
+
+    _defaults = {
+
+        "actor_mappings": {},
+
+        "software_denylist": [],
+
+        "cti_feeds": {"feodo": True, "urlhaus": True, "et_compromised": True},
+
+        "malpedia_enabled": True,
+
+        "malpedia_api_token": "",
+
+    }
+
+    if not overrides_file.exists():
+
+        return _defaults
+
+
+
+    try:
+
+        with overrides_file.open("r", encoding="utf-8") as f:
+
+            data = json.load(f)
+
+        # Back-fill any newly added keys so the UI always has them
+
+        for k, v in _defaults.items():
+
+            data.setdefault(k, v)
+
+        return data
+
+    except Exception as e:
+
+        raise HTTPException(status_code=500, detail=f"Read overrides failed: {e}")
+
+
+
+
+
+
+
+@router.post("/api/config")
+
+async def api_save_config(request: Request, is_authorized: None = Depends(verify_api_key)):
+
+    """API to write overrides"""
+
+    try:
+
+        payload = await request.json()
+
+        if "actor_mappings" not in payload or "software_denylist" not in payload:
+
+            raise ValueError("Missing actor_mappings or software_denylist keys")
+
+        # Ensure Malpedia fields are stored even if old clients omit them
+
+        payload.setdefault("malpedia_enabled", True)
+
+        payload.setdefault("malpedia_api_token", "")
+
+        
+
+        config_dir = PROJECT_ROOT / "config"
+
+        config_dir.mkdir(parents=True, exist_ok=True)
+
+        overrides_file = config_dir / "intel_overrides.json"
+
+        
+
+        with overrides_file.open("w", encoding="utf-8") as f:
+
+            json.dump(payload, f, indent=4, ensure_ascii=False)
+
+        
+
+        return {"status": "success"}
+
+    except Exception as e:
+
+        from fastapi.responses import JSONResponse
+
+        return JSONResponse(status_code=400, content={"status": "error", "message": str(e)})
+
+
+
+
+
+
+
+@router.get("/api/logs")
+
+async def api_get_logs(response: Response, is_authorized: None = Depends(verify_api_key)):
+
+    """API to fetch latest 100 log lines"""
+
+    log_file = PROJECT_ROOT / "logs" / "download.log"
+
+    if not log_file.exists():
+
+        return Response(content="No logs found yet.", media_type="text/plain")
+
+
+
+    try:
+
+        with log_file.open("rb") as f:
+
+            try:
+
+                f.seek(-65536, 2)
+
+            except OSError:
+
+                f.seek(0)
+
+            chunk = f.read()
+
+        
+
+        lines = chunk.decode("utf-8", errors="replace").splitlines()
+
+        latest_lines = lines[-100:]
+
+        payload = "\n".join(latest_lines)
+
+        return Response(content=payload, media_type="text/plain")
+
+    except Exception as e:
+
+        raise HTTPException(status_code=500, detail=f"Failed to read logs: {e}")
+
+
+
+
+
+@router.get("/api/system/health")
+
+async def api_system_health(request: Request, is_authorized: None = Depends(verify_api_key)):
+
+    try:
+
+        import shutil
+
+        total, used, free = shutil.disk_usage(str(PROJECT_ROOT))
+
+        percent = (used / total) * 100 if total > 0 else 0.0
+
+        def format_bytes(b):
+
+            for unit in ['B', 'KB', 'MB', 'GB', 'TB']:
+
+                if b < 1024.0: return f"{b:.2f} {unit}"
+
+                b /= 1024.0
+
+            return f"{b:.2f} TB"
+
+        disk_info = {
+
+            "total": format_bytes(total), "used": format_bytes(used),
+
+            "free": format_bytes(free), "percent": percent
+
+        }
+
+        return {"status": "success", "suricata_running": False, "disk": disk_info}
+
+    except Exception as e:
+
+        logger.error(f"Health check error: {e}")
+
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+
+@router.get("/api/system/init_data")
+
+async def api_init_data(request: Request, is_authorized: None = Depends(verify_api_key)):
+
+    """API to fetch aggregated initialization data to reduce frontend requests"""
+
+    try:
+
+        from routers.rules import api_get_active_rules_facets, api_get_active_rules_stats
+
+        
+
+        status_res = await api_get_status(request, None)
+
+        health_res = await api_system_health(request, None)
+
+        config_res = await api_get_config(request, None)
+
+        facets_res = await api_get_active_rules_facets(request, None)
+
+        stats_res = await api_get_active_rules_stats(request, None)
+
+        
+
+        return {
+
+            "status": status_res,
+
+            "health": health_res,
+
+            "config": config_res,
+
+            "facets": facets_res,
+
+            "stats": stats_res
+
+        }
+
+    except Exception as e:
+
+        logger.error(f"Init data error: {e}")
+
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+
+@router.get("/api/stream")
+
+async def api_stream(request: Request, is_authorized: None = Depends(verify_api_key)):
+
+    log_file = PROJECT_ROOT / "logs" / "download.log"
+
+    async def log_generator():
+
+        try:
+
+            with open(log_file, "r", encoding="utf-8") as f:
+
+                f.seek(0, 2)
+
+                while True:
+
+                    if await request.is_disconnected():
+
+                        break
+
+                    line = f.readline()
+
+                    if line:
+
+                        yield f"data: {line}\n\n"
+
+                    else:
+
+                        await anyio.sleep(0.5)
+
+        except Exception:
+
+            yield "data: Error reading logs\n\n"
+
+    return StreamingResponse(log_generator(), media_type="text/event-stream")
+
+
+
+@router.get("/api/system/suricata-yaml")
+
+async def api_get_suricata_yaml(request: Request, is_authorized: None = Depends(verify_api_key)):
+
+    from config import AppConfig
+
+    config = AppConfig.from_env(PROJECT_ROOT)
+
+    yaml_file = config.suricata_yaml_path
+
+    
+
+    if yaml_file and yaml_file.exists():
+
+        return {"status": "success", "content": yaml_file.read_text(encoding="utf-8"), "path": str(yaml_file)}
+
+    
+
+    # Fallback if the default doesn't exist
+
+    fallback = PROJECT_ROOT / "config" / "suricata.yaml"
+
+    if fallback.exists():
+
+        return {"status": "success", "content": fallback.read_text(encoding="utf-8"), "path": str(fallback)}
+
+        
+
+    return {"status": "error", "detail": f"File not found: {yaml_file}"}
+
+
+
+class SuricataYamlUpdate(BaseModel):
+
+    content: str
+
+
+
+@router.post("/api/system/suricata-yaml")
+
+async def api_post_suricata_yaml(req: SuricataYamlUpdate, request: Request, is_authorized: None = Depends(verify_api_key)):
+
+    from config import AppConfig
+
+    import shutil
+
+    import datetime
+
+    
+
+    config = AppConfig.from_env(PROJECT_ROOT)
+
+    yaml_file = config.suricata_yaml_path
+
+    
+
+    if not yaml_file or not yaml_file.exists():
+
+        yaml_file = PROJECT_ROOT / "config" / "suricata.yaml"
+
+        
+
+    try:
+
+        # Create a backup
+
+        if yaml_file.exists():
+
+            backup_dir = PROJECT_ROOT / "config" / "backups"
+
+            backup_dir.mkdir(exist_ok=True, parents=True)
+
+            timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+
+            backup_file = backup_dir / f"suricata_{timestamp}.yaml.bak"
+
+            shutil.copy2(yaml_file, backup_file)
+
+            
+
+        yaml_file.write_text(req.content, encoding="utf-8")
+
+        return {"status": "success", "path": str(yaml_file)}
+
+    except Exception as e:
+
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+
+@router.post("/api/system/suricata-test")
+
+async def api_post_suricata_test(request: Request, is_authorized: None = Depends(verify_api_key)):
+    import subprocess
+    from config import AppConfig
+    
+    config = AppConfig.from_env(PROJECT_ROOT)
+    yaml_file = config.suricata_yaml_path
+    
+    if not yaml_file or not yaml_file.exists():
+        yaml_file = PROJECT_ROOT / "config" / "suricata.yaml"
+        
+    try:
+        suricata_exe = str(config.suricata_exe_path) if config.suricata_exe_path and config.suricata_exe_path.exists() else "suricata"
+        result = subprocess.run([suricata_exe, "-c", str(yaml_file), "-T"], capture_output=True, text=True, timeout=10)
+        return {
+            "success": result.returncode == 0,
+            "output": result.stdout + "\n" + result.stderr
+        }
+    except subprocess.TimeoutExpired:
+        raise HTTPException(status_code=504, detail="Test timed out after 10 seconds")
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.post("/api/trigger")
+async def api_trigger_pipeline(background_tasks: BackgroundTasks, is_authorized: None = Depends(verify_api_key)):
+    from core_state import RUN_STATUS, RUN_LOCK, run_pipeline_worker
+    with RUN_LOCK:
+        if RUN_STATUS["status"] == "running":
+            return {"status": "already_running"}
+    background_tasks.add_task(run_pipeline_worker, PROJECT_ROOT)
+    return {"status": "started"}
