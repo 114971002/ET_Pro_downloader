@@ -224,3 +224,12 @@ python -m unittest discover -s tests
 ```
 
 測試不會連線到 ET Pro，也不需要真實 Oinkcode。
+
+## 系統重建指南 (System Reconstruction Guide)
+若您需要在另一台電腦上重新部署本系統，請按照以下步驟執行：
+
+1. **安裝必備環境**：確保新電腦已安裝 Git 與 Python (>=3.9)，安裝 Python 時請務必勾選 "Add python.exe to PATH"。
+2. **下載專案**：在終端機執行 "git clone https://github.com/114971002/ET_Pro_downloader.git"，然後 "cd ET_Pro_downloader"。
+3. **安裝套件**：執行 "pip install -r requirements.txt" 安裝所需依賴。
+4. **設定環境變數**：系統需要您的 ET Pro Oinkcode 授權碼才能下載規則。請設定環境變數 ETPRO_OINKCODE (例如："setx ETPRO_OINKCODE 您的授權碼")。
+5. **啟動網頁介面**：執行 "python src/web_server_entry.py"，開啟瀏覽器前往 "http://localhost:8000" 即可看到儀表板。
