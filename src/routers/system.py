@@ -68,7 +68,7 @@ async def api_get_status(request: Request, is_authorized: None = Depends(verify_
 
         from config import AppConfig
 
-        config = AppConfig.from_env(project_root)
+        config = AppConfig.from_env(project_root, require_oinkcode=False)
 
     except Exception as e:
 
@@ -221,45 +221,27 @@ async def api_save_config(request: Request, is_authorized: None = Depends(verify
 
 
 @router.get("/api/logs")
-
-async def api_get_logs(response: Response, is_authorized: None = Depends(verify_api_key)):
-
+async def api_get_logs(request: Request, response: Response, is_authorized: None = Depends(verify_api_key)):
     """API to fetch latest 100 log lines"""
-
     log_file = PROJECT_ROOT / "logs" / "download.log"
-
     if not log_file.exists():
-
-        return Response(content="No logs found yet.", media_type="text/plain")
-
-
+        return {"lines": ["尚無日誌記錄"], "raw": "尚無日誌記錄"}
 
     try:
-
         with log_file.open("rb") as f:
-
             try:
-
                 f.seek(-65536, 2)
-
             except OSError:
-
                 f.seek(0)
-
             chunk = f.read()
 
-        
-
         lines = chunk.decode("utf-8", errors="replace").splitlines()
-
         latest_lines = lines[-100:]
-
         payload = "\n".join(latest_lines)
-
-        return Response(content=payload, media_type="text/plain")
-
+        if "text/plain" in request.headers.get("accept", "") and "application/json" not in request.headers.get("accept", ""):
+            return Response(content=payload, media_type="text/plain")
+        return {"lines": latest_lines, "raw": payload}
     except Exception as e:
-
         raise HTTPException(status_code=500, detail=f"Failed to read logs: {e}")
 
 
@@ -396,7 +378,7 @@ async def api_get_suricata_yaml(request: Request, is_authorized: None = Depends(
 
     from config import AppConfig
 
-    config = AppConfig.from_env(PROJECT_ROOT)
+    config = AppConfig.from_env(PROJECT_ROOT, require_oinkcode=False)
 
     yaml_file = config.suricata_yaml_path
 
@@ -440,7 +422,7 @@ async def api_post_suricata_yaml(req: SuricataYamlUpdate, request: Request, is_a
 
     
 
-    config = AppConfig.from_env(PROJECT_ROOT)
+    config = AppConfig.from_env(PROJECT_ROOT, require_oinkcode=False)
 
     yaml_file = config.suricata_yaml_path
 
@@ -481,12 +463,12 @@ async def api_post_suricata_yaml(req: SuricataYamlUpdate, request: Request, is_a
 
 
 @router.post("/api/system/suricata-test")
-
 async def api_post_suricata_test(request: Request, is_authorized: None = Depends(verify_api_key)):
+    import os
     import subprocess
     from config import AppConfig
     
-    config = AppConfig.from_env(PROJECT_ROOT)
+    config = AppConfig.from_env(PROJECT_ROOT, require_oinkcode=False)
     yaml_file = config.suricata_yaml_path
     
     if not yaml_file or not yaml_file.exists():
@@ -494,13 +476,29 @@ async def api_post_suricata_test(request: Request, is_authorized: None = Depends
         
     try:
         suricata_exe = str(config.suricata_exe_path) if config.suricata_exe_path and config.suricata_exe_path.exists() else "suricata"
-        result = subprocess.run([suricata_exe, "-c", str(yaml_file), "-T"], capture_output=True, text=True, timeout=10)
+        
+        env = os.environ.copy()
+        path_key = "PATH"
+        for k in list(env.keys()):
+            if k.upper() == "PATH":
+                path_key = k
+                break
+        npcap_str = str(config.npcap_dir_path)
+        if npcap_str not in env.get(path_key, ""):
+            env[path_key] = f"{npcap_str};{env.get(path_key, '')}"
+            
+        cmd = [suricata_exe, "-c", str(yaml_file), "-T", "-l", str(config.logs_dir)]
+        deploy_rules = config.deploy_target_path or (PROJECT_ROOT / "deploy" / "deploy.rules")
+        if deploy_rules.exists():
+            cmd.extend(["-S", str(deploy_rules)])
+            
+        result = subprocess.run(cmd, env=env, capture_output=True, text=True, timeout=60)
         return {
             "success": result.returncode == 0,
             "output": result.stdout + "\n" + result.stderr
         }
     except subprocess.TimeoutExpired:
-        raise HTTPException(status_code=504, detail="Test timed out after 10 seconds")
+        raise HTTPException(status_code=504, detail="Test timed out after 60 seconds")
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 

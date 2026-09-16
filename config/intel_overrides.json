@@ -1,6 +1,17 @@
 {
-    "actor_mappings": {},
-    "software_denylist": [],
+    "actor_mappings": {
+        "Lazarus": [
+            "hidden cobra",
+            "andariel"
+        ],
+        "APT28": [
+            "fancy bear"
+        ]
+    },
+    "software_denylist": [
+        "cobaltstrike",
+        "quasar"
+    ],
     "malpedia_enabled": true,
     "malpedia_api_token": ""
 }

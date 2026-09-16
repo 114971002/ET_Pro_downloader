@@ -1,9 +1,10 @@
 __pycache__/
 *.pyc
 .env
-downloads/*.tar.gz
-downloads/*.part
-logs/*.log
+downloads/
+!downloads/.gitkeep
+logs/
+!logs/.gitkeep
 reports/*.csv
 output/*.rules
 deploy/*.rules
@@ -21,9 +22,11 @@ update_*.py
 fix_*.py
 find_*.py
 restore_*.py
-*.js
+audit_*.py
+check_*.py
 *.md
 !README.md
 
 *.db
 *.cache.json
+*_cache.json

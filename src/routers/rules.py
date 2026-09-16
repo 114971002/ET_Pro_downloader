@@ -22,7 +22,7 @@ async def api_get_disabled_rules(request: Request, is_authorized: None = Depends
     project_root = PROJECT_ROOT
     try:
         from config import AppConfig
-        config = AppConfig.from_env(project_root)
+        config = AppConfig.from_env(project_root, require_oinkcode=False)
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Configuration load failed: {e}")
 
@@ -52,7 +52,13 @@ async def api_get_active_rules_stats(request: Request, is_authorized: None = Dep
         refresh_active_rules_cache(project_root)
         db_path = project_root / "config" / "deploy_rules.db"
         if not db_path.exists():
-            raise FileNotFoundError("SQLite rules database not found")
+            return {
+                "threat_actors": {},
+                "severities": {},
+                "mitre_tactics": {},
+                "cve_years": {},
+                "total_active_rules": 0
+            }
         
         conn = sqlite3.connect(str(db_path))
         conn.execute("PRAGMA journal_mode=WAL;")
@@ -130,7 +136,13 @@ async def api_get_active_rules(
         refresh_active_rules_cache(project_root)
         db_path = project_root / "config" / "deploy_rules.db"
         if not db_path.exists():
-            raise FileNotFoundError("SQLite rules database not found")
+            return {
+                "total": 0,
+                "page": page,
+                "limit": limit,
+                "total_pages": 1,
+                "rules": []
+            }
         
         conn = sqlite3.connect(str(db_path))
         conn.execute("PRAGMA journal_mode=WAL;")
@@ -222,8 +234,32 @@ async def api_get_active_rules(
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Failed to query active rules: {e}")
 
+
+@router.get("/api/rules/detail/{sid}")
+async def api_get_rule_detail(sid: str, request: Request, is_authorized: None = Depends(verify_api_key)):
+    """API to get single rule detail by SID"""
+    project_root = PROJECT_ROOT
+    try:
+        db_path = project_root / "config" / "deploy_rules.db"
+        if not db_path.exists():
+            raise HTTPException(status_code=404, detail="Database not found")
+        conn = sqlite3.connect(str(db_path))
+        conn.row_factory = sqlite3.Row
+        cursor = conn.cursor()
+        cursor.execute("SELECT * FROM active_rules WHERE sid = ?", (str(sid),))
+        row = cursor.fetchone()
+        conn.close()
+        if not row:
+            raise HTTPException(status_code=404, detail=f"Rule with SID {sid} not found")
+        return {k: row[k] for k in row.keys()}
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
 import io
 import csv
+
 
 @router.get("/api/rules/active/export")
 async def api_export_active_rules(
@@ -533,7 +569,7 @@ async def api_toggle_rule(request: Request, is_authorized: None = Depends(verify
             raise ValueError("Missing 'sid' parameter")
         
         from config import AppConfig
-        config = AppConfig.from_env(PROJECT_ROOT)
+        config = AppConfig.from_env(PROJECT_ROOT, require_oinkcode=False)
         deploy_path = config.deploy_target_path or (PROJECT_ROOT / "deploy" / "deploy.rules")
         
         if not deploy_path.exists():
@@ -596,7 +632,7 @@ async def api_toggle_rule(request: Request, is_authorized: None = Depends(verify
 async def api_get_deployments(request: Request, is_authorized: None = Depends(verify_api_key)):
     try:
         from config import AppConfig
-        config = AppConfig.from_env(PROJECT_ROOT)
+        config = AppConfig.from_env(PROJECT_ROOT, require_oinkcode=False)
         backups_dir = config.deploy_archive_dir
         backups = []
         if backups_dir and backups_dir.exists():
@@ -614,7 +650,7 @@ async def api_rollback_deployment(req: RollbackRequest, request: Request, is_aut
     import shutil
     try:
         from config import AppConfig
-        config = AppConfig.from_env(PROJECT_ROOT)
+        config = AppConfig.from_env(PROJECT_ROOT, require_oinkcode=False)
         backup_file = config.deploy_archive_dir / req.filename
         if not backup_file.exists():
             raise FileNotFoundError("Backup file not found")

@@ -47,6 +47,16 @@ logger = logging.getLogger("analyzer")
 
 
 def analyze_archive(archive_path: Path, report_path: Path, date_stamp: str) -> AnalysisResult:
+    if report_path.exists() and report_path.stat().st_size > 1000 and report_path.stat().st_mtime >= archive_path.stat().st_mtime:
+        logger.info("Analysis report %s is up-to-date. Skipping re-analysis.", report_path)
+        with report_path.open("r", encoding="utf-8", errors="replace") as f:
+            total_rules = max(0, sum(1 for _ in f) - 1)
+        return AnalysisResult(
+            report_path=report_path,
+            total_rules=total_rules,
+            records=[],
+        )
+
     actor_mappings, canonical_codes, base_denylist = load_intel_data()
     active_denylist = base_denylist.copy()
     keyword_patterns = get_keyword_patterns(actor_mappings)
@@ -333,6 +343,15 @@ def is_denylisted(val: str, software_denylist: set[str]) -> bool:
 
 def is_context_qualified(source_text: str, start: int, end: int, keyword: str, raw_rule: str) -> bool:
     kw_lower = keyword.lower()
+
+    # Disambiguate generic "group \d+" aliases against IP reputation / Tor batch rules
+    if re.match(r"^group\s*\d+$", kw_lower):
+        raw_low = raw_rule.lower()
+        if any(b in raw_low for b in ["ip group", "cins", "tor exit", "tor relay", "dshield", "compromised"]):
+            return False
+        if not any(k in raw_low for k in ["threat", "actor", "apt", "campaign", "malware", "espionage"]):
+            return False
+
     if kw_lower not in {"reaper", "inception", "hades", "platinum"}:
         return True
 

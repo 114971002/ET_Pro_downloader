@@ -76,30 +76,43 @@ class AppConfig:
         cls,
         project_root: Optional[Path] = None,
         env: Optional[Mapping[str, str]] = None,
+        require_oinkcode: bool = True,
     ) -> "AppConfig":
         env_map = env if env is not None else os.environ
         root = Path(project_root) if project_root is not None else default_project_root()
         root = root.resolve()
 
-        oinkcode = env_map.get(OINKCODE_ENV, "").strip()
-        if not oinkcode:
+        def get_env_or_reg(var_name: str, default: str = "") -> str:
+            val = env_map.get(var_name, "").strip()
+            if not val and env is None and os.name == "nt":
+                try:
+                    import winreg
+                    with winreg.OpenKey(winreg.HKEY_CURRENT_USER, "Environment") as key:
+                        reg_val, _ = winreg.QueryValueEx(key, var_name)
+                        val = str(reg_val).strip()
+                except Exception:
+                    pass
+            return val if val else default
+
+        oinkcode = get_env_or_reg(OINKCODE_ENV)
+        if require_oinkcode and not oinkcode:
             raise ConfigError(f"Missing required environment variable: {OINKCODE_ENV}")
 
-        deploy_target_raw = env_map.get(DEPLOY_TARGET_ENV, "").strip()
+        deploy_target_raw = get_env_or_reg(DEPLOY_TARGET_ENV)
         deploy_target_path = build_deploy_target_path(root, deploy_target_raw)
 
-        validation_enabled_raw = env_map.get(VALIDATION_ENABLED_ENV, "true").strip().lower()
+        validation_enabled_raw = get_env_or_reg(VALIDATION_ENABLED_ENV, "true").lower()
         validation_enabled = validation_enabled_raw in ("true", "1", "yes", "on")
 
-        intel_sync_enabled_raw = env_map.get(INTEL_SYNC_ENABLED_ENV, "true").strip().lower()
+        intel_sync_enabled_raw = get_env_or_reg(INTEL_SYNC_ENABLED_ENV, "true").lower()
         intel_sync_enabled = intel_sync_enabled_raw in ("true", "1", "yes", "on")
 
-        suricata_version = env_map.get(SURICATA_VERSION_ENV, SURICATA_VERSION_DEFAULT).strip()
+        suricata_version = get_env_or_reg(SURICATA_VERSION_ENV, SURICATA_VERSION_DEFAULT)
 
-        suricata_exe = Path(env_map.get(SURICATA_EXE_ENV, SURICATA_EXE_DEFAULT).strip())
-        suricata_yaml = Path(env_map.get(SURICATA_YAML_ENV, SURICATA_YAML_DEFAULT).strip())
-        npcap_dir = Path(env_map.get(NPCAP_DIR_ENV, NPCAP_DIR_DEFAULT).strip())
-        force_download_raw = env_map.get(FORCE_DOWNLOAD_ENV, "false").strip().lower()
+        suricata_exe = Path(get_env_or_reg(SURICATA_EXE_ENV, SURICATA_EXE_DEFAULT))
+        suricata_yaml = Path(get_env_or_reg(SURICATA_YAML_ENV, SURICATA_YAML_DEFAULT))
+        npcap_dir = Path(get_env_or_reg(NPCAP_DIR_ENV, NPCAP_DIR_DEFAULT))
+        force_download_raw = get_env_or_reg(FORCE_DOWNLOAD_ENV, "false").lower()
         force_download = force_download_raw in ("true", "1", "yes", "on")
 
         deploy_archive_raw = env_map.get(DEPLOY_ARCHIVE_ENV, "").strip()
@@ -152,6 +165,8 @@ class AppConfig:
 
     @property
     def download_url(self) -> str:
+        if not self.etpro_oinkcode:
+            return ""
         return (
             f"{DOWNLOAD_BASE_URL}/{self.etpro_oinkcode}/"
             f"suricata-{self.suricata_version}/{self.source_filename}"
@@ -159,6 +174,8 @@ class AppConfig:
 
     @property
     def masked_download_url(self) -> str:
+        if not self.etpro_oinkcode:
+            return ""
         return self.download_url.replace(self.etpro_oinkcode, mask_secret(self.etpro_oinkcode))
 
     def date_stamp(self, now: Optional[datetime] = None) -> str:

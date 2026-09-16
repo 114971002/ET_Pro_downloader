@@ -1,4960 +1,4907 @@
 {
-    "Lazarus / Hidden Cobra": [
-        "G0032",
-        "G0082",
-        "G0138",
-        "alluring pisces",
-        "andariel",
-        "appleworm",
-        "apt 38",
-        "apt-38",
-        "apt-c-26",
-        "apt38",
-        "atk117",
-        "atk3",
-        "beagleboyz",
-        "black artemis",
-        "bluenoroff",
-        "bureau 121",
-        "cageychameleon",
-        "citrine sleet",
-        "copernicium",
-        "covellite",
-        "cryptocore",
-        "dark seoul",
-        "dev-0139",
-        "dev-1222",
-        "diamond sleet",
-        "g0032",
-        "g0082",
-        "g0138",
-        "genie spider",
-        "gop",
-        "group 77",
-        "guardian of peace",
-        "guardians of peace",
-        "hastati group",
-        "hidden cobra",
-        "hidden-cobra",
-        "labyrinth chollima",
-        "lazarus",
-        "lazarus group",
-        "masan",
-        "moonstone sleet",
-        "newromanic cyber army team",
-        "nickel academy",
-        "nickel gladstone",
-        "onyx sleet",
-        "operation applejeus",
-        "operation darkseoul",
-        "operation ghostsecret",
-        "operation troy",
-        "operationtroy",
-        "plutonium",
-        "sapphire sleet",
-        "silent chollima",
-        "stardust chollima",
-        "subgroup: andariel",
-        "subgroup: bluenoroff",
-        "ta404",
-        "unc1069",
-        "unit 121",
-        "whois hacking team",
-        "whois team",
-        "zinc"
-    ],
-    "APT28 / Fancy Bear": [
-        "4hcrew",
-        "G0007",
-        "apt 28",
-        "apt-28",
-        "apt-c-20",
-        "apt2",
-        "apt28",
-        "apt29",
-        "atg2",
-        "atk5",
-        "atk7",
-        "blue athena",
-        "blue kitsune",
-        "bluebravo",
-        "bluedelta",
-        "cloaked ursa",
-        "cozy bear",
-        "crisisfour",
-        "darkhalo",
-        "fancy bear",
-        "fancybear",
-        "fighting ursa",
-        "forest blizzard",
-        "frozenlake",
-        "g0007",
-        "g0016",
-        "g0024",
-        "grey-cloud",
-        "grizzly steppe",
-        "group 100",
-        "group 74",
-        "group-4127",
-        "gruesomelarch",
-        "hellfire",
-        "iron hemlock",
-        "iron twilight",
-        "itg05",
-        "itg11",
-        "midnight blizzard",
-        "minidionis",
-        "msupdater",
-        "nobelium",
-        "operation pawn storm",
-        "pawn storm",
-        "pla unit 61486",
-        "putter panda",
-        "seaduke",
-        "searchfire",
-        "sednit",
-        "sig40",
-        "snakemackerel",
-        "sofacy",
-        "solar phoenix",
-        "stellarparticle",
-        "strontium",
-        "sulphur",
-        "swallowtail",
-        "t-apt-12",
-        "ta421",
-        "ta422",
-        "tg-4127",
-        "tg-6952",
-        "the dukes",
-        "threat group-4127",
-        "tsar team",
-        "tsarteam",
-        "uac-0001",
-        "uac-0028",
-        "uac-0029",
-        "unc2452",
-        "yttrium",
-        "z-lom team"
-    ],
-    "APT29 / Cozy Bear": [
-        "G0016",
-        "apt-29",
-        "apt29",
-        "blue kitsune",
-        "cozy bear",
-        "cozybear",
-        "cozyduke",
-        "dark halo",
-        "g0016",
-        "iron hemlock",
-        "iron ritual",
-        "midnight blizzard",
-        "nobelium",
-        "noblebaron",
-        "solarstorm",
-        "the dukes",
-        "unc2452",
-        "unc3524",
-        "yttrium"
-    ],
-    "Winnti / APT41": [
-        "G0096",
-        "amoeba",
-        "apt-41",
-        "apt18",
-        "apt4",
-        "apt41",
-        "barium",
-        "blackfly",
-        "brass typhoon",
-        "bronze atlas",
-        "bronze edison",
-        "bronze export",
-        "double dragon",
-        "dynamite panda",
-        "earth baku",
-        "g0026",
-        "g0044",
-        "g0096",
-        "grayfly",
-        "hoodoo",
-        "lead",
-        "leopard typhoon",
-        "maverick panda",
-        "pla navy",
-        "red kelpie",
-        "salmon typhoon",
-        "samurai panda",
-        "satin typhoon",
-        "scandium",
-        "sodium",
-        "ta415",
-        "tg-0416",
-        "tg-2633",
-        "wekby",
-        "wicked panda",
-        "wicked spider",
-        "winnti",
-        "wisp team"
-    ],
-    "Gamaredon": [
-        "G0047",
-        "actinium",
-        "aqua blizzard",
-        "armageddon",
-        "blue otso",
-        "bluealpha",
-        "dev-0157",
-        "g0047",
-        "gamaredon",
-        "gamaredon group",
-        "iron tilden",
-        "nastyshrew",
-        "primitive bear",
-        "sectorc08",
-        "shuckworm",
-        "trident ursa",
-        "uac-0010",
-        "unc530",
-        "winterflounder"
-    ],
-    "Kimsuky": [
-        "G0094",
-        "apt43",
-        "black banshee",
-        "earth kumiho",
-        "emerald sleet",
-        "g0086",
-        "g0094",
-        "greendinosa",
-        "kimsuky",
-        "operation stolen pencil",
-        "patheticslug",
-        "rgb-d5",
-        "sparkling pisces",
-        "springtail",
-        "ta427",
-        "thallium",
-        "velvet cholima",
-        "velvet chollima"
-    ],
-    "SideWinder": [
-        "G0121",
-        "apt-c-17",
-        "g0121",
-        "rattlesnake",
-        "razor tiger",
-        "sidewinder",
-        "t-apt-04"
-    ],
-    "MuddyWater": [
-        "G0069",
-        "atk51",
-        "boggy serpens",
-        "cobalt ulster",
-        "earth vetala",
-        "g0069",
-        "mango sandstorm",
-        "mercury",
-        "muddykrill",
-        "muddywater",
-        "seedworm",
-        "static kitten",
-        "ta450",
-        "temp.zagros"
-    ],
-    "APT34 / OilRig": [
-        "G0022",
-        "G0049",
-        "alibaba",
-        "apt 34",
-        "apt-34",
-        "apt3",
-        "apt34",
-        "atk40",
-        "boron",
-        "boyusec",
-        "brocade typhoon",
-        "bronze mayfair",
-        "buckeye",
-        "chrysene",
-        "cleaver",
-        "cobalt gypsy",
-        "crambus",
-        "earth simnavaz",
-        "europium",
-        "evasive serpens",
-        "g0003",
-        "g0022",
-        "g0049",
-        "gothic panda",
-        "greenbug",
-        "group 6",
-        "hazel sandstorm",
-        "helix kitten",
-        "irn2",
-        "itg13",
-        "oilrig",
-        "op cleaver",
-        "operation cleaver",
-        "pirpi",
-        "red sylvan",
-        "ta452",
-        "tarh andishan",
-        "tg-0110",
-        "tg-2889",
-        "threat group-0110",
-        "twisted kitten",
-        "ups",
-        "ups team"
-    ],
-    "Turla": [
-        "G0010",
-        "atg26",
-        "atk13",
-        "belugasturgeon",
-        "blue python",
-        "g0010",
-        "group 88",
-        "hippo team",
-        "iron hunter",
-        "itg12",
-        "krypton",
-        "makersmark",
-        "pacifier apt",
-        "pfinet",
-        "popeye",
-        "secret blizzard",
-        "sig23",
-        "snake",
-        "summit",
-        "tag_0530",
-        "turla",
-        "uac-0003",
-        "uac-0024",
-        "uac-0144",
-        "unc4210",
-        "uroburos",
-        "venomous bear",
-        "waterbug",
-        "whitebear",
-        "wraith"
-    ],
-    "Carbanak / Anunak": [
-        "G0008",
-        "G0046",
-        "anunak",
-        "atk32",
-        "calcium",
-        "carbanak",
-        "carbon spider",
-        "coreid",
-        "elbrus",
-        "fin-7",
-        "fin7",
-        "g0008",
-        "g0046",
-        "gold niagara",
-        "itg14",
-        "jokerstash",
-        "sangria tempest"
-    ],
-    "APT35 / Charming Kitten": [
-        "G0059",
-        "agent serpens",
-        "apt-35",
-        "apt35",
-        "charming kitten",
-        "charmingcypress",
-        "cobalt illusion",
-        "cobalt mirage",
-        "g0058",
-        "g0059",
-        "group 83",
-        "ikittens",
-        "itg18",
-        "magic hound",
-        "mint sandstorm",
-        "newsbeef",
-        "newscaster",
-        "newscaster team",
-        "parastoo",
-        "phosphorus",
-        "ta453",
-        "tunnelvision"
-    ],
-    "Sandworm": [
-        "G0034",
-        "apt-44",
-        "apt44",
-        "be2",
-        "blackenergy (group)",
-        "blackenergy lite",
-        "blue echidna",
-        "electrum",
-        "frozenbarents",
-        "g0034",
-        "iridium",
-        "iron viking",
-        "phantom",
-        "quedagh",
-        "sandworm",
-        "sandworm team",
-        "seashell blizzard",
-        "telebots",
-        "temp.noble",
-        "uac-0082",
-        "uac-0113",
-        "voodoo bear"
-    ],
-    "LockBit": [
-        "lockbit"
-    ],
-    "DarkHotel": [
-        "G0012",
-        "apt-c-06",
-        "apt-c-60",
-        "atk52",
-        "dark hotel",
-        "darkhotel",
-        "dubnium",
-        "egobot",
-        "fallout team",
-        "g0012",
-        "karba",
-        "luder",
-        "nemim",
-        "nemin",
-        "paladin",
-        "pioneer",
-        "purple pygmy",
-        "shadow crane",
-        "sig25",
-        "t-apt-02",
-        "tapaoux",
-        "templar",
-        "tieonjoe",
-        "tungsten bridge",
-        "zigzag hail"
-    ],
-    "Mustang Panda": [
-        "G0129",
-        "basin",
-        "bronze president",
-        "bronzelychee",
-        "camaro dragon",
-        "clumsytoad",
-        "earth preta",
-        "fireant",
-        "g0129",
-        "hive0154",
-        "honeymyte",
-        "luminous moth",
-        "luminousmoth",
-        "mustang panda",
-        "polaris",
-        "red lich",
-        "reddelta",
-        "stately taurus",
-        "ta416",
-        "tantalum",
-        "temp.hex",
-        "twill typhoon",
-        "unc6384",
-        "vertigo panda"
-    ],
-    "Transparent Tribe / APT36": [
-        "G0134",
-        "apt 36",
-        "apt-36",
-        "apt36",
-        "c-major",
-        "copper fieldstone",
-        "earth karkaddan",
-        "g0134",
-        "green havildar",
-        "mythic leopard",
-        "operation c-major",
-        "projectm",
-        "storm-0156",
-        "tmp.lapis",
-        "transparent tribe"
-    ],
-    "Patchwork": [
-        "G0040",
-        "apt-c-09",
-        "apt-c-35",
-        "atk11",
-        "chinastrats",
-        "donot team",
-        "drooping elephant",
-        "dropping elephant",
-        "g0040",
-        "hangover group",
-        "monsoon",
-        "operation hangover",
-        "orange athos",
-        "orange kala",
-        "patchwork",
-        "quilted tiger",
-        "sarit",
-        "sectore02",
-        "thirsty gemini",
-        "viceroy tiger",
-        "zinc emerson"
-    ],
-    "APT33": [
-        "G0064",
-        "apt 33",
-        "apt-33",
-        "apt33",
-        "atk35",
-        "cobalt trinity",
-        "elfin",
-        "g0064",
-        "holmium",
-        "magnallium",
-        "peach sandstorm",
-        "refined kitten",
-        "ta451"
-    ],
-    "Naikon": [
-        "G0019",
-        "bronze geneva",
-        "bronze sterling",
-        "camerashy",
-        "g0013",
-        "g0019",
-        "naikon",
-        "override panda",
-        "pla unit 78020"
-    ],
-    "BlackTech": [
-        "G0098",
-        "blacktech",
-        "canary typhoon",
-        "circuit panda",
-        "earth hundun",
-        "g0098",
-        "huapi",
-        "manga taurus",
-        "mobwork",
-        "palmerworm",
-        "red djinn",
-        "t-apt-03",
-        "temp.overboard"
-    ],
-    "BlackCat / ALPHV": [
-        "alphv",
-        "blackcat"
-    ],
-    "Cobalt Group": [
-        "G0080",
-        "cobalt",
-        "cobalt gang",
-        "cobalt group",
-        "cobalt spider",
-        "g0080",
-        "gold kingswood",
-        "mule libra"
-    ],
-    "Scattered Spider": [
-        "0ktapus",
-        "G1015",
-        "dev-0971",
-        "g1015",
-        "muddled libra",
-        "octo tempest",
-        "oktapus",
-        "roasted 0ktapus",
-        "scatter swine",
-        "scattered spider",
-        "scattered swine",
-        "starfraud",
-        "storm-0875",
-        "storm-0971",
-        "unc3944"
-    ],
-    "APT32 / OceanLotus": [
-        "G0050",
-        "apt 32",
-        "apt-32",
-        "apt-c-00",
-        "apt32",
-        "atk17",
-        "bismuth",
-        "canvas cyclone",
-        "cobalt kitty",
-        "g0050",
-        "ocean buffalo",
-        "ocean lotus",
-        "oceanlotus",
-        "oceanlotus group",
-        "pond loach",
-        "sea lotus",
-        "sealotus",
-        "tin woodlawn"
-    ],
-    "Donot / DonotGroup": [
-        "donot group",
-        "donotgroup"
-    ],
-    "StrongPity": [
-        "G0056",
-        "g0056",
-        "promethium",
-        "strong pity",
-        "strongpity"
-    ],
-    "Chafer": [
-        "G0087",
-        "apt39",
-        "burgundy sandstorm",
-        "chafer",
-        "cobalt hickman",
-        "g0087",
-        "itg07",
-        "radio serpens",
-        "remix kitten",
-        "ta454"
-    ],
-    "LotusBlossom": [
-        "G0030",
-        "G0076",
-        "apt30",
-        "atk1",
-        "atk78",
-        "bilbug",
-        "billbug",
-        "bronze elgin",
-        "dragonfish",
-        "g0013",
-        "g0030",
-        "g0076",
-        "lotus blossom",
-        "lotus panda",
-        "lotusblossom",
-        "radium",
-        "raspberry typhoon",
-        "red salamander",
-        "spring dragon",
-        "st group",
-        "thrip"
-    ],
-    "RomCom": [
-        "romcom",
-        "storm-0978",
-        "uat-5647"
-    ],
-    "Volatile Cedar": [
-        "G0123",
-        "amethyst rain",
-        "defttorero",
-        "g0123",
-        "lebanese cedar",
-        "volatile cedar",
-        "volatilecedar",
-        "volcanictimber"
-    ],
-    "ScarCruft": [
-        "G0067",
-        "apt 37",
-        "apt-c-28",
-        "apt37",
-        "atk4",
-        "g0067",
-        "group 123",
-        "group123",
-        "inkysquid",
-        "moldy pisces",
-        "operation daybreak",
-        "operation erebus",
-        "reaper",
-        "reaper group",
-        "red eyes",
-        "ricochet chollima",
-        "scarcruft",
-        "temp.reaper",
-        "venus 121"
-    ],
-    "Platinum": [
-        "G0068",
-        "atk33",
-        "g0068",
-        "platinum",
-        "twoforone"
-    ],
-    "Taidoor": [
-        "G0015",
-        "earth aughisky",
-        "g0015",
-        "taidoor"
-    ],
-    "RampantKitten": [
-        "rampant kitten",
-        "rampantkitten"
-    ],
-    "LuckyMouse": [
-        "G0027",
-        "apt-27",
-        "apt27",
-        "bronze union",
-        "budworm",
-        "circle typhoon",
-        "dev-0322",
-        "earth smilodon",
-        "emissary panda",
-        "g0027",
-        "greedytaotie",
-        "group 35",
-        "iron taurus",
-        "iron tiger",
-        "linen typhoon",
-        "lucky mouse",
-        "luckymouse",
-        "red phoenix",
-        "temp.hippo",
-        "tg-3390",
-        "threat group-3390",
-        "tiltedtemple",
-        "ziptoken"
-    ],
-    "Equation Group": [
-        "G0020",
-        "eqgrp",
-        "equation",
-        "equation group",
-        "equationgroup",
-        "g0020",
-        "tilded team"
-    ],
-    "Molerats": [
-        "G0021",
-        "aluminum saratoga",
-        "blackstem",
-        "extreme jackal",
-        "g0021",
-        "gaza cybergang",
-        "gaza hackers team",
-        "mole rats",
-        "molerats",
-        "moonlight",
-        "operation molerats"
-    ],
-    "DarkHydrus": [
-        "G0079",
-        "dark hydrus",
-        "darkhydrus",
-        "g0079",
-        "lazymeerkat",
-        "obscure serpens"
-    ],
-    "Inception / Cloud Atlas": [
-        "G0100",
-        "atk116",
-        "blue odin",
-        "clean ursa",
-        "cloud atlas",
-        "cloudatlas",
-        "g0100",
-        "inception",
-        "inception framework",
-        "oxygen"
-    ],
-    "APT1 / CommentCrew": [
-        "G0006",
-        "apt-1",
-        "apt1",
-        "brown fox",
-        "byzantine candor",
-        "comment crew",
-        "comment group",
-        "comment panda",
-        "comment_crew",
-        "commentcrew",
-        "g0006",
-        "gif89a",
-        "group 3",
-        "pla unit 61398",
-        "shadyrat",
-        "tg-8223"
-    ],
-    "Icefog": [
-        "dagger panda",
-        "ice fog",
-        "icefog",
-        "pla unit 69010",
-        "red foxtrot",
-        "red wendigo",
-        "redfoxtrot",
-        "trident",
-        "uat-7290"
-    ],
-    "Hades": [
-        "hades"
-    ],
-    "Indrik Spider": [
-        "G0119",
-        "dev-0243",
-        "evil corp",
-        "evilcorp",
-        "g0119",
-        "gold drake",
-        "indrik spider",
-        "manatee tempest",
-        "unc2165"
-    ],
-    "NEODYMIUM": [
-        "G0055",
-        "g0055",
-        "neodymium"
-    ],
-    "BlackByte": [
-        "G1043",
-        "blackbyte",
-        "g1043",
-        "hecamede"
-    ],
-    "Elderwood": [
-        "G0066",
-        "beijing group",
-        "elderwood",
-        "elderwood gang",
-        "g0066",
-        "sig22",
-        "sneaky panda"
-    ],
-    "SideCopy": [
-        "G1008",
-        "g1008",
-        "sidecopy"
-    ],
-    "GALLIUM": [
-        "G0093",
-        "alloy taurus",
-        "g0093",
-        "gallium",
-        "granite typhoon",
-        "operation soft cell",
-        "phantom panda",
-        "red dev 4"
-    ],
-    "APT17": [
-        "G0025",
-        "apt17",
-        "aurora panda",
-        "axiom",
-        "bronze keystone",
-        "deputy dog",
-        "dogfish",
-        "g0001",
-        "g0025",
-        "group 72",
-        "group 8",
-        "heart typhoon",
-        "helium",
-        "hidden lynx",
-        "tailgater team"
-    ],
-    "Mustard Tempest": [
-        "G1020",
-        "dev-0206",
-        "g1020",
-        "gold prelude",
-        "mustard tempest",
-        "purple vallhund",
-        "ta569",
-        "unc1543"
-    ],
-    "GCMAN": [
-        "G0036",
-        "g0036",
-        "gcman"
-    ],
-    "EXOTIC LILY": [
-        "G1011",
-        "dev-0413",
-        "exotic lily",
-        "g1011"
-    ],
-    "TA577": [
-        "G1037",
-        "g1037",
-        "hive0118",
-        "ta577"
-    ],
-    "AppleJeus": [
-        "G1049",
-        "applejeus",
-        "citrine sleet",
-        "g1049",
-        "gleaming pisces",
-        "unc1720",
-        "unc4736"
-    ],
-    "admin@338": [
-        "G0018",
-        "admin338",
-        "admin@338",
-        "g0018",
-        "magnesium",
-        "team338",
-        "temper panda"
-    ],
-    "Volt Typhoon": [
-        "G1017",
-        "bronze silhouette",
-        "dazedtoad",
-        "dev-0391",
-        "g1017",
-        "insidious taurus",
-        "unc3236",
-        "vanguard panda",
-        "volt typhoon",
-        "voltzite"
-    ],
-    "Salt Typhoon": [
-        "G1045",
-        "famoussparrow",
-        "g1045",
-        "ghostemperor",
-        "operator panda",
-        "redmike",
-        "salt typhoon",
-        "unc2286"
-    ],
-    "Dragonfly": [
-        "G0035",
-        "allanite",
-        "atk6",
-        "berserk bear",
-        "blue kraken",
-        "bromine",
-        "castle",
-        "crouching yeti",
-        "dragonfly",
-        "dymalloy",
-        "energetic bear",
-        "g0035",
-        "ghost blizzard",
-        "group 24",
-        "havex",
-        "iron liberty",
-        "itg15",
-        "koala team",
-        "temp.isotope",
-        "tg-4192"
-    ],
-    "Evilnum": [
-        "G0120",
-        "deathstalker",
-        "evilnum",
-        "g0120",
-        "jointworm",
-        "knockout spider",
-        "ta4563"
-    ],
-    "Gorgon Group": [
-        "G0078",
-        "atk92",
-        "g0078",
-        "gorgon group",
-        "pasty gemini",
-        "subaat",
-        "the gorgon group"
-    ],
-    "menuPass": [
-        "G0045",
-        "apt10",
-        "atk41",
-        "bronze riverside",
-        "cicada",
-        "cloud hopper",
-        "cvnx",
-        "g0045",
-        "granite taurus",
-        "happyyongzi",
-        "hogfish",
-        "menupass",
-        "menupass team",
-        "potassium",
-        "purple typhoon",
-        "red apollo",
-        "stone panda",
-        "ta429"
-    ],
-    "Night Dragon": [
-        "G0014",
-        "g0014",
-        "night dragon"
-    ],
-    "HAFNIUM": [
-        "G0125",
-        "atk233",
-        "g0125",
-        "hafnium",
-        "murky panda",
-        "operation exchange marauder",
-        "red dev 13",
-        "silk typhoon",
-        "timmy"
-    ],
-    "Strider": [
-        "G0041",
-        "g0041",
-        "project sauron",
-        "projectsauron",
-        "sauron",
-        "strider"
-    ],
-    "Operation Wocao": [
-        "G0116",
-        "g0116",
-        "operation wocao"
-    ],
-    "FIN6": [
-        "G0037",
-        "atk88",
-        "camouflage tempest",
-        "fin6",
-        "g0037",
-        "gold franklin",
-        "itg08",
-        "magecart group 6",
-        "skeleton spider",
-        "storm-0538",
-        "ta4557",
-        "taal",
-        "white giant"
-    ],
-    "RedEcho": [
-        "G1042",
-        "g1042",
-        "redecho"
-    ],
-    "Moafee": [
-        "G0002",
-        "bronze overbrook",
-        "dragonok",
-        "g0002",
-        "g0017",
-        "moafee",
-        "shallow taurus"
-    ],
-    "Gallmaker": [
-        "G0084",
-        "g0084",
-        "gallmaker"
-    ],
-    "Storm-1811": [
-        "G1046",
-        "cardinal",
-        "curly spider",
-        "g1046",
-        "stac5777",
-        "storm-1811",
-        "unc4393"
-    ],
-    "Leafminer": [
-        "G0077",
-        "g0077",
-        "leafminer",
-        "raspite"
-    ],
-    "TeamTNT": [
-        "G0139",
-        "adept libra",
-        "g0139",
-        "teamtnt"
-    ],
-    "Machete": [
-        "G0095",
-        "apt-c-43",
-        "el machete",
-        "g0095",
-        "machete",
-        "machete-apt"
-    ],
-    "APT18": [
-        "G0026",
-        "apt18",
-        "dynamite panda",
-        "g0026",
-        "tg-0416",
-        "threat group-0416"
-    ],
-    "CURIUM": [
-        "G1012",
-        "crimson sandstorm",
-        "cuboid sandstorm",
-        "curium",
-        "dev-0228",
-        "dustycave",
-        "g1012",
-        "imperial kitten",
-        "smoke sandstorm",
-        "ta456",
-        "tortoise shell",
-        "tortoiseshell",
-        "yellow liderc"
-    ],
-    "ZIRCONIUM": [
-        "G0128",
-        "apt31",
-        "bronze vinewood",
-        "chameleon",
-        "g0128",
-        "judgment panda",
-        "red keres",
-        "ta412",
-        "violet typhoon",
-        "webfans",
-        "zirconium"
-    ],
-    "Rocke": [
-        "G0106",
-        "aged libra",
-        "g0106",
-        "rocke"
-    ],
-    "UNC3886": [
-        "G1048",
-        "g1048",
-        "unc3886"
-    ],
-    "Contagious Interview": [
-        "G1052",
-        "contagious interview",
-        "deceptivedevelopment",
-        "dev#popper",
-        "famous chollima",
-        "g1052",
-        "gwisin gang",
-        "nickel tapestry",
-        "purplebravo",
-        "storm-1877",
-        "tag-121",
-        "tenacious pungsan",
-        "unc5267",
-        "void dokkaebi",
-        "wagemole",
-        "waterplum"
-    ],
-    "TA2541": [
-        "G1018",
-        "g1018",
-        "ta2541"
-    ],
-    "Akira": [
-        "G1024",
-        "akira",
-        "g1024",
-        "gold sahara",
-        "howling scorpius",
-        "punk spider",
-        "storm-1567"
-    ],
-    "Moses Staff": [
-        "G1009",
-        "dev-0500",
-        "dev-500",
-        "g1009",
-        "marigold sandstorm",
-        "moses staff",
-        "mosesstaff",
-        "vengeful kitten"
-    ],
-    "Windigo": [
-        "G0124",
-        "g0124",
-        "windigo"
-    ],
-    "Higaisa": [
-        "G0126",
-        "g0126",
-        "higaisa"
-    ],
-    "Tropic Trooper": [
-        "G0081",
-        "apt23",
-        "bronze hobart",
-        "earth centaur",
-        "g0081",
-        "keyboy",
-        "pirate panda",
-        "red orthrus",
-        "tropic trooper"
-    ],
-    "Orangeworm": [
-        "G0071",
-        "g0071",
-        "orangeworm"
-    ],
-    "Sea Turtle": [
-        "G1041",
-        "cosmic wolf",
-        "g1041",
-        "marbled dust",
-        "sea turtle",
-        "silicon",
-        "teal kurma",
-        "unc1326"
-    ],
-    "Suckfly": [
-        "G0039",
-        "apt22",
-        "bronze olive",
-        "g0039",
-        "group 46",
-        "suckfly"
-    ],
-    "Putter Panda": [
-        "G0024",
-        "apt2",
-        "g0024",
-        "msupdater",
-        "putter panda"
-    ],
-    "Sharpshooter": [
-        "G0104",
-        "g0104",
-        "sharpshooter"
-    ],
-    "POLONIUM": [
-        "G1005",
-        "g1005",
-        "greatrift",
-        "incendiary jackal",
-        "plaid rain",
-        "polonium",
-        "unc4453"
-    ],
-    "TA459": [
-        "G0062",
-        "g0062",
-        "ta459"
-    ],
-    "Aquatic Panda": [
-        "G0143",
-        "aquatic panda",
-        "bountyglad",
-        "bronze university",
-        "charcoal typhoon",
-        "chromium",
-        "controlx",
-        "earth lusca",
-        "fishmonger",
-        "g0143",
-        "red dev 10",
-        "red scylla",
-        "redhotel",
-        "tag-22"
-    ],
-    "Aoqin Dragon": [
-        "G1007",
-        "aoqin dragon",
-        "g1007",
-        "unc94"
-    ],
-    "Ferocious Kitten": [
-        "G0137",
-        "ferocious kitten",
-        "g0137"
-    ],
-    "The White Company": [
-        "G0089",
-        "g0089",
-        "the white company"
-    ],
-    "Ke3chang": [
-        "G0004",
-        "apt15",
-        "bronze davenport",
-        "bronze idlewood",
-        "bronze palace",
-        "g0004",
-        "gref",
-        "ke3chang",
-        "lurid",
-        "metushy",
-        "mirage",
-        "nickel",
-        "nylon typhoon",
-        "playful dragon",
-        "red vulture",
-        "redriver",
-        "royal apt",
-        "royalapt",
-        "social network team",
-        "vixen panda"
-    ],
-    "Saint Bear": [
-        "G1003",
-        "G1031",
-        "bleeding bear",
-        "cadet blizzard",
-        "dev-0586",
-        "dev-0587",
-        "ember bear",
-        "frozenvista",
-        "g1003",
-        "g1031",
-        "lorec bear",
-        "lorec53",
-        "nascent ursa",
-        "nodaria",
-        "ruinous ursa",
-        "saint bear",
-        "saintbear",
-        "storm-0587",
-        "ta471",
-        "uac-0056",
-        "unc2589"
-    ],
-    "Frankenstein": [
-        "G0101",
-        "frankenstein",
-        "g0101"
-    ],
-    "Confucius": [
-        "G0142",
-        "confucius",
-        "confucius apt",
-        "g0142"
-    ],
-    "Leviathan": [
-        "G0065",
-        "apt40",
-        "atk29",
-        "bronze mohawk",
-        "feverdream",
-        "g0065",
-        "gadolinium",
-        "gingham typhoon",
-        "islanddreams",
-        "itg09",
-        "jjdoor",
-        "kryptonite panda",
-        "leviathan",
-        "mudcarp",
-        "red ladon",
-        "ta423",
-        "temp.jumper",
-        "temp.periscope"
-    ],
-    "MoustachedBouncer": [
-        "G1019",
-        "g1019",
-        "moustachedbouncer"
-    ],
-    "Group5": [
-        "G0043",
-        "g0043",
-        "group5"
-    ],
-    "Blue Mockingbird": [
-        "G0108",
-        "blue mockingbird",
-        "g0108"
-    ],
-    "Winter Vivern": [
-        "G1035",
-        "g1035",
-        "ta-473",
-        "ta473",
-        "tag-70",
-        "uac-0114",
-        "winter vivern"
-    ],
-    "SilverTerrier": [
-        "G0083",
-        "g0083",
-        "silverterrier"
-    ],
-    "Storm-0501": [
-        "G1053",
-        "g1053",
-        "storm-0501"
-    ],
-    "Poseidon Group": [
-        "G0033",
-        "g0033",
-        "poseidon group"
-    ],
-    "TA505": [
-        "G0092",
-        "atk103",
-        "chimborazo",
-        "dev-0950",
-        "dudear",
-        "fin11",
-        "g0092",
-        "gold tahoe",
-        "graceful spider",
-        "hive0065",
-        "lace tempest",
-        "monty spider",
-        "sectorj04",
-        "sectorj04 group",
-        "spandex tempest",
-        "ta505",
-        "temp.warlock",
-        "unc902"
-    ],
-    "BITTER": [
-        "G1002",
-        "apt-c-08",
-        "bitter",
-        "g1002",
-        "hazy tiger",
-        "orange yali",
-        "t-apt-17",
-        "ta397"
-    ],
-    "DarkVishnya": [
-        "G0105",
-        "darkvishnya",
-        "g0105"
-    ],
-    "RedCurl": [
-        "G1039",
-        "earth kapre",
-        "g1039",
-        "gold blade",
-        "red wolf",
-        "redcurl"
-    ],
-    "APT-C-23": [
-        "G1028",
-        "apt-c-23",
-        "arid viper",
-        "aridviper",
-        "bearded barbie",
-        "big bang apt",
-        "desert falcon",
-        "desert falcons",
-        "g1028",
-        "grey karkadann",
-        "mantis",
-        "niobium",
-        "pinstripe lightning",
-        "renegade jackal",
-        "scimitar",
-        "tag-63",
-        "two-tailed scorpion"
-    ],
-    "FIN5": [
-        "G0053",
-        "fin5",
-        "g0053"
-    ],
-    "Mofang": [
-        "G0103",
-        "bronze walker",
-        "g0103",
-        "mofang",
-        "superman"
-    ],
-    "Stealth Falcon": [
-        "G0038",
-        "fruityarmor",
-        "g0038",
-        "stealth falcon"
-    ],
-    "Dark Caracal": [
-        "G0070",
-        "dark caracal",
-        "g0070"
-    ],
-    "Cinnamon Tempest": [
-        "G1021",
-        "bronze starlight",
-        "cinnamon tempest",
-        "dev-0401",
-        "emperor dragonfly",
-        "g1021",
-        "highground",
-        "slime34"
-    ],
-    "Chimera": [
-        "G0114",
-        "chimera",
-        "g0114"
-    ],
-    "MirrorFace": [
-        "G1054",
-        "earth kasha",
-        "g1054",
-        "mirrorface"
-    ],
-    "Cleaver": [
-        "G0003",
-        "cleaver",
-        "g0003",
-        "tg-2889",
-        "threat group 2889"
-    ],
-    "Silent Librarian": [
-        "G0122",
-        "cobalt dickens",
-        "g0122",
-        "mabna institute",
-        "mabna institute group",
-        "silent librarian",
-        "ta407",
-        "ta4900",
-        "yellow nabu"
-    ],
-    "Medusa Group": [
-        "G1051",
-        "g1051",
-        "medusa group"
-    ],
-    "BRONZE BUTLER": [
-        "G0060",
-        "bronze butler",
-        "g0060",
-        "nian",
-        "pla unit 61419",
-        "redbaldknight",
-        "stalker panda",
-        "stalker taurus",
-        "swirl typhoon",
-        "tick"
-    ],
-    "TA551": [
-        "G0127",
-        "atk236",
-        "g0127",
-        "gold cabin",
-        "monster libra",
-        "shakthak",
-        "shathak",
-        "ta551"
-    ],
-    "TEMP.Veles": [
-        "G0088",
-        "atk91",
-        "g0088",
-        "temp.veles",
-        "xenotime"
-    ],
-    "BackdoorDiplomacy": [
-        "G0135",
-        "backdip",
-        "backdoordiplomacy",
-        "cloudcomputating",
-        "g0135",
-        "quarian"
-    ],
-    "Gelsemium": [
-        "G0141",
-        "g0141",
-        "gelsemium",
-        "狼毒草"
-    ],
-    "Star Blizzard": [
-        "G1033",
-        "blue callisto",
-        "bluecharlie",
-        "callisto",
-        "callisto group",
-        "coldriver",
-        "g1033",
-        "gossamer bear",
-        "iron frontier",
-        "seaborgium",
-        "star blizzard",
-        "ta446",
-        "tag-53",
-        "unc4057"
-    ],
-    "Axiom": [
-        "G0001",
-        "axiom",
-        "g0001",
-        "group 72"
-    ],
-    "TA578": [
-        "G1038",
-        "g1038",
-        "ta578"
-    ],
-    "Deep Panda": [
-        "G0009",
-        "apt19",
-        "black vine",
-        "bronze firestone",
-        "checkered typhoon",
-        "codoso",
-        "deep panda",
-        "g0009",
-        "g0073",
-        "group 13",
-        "kungfu kittens",
-        "pinkpanther",
-        "pupa",
-        "shell crew",
-        "sunshop group",
-        "temp.avengers",
-        "webmasters"
-    ],
-    "LazyScripter": [
-        "G0140",
-        "g0140",
-        "lazyscripter"
-    ],
-    "Dust Storm": [
-        "G0031",
-        "dust storm",
-        "g0031"
-    ],
-    "Windshift": [
-        "G0112",
-        "bahamut",
-        "g0112",
-        "windshift",
-        "windy phoenix"
-    ],
-    "ToddyCat": [
-        "G1022",
-        "g1022",
-        "toddycat",
-        "websiic"
-    ],
-    "Whitefly": [
-        "G0107",
-        "g0107",
-        "whitefly"
-    ],
-    "LuminousMoth": [
-        "G1014",
-        "g1014",
-        "luminousmoth"
-    ],
-    "Agrius": [
-        "G1030",
-        "agonizing serpens",
-        "agrius",
-        "americium",
-        "black shadow",
-        "blackshadow",
-        "dev-0022",
-        "g1030",
-        "pink sandstorm",
-        "spectral kitten",
-        "unc2428"
-    ],
-    "CostaRicto": [
-        "G0132",
-        "costaricto",
-        "g0132"
-    ],
-    "Water Galura": [
-        "G1050",
-        "g1050",
-        "gold feather",
-        "water galura"
-    ],
-    "Malteiro": [
-        "G1026",
-        "g1026",
-        "malteiro"
-    ],
-    "Metador": [
-        "G1013",
-        "g1013",
-        "metador"
-    ],
-    "APT42": [
-        "G1044",
-        "apt42",
-        "calanque",
-        "g1044",
-        "unc788"
-    ],
-    "APT5": [
-        "G1023",
-        "apt12",
-        "apt5",
-        "atg48",
-        "auriga",
-        "backdoor-dpd",
-        "beebus",
-        "bottle",
-        "bronze fleetwood",
-        "bronze globe",
-        "calc team",
-        "covenant",
-        "crimson iron",
-        "cyservice",
-        "dnscalc",
-        "dyncalc",
-        "g1023",
-        "group 22",
-        "hexagon typhoon",
-        "ixeshe",
-        "keyhole panda",
-        "manganese",
-        "mulberry typhoon",
-        "numbered panda",
-        "poisoned flight",
-        "red horus",
-        "red naga",
-        "tabcteng",
-        "temp.bottle",
-        "tg-2754",
-        "unc2630"
-    ],
-    "Fox Kitten": [
-        "G0117",
-        "fox kitten",
-        "g0117",
-        "lemon sandstorm",
-        "parisite",
-        "pioneer kitten",
-        "pioneerkitten",
-        "rubidium",
-        "unc757"
-    ],
-    "RTM": [
-        "G0048",
-        "g0048",
-        "rtm"
-    ],
-    "APT12": [
-        "G0005",
-        "apt12",
-        "dnscalc",
-        "dyncalc",
-        "g0005",
-        "ixeshe",
-        "numbered panda"
-    ],
-    "APT-C-36": [
-        "G0099",
-        "aguilaciega",
-        "apt-c-36",
-        "apt-q-98",
-        "blind eagle",
-        "g0099",
-        "tag-144"
-    ],
-    "Scarlet Mimic": [
-        "G0029",
-        "g0029",
-        "golfing taurus",
-        "scarlet mimic"
-    ],
-    "Winnti Group": [
-        "G0044",
-        "blackfly",
-        "g0044",
-        "winnti group"
-    ],
-    "Tonto Team": [
-        "G0131",
-        "bronze huntley",
-        "cactuspete",
-        "copper",
-        "earth akhlut",
-        "g0131",
-        "karma panda",
-        "pla unit 65017",
-        "red beifang",
-        "tag-74",
-        "tonto team"
-    ],
-    "GOLD SOUTHFIELD": [
-        "G0115",
-        "g0115",
-        "gold southfield",
-        "pinchy spider"
-    ],
-    "INC Ransom": [
-        "G1032",
-        "g1032",
-        "gold ionic",
-        "inc ransom"
-    ],
-    "Earth Lusca": [
-        "G1006",
-        "charcoal typhoon",
-        "chromium",
-        "controlx",
-        "earth lusca",
-        "g1006",
-        "tag-22"
-    ],
-    "FIN4": [
-        "G0085",
-        "fin4",
-        "g0085",
-        "wolf spider"
-    ],
-    "Silence": [
-        "G0091",
-        "g0091",
-        "silence",
-        "silence group",
-        "whisper spider"
-    ],
-    "Sowbug": [
-        "G0054",
-        "g0054",
-        "sowbug"
-    ],
-    "Threat Group-1314": [
-        "G0028",
-        "g0028",
-        "tg-1314",
-        "threat group-1314"
-    ],
-    "APT16": [
-        "G0023",
-        "apt16",
-        "g0023",
-        "svcmondr"
-    ],
-    "LAPSUS$": [
-        "G1004",
-        "dev-0537",
-        "g1004",
-        "lapsus",
-        "lapsus$",
-        "slippy spider",
-        "strawberry tempest",
-        "unc3661"
-    ],
-    "BlackOasis": [
-        "G0063",
-        "blackoasis",
-        "g0063"
-    ],
-    "CopyKittens": [
-        "G0052",
-        "copykittens",
-        "g0052",
-        "slayer kitten"
-    ],
-    "Wizard Spider": [
-        "G0102",
-        "dev-0193",
-        "dev-0237",
-        "fin12",
-        "g0102",
-        "gold blackburn",
-        "gold ulrick",
-        "grim spider",
-        "itg23",
-        "periwinkle tempest",
-        "pistachio tempest",
-        "storm-0193",
-        "storm-0230",
-        "temp.mixmaster",
-        "trickbot llc",
-        "unc1878",
-        "unc2053",
-        "wizard spider"
-    ],
-    "Velvet Ant": [
-        "G1047",
-        "g1047",
-        "velvet ant"
-    ],
-    "IndigoZebra": [
-        "G0136",
-        "g0136",
-        "indigozebra"
-    ],
-    "Moonstone Sleet": [
-        "G1036",
-        "g1036",
-        "moonstone sleet",
-        "storm-1789"
-    ],
-    "Honeybee": [
-        "G0072",
-        "g0072",
-        "honeybee"
-    ],
-    "VOID MANTICORE": [
-        "G1055",
-        "banished kitten",
-        "cobalt mystique",
-        "dune",
-        "g1055",
-        "handala hack",
-        "homeland justice",
-        "karma",
-        "karmabelow80",
-        "red sandstorm",
-        "storm-0842",
-        "void manticore"
-    ],
-    "Play": [
-        "G1040",
-        "g1040",
-        "play"
-    ],
-    "APT30": [
-        "G0013",
-        "apt30",
-        "g0013"
-    ],
-    "HEXANE": [
-        "G1001",
-        "chrono kitten",
-        "cobalt lyceum",
-        "g1001",
-        "hexane",
-        "lyceum",
-        "mysticdome",
-        "siamesekitten",
-        "spirlin",
-        "storm-0133",
-        "unc1530"
-    ],
-    "DragonOK": [
-        "G0017",
-        "dragonok",
-        "g0017"
-    ],
-    "Daggerfly": [
-        " daggerfly",
-        "G1034",
-        "bronze highland",
-        "daggerfly",
-        "evasive panda",
-        "g1034"
-    ],
-    "Rancor": [
-        "G0075",
-        "g0075",
-        "rancor",
-        "rancor group",
-        "rancor taurus"
-    ],
-    "WIRTE": [
-        "G0090",
-        "ashen lepus",
-        "g0090",
-        "wirte"
-    ],
-    "Ajax Security Team": [
-        "G0130",
-        "ajax security team",
-        "ajaxsecurityteam",
-        "ajaxtm",
-        "flying kitten",
-        "g0130",
-        "group 26",
-        "operation saffron rose",
-        "operation woolen goldfish",
-        "operation woolen-goldfish",
-        "rocket kitten",
-        "saffron rose",
-        "saffronrose",
-        "sayad",
-        "temp.beanie",
-        "thamar reservoir",
-        "timberworm"
-    ],
-    "FIN10": [
-        "G0051",
-        "fin1",
-        "fin10",
-        "g0051"
-    ],
-    "FIN8": [
-        "G0061",
-        "atk113",
-        "fin8",
-        "g0061",
-        "syssphinx"
-    ],
-    "FIN13": [
-        "G1016",
-        "elephant beetle",
-        "fin13",
-        "g1016",
-        "tg2003"
-    ],
-    "APT19": [
-        "G0073",
-        "apt19",
-        "c0d0so0",
-        "codoso",
-        "codoso team",
-        "g0073",
-        "sunshop group"
-    ],
-    "PittyTiger": [
-        "G0011",
-        "apt24",
-        "g0011",
-        "pitty panda",
-        "pittytiger",
-        "temp.pittytiger"
-    ],
-    "Nomadic Octopus": [
-        "G0133",
-        "dustsquad",
-        "g0133",
-        "madi",
-        "nomadic octopus"
-    ],
-    "TeamPCP": [
-        "G1056",
-        "deadcatx3",
-        "g1056",
-        "pcpcat",
-        "shadow-water-058",
-        "shellforce",
-        "teampcp",
-        "unc6780"
-    ],
-    "ShinyHunters": [
-        "G1057",
-        "bling libra",
-        "g1057",
-        "shinyhunters",
-        "unc6240"
-    ],
-    "1937CN": [
-        "1937cn"
-    ],
-    "313 Team": [
-        "313 team"
-    ],
-    "[Unnamed group]": [
-        "[unnamed group]"
-    ],
-    "[Vault 7/8]": [
-        "[vault 7 8]",
-        "[vault 7/8]"
-    ],
-    " Stealth Mango and Tangelo ": [
-        " stealth mango and tangelo "
-    ],
-    "Ababil of Minab": [
-        "ababil of minab"
-    ],
-    "Actor240524": [
-        "actor240524"
-    ],
-    "Adrastea": [
-        "adrastea"
-    ],
-    "AeroBlade": [
-        "aeroblade"
-    ],
-    "Aggressive Inventory Zombies": [
-        "aggressive inventory zombies",
-        "aiz"
-    ],
-    "ALLANITE": [
-        "allanite",
-        "palmetto fusion"
-    ],
-    "Alpha Spider": [
-        "alpha spider",
-        "alphv ransomware group"
-    ],
-    "Altahrea Team": [
-        "altahrea team"
-    ],
-    "ALTDOS": [
-        "altdos"
-    ],
-    "Altoufan Team": [
-        "altoufan team"
-    ],
-    "Amaranth-Dragon": [
-        "amaranth-dragon"
-    ],
-    "ANDROMEDA SPIDER": [
-        "andromeda spider"
-    ],
-    "Angry Likho": [
-        "angry likho",
-        "sticky werewolf"
-    ],
-    "Anonymous KSA": [
-        "anonymous ksa"
-    ],
-    "APT-C-12": [
-        "apt-c-12",
-        "blue mushroom",
-        "nuclearcrisis",
-        "sapphire mushroom"
-    ],
-    "APT-C-60": [
-        "apt-c-60",
-        "apt-q-12"
-    ],
-    "APT20": [
-        "apt20",
-        "crawling taurus",
-        "th3bug",
-        "violin panda"
-    ],
-    "APTIran": [
-        "aptiran"
-    ],
-    "Aslan Neferler Tim": [
-        "aslan neferler tim",
-        "lion soldiers team",
-        "phantom turk"
-    ],
-    "Avivore": [
-        "avivore"
-    ],
-    "AzzaSec": [
-        "azzasec"
-    ],
-    "BatShadow": [
-        "batshadow"
-    ],
-    "BelialDemon": [
-        "belialdemon",
-        "matanbuchus"
-    ],
-    "BIG PANDA": [
-        "big panda"
-    ],
-    "Blackgear": [
-        "blackgear",
-        "comnie",
-        "topgear"
-    ],
-    "BladedFeline": [
-        "bladedfeline"
-    ],
-    "Blue Termite": [
-        "blue termite",
-        "cloudy omega",
-        "emdivi"
-    ],
-    "Bohrium": [
-        "bohrium",
-        "imperial kitten",
-        "smoke sandstorm"
-    ],
-    "BOSON SPIDER": [
-        "boson spider"
-    ],
-    "BreachLaboratory": [
-        "breachlaboratory"
-    ],
-    "BRONZE SPIRAL": [
-        "bronze spiral"
-    ],
-    "Budminer": [
-        "budminer",
-        "budminer cyberespionage group"
-    ],
-    "ByteToBreach": [
-        "bytetobreach"
-    ],
-    "Calypso": [
-        "bronze medley",
-        "calypso"
-    ],
-    "Caramel Tsunami": [
-        "candiru",
-        "caramel tsunami",
-        "sourgum"
-    ],
-    "Carmine Tsunami": [
-        "carmine tsunami",
-        "dev-0196",
-        "quadream"
-    ],
-    "ChainedShark": [
-        "actor240820",
-        "chainedshark"
-    ],
-    "Chamelgang": [
-        "camofei",
-        "chamelgang"
-    ],
-    "Chaya_004": [
-        "chaya 004",
-        "chaya_004"
-    ],
-    "Chernovite": [
-        "chernovite"
-    ],
-    "CiberInteligenciaSV": [
-        "ciberinteligenciasv"
-    ],
-    "CL-STA-0048": [
-        "cl sta 0048",
-        "cl-sta-0048"
-    ],
-    "CL-STA-1009": [
-        "cl-sta-1009"
-    ],
-    "CL-STA-1087": [
-        "cl-sta-1087"
-    ],
-    "Clever Kitten": [
-        "clever kitten",
-        "group 41"
-    ],
-    "CLOCKWORK SPIDER": [
-        "clockwork spider"
-    ],
-    "CloudSorcerer": [
-        "cloudsorcerer"
-    ],
-    "COBALT JUNO": [
-        "apt-c-38 (qianxin)",
-        "cobalt juno",
-        "saber lion",
-        "tg-2884 (scwx ctu)"
-    ],
-    "COBALT KATANA": [
-        "cobalt katana",
-        "hive0081 (ibm)",
-        "hunter serpens",
-        "sectord01 (nhsc)",
-        "xhunt campaign (palo alto)"
-    ],
-    "Codefinger": [
-        "codefinger"
-    ],
-    "Coinbase Cartel": [
-        "coinbase cartel"
-    ],
-    "Confucious": [
-        "confucious"
-    ],
-    "Conquerors Electronic Army": [
-        "conquerors electronic army"
-    ],
-    "Cyber.Anarchy.Squad": [
-        "cyber anarchy squad",
-        "cyber.anarchy.squad"
-    ],
-    "Cyber Army of Russia Reborn": [
-        "cyber army of russia reborn"
-    ],
-    "Cyber Serp": [
-        "cyber serp",
-        "uac-0255"
-    ],
-    "Daixin Team": [
-        "daixin team"
-    ],
-    "Danti": [
-        "danti"
-    ],
-    "DarkRaaS": [
-        "darkraas"
-    ],
-    "Deadeye Jackal": [
-        "deadeye jackal",
-        "sea",
-        "syrianelectronicarmy"
-    ],
-    "DEV-0569": [
-        "dev-0569",
-        "storm-0569"
-    ],
-    "DEV-1028": [
-        "dev-1028"
-    ],
-    "DNSpionage": [
-        "cobalt edgewater",
-        "dnspionage"
-    ],
-    "DragonBreath": [
-        "apt-q-27,",
-        "dragonbreath",
-        "golden eye dog"
-    ],
-    "DragonSpark": [
-        "dragonspark"
-    ],
-    "Earth Berberoka": [
-        "earth berberoka",
-        "gamblingpuppet"
-    ],
-    "Earth Lamia": [
-        "earth lamia",
-        "unc5454"
-    ],
-    "Earth Yako": [
-        "earth yako",
-        "enelink",
-        "operation restylink"
-    ],
-    "ELECTRIC PANDA": [
-        "electric panda"
-    ],
-    "ExCobalt": [
-        "excobalt"
-    ],
-    "FASTCash": [
-        "fastcash"
-    ],
-    "Flash Kitten": [
-        "flash kitten"
-    ],
-    "Flax Typhoon": [
-        "ethereal panda",
-        "flax typhoon",
-        "storm-0919"
-    ],
-    "FlowerStorm": [
-        "flowerstorm"
-    ],
-    "FlyingYeti": [
-        "flying yeti",
-        "flyingyeti",
-        "storm-1837"
-    ],
-    "FrostyNeighbor": [
-        "frostyneighbor"
-    ],
-    "Fxmsp": [
-        "fxmsp"
-    ],
-    "GamaCopy": [
-        "gamacopy"
-    ],
-    "GambleForce": [
-        "gambleforce"
-    ],
-    "GC01": [
-        "gc01",
-        "gc02",
-        "golden chickens",
-        "golden chickens 01",
-        "golden chickens 02",
-        "golden chickens01",
-        "golden chickens02"
-    ],
-    "Ghost Jackal": [
-        "ghost jackal"
-    ],
-    "GhostNet": [
-        "ghostnet",
-        "snooping dragon"
-    ],
-    "GhostRedirector": [
-        "ghostr",
-        "ghostredirector"
-    ],
-    "Gitloker": [
-        "gitloker"
-    ],
-    "GOLD BURLAP": [
-        "cyborg spider",
-        "gold burlap"
-    ],
-    "GOLD REBELLION": [
-        "dark scorpius",
-        "gold rebellion",
-        "wandering spider",
-        "white dev 115"
-    ],
-    "GOLD SKYLINE": [
-        "gold skyline"
-    ],
-    "GOLD WINTER": [
-        "gold winter"
-    ],
-    "GopherWhisper": [
-        "gopherwhisper"
-    ],
-    "Gray Sandstorm": [
-        "dev-0343",
-        "gray sandstorm"
-    ],
-    "Greenbug": [
-        "greenbug"
-    ],
-    "Guacamaya": [
-        "guacamaya"
-    ],
-    "Hellsing": [
-        "hellsing"
-    ],
-    "HIVE-0145": [
-        "hive-0145",
-        "hive0145"
-    ],
-    "Hive0163": [
-        "hive0163"
-    ],
-    "Houken": [
-        "houken"
-    ],
-    "IcePeony": [
-        "icepeony"
-    ],
-    "INJ3CTOR3": [
-        "inj3ctor3"
-    ],
-    "IRLeaks": [
-        "irleaks"
-    ],
-    "ItaDuke": [
-        "darkuniverse",
-        "itaduke",
-        "sig27"
-    ],
-    "Jabaroot": [
-        "jabaroot",
-        "jabaroot dz"
-    ],
-    "JavaGhost": [
-        "javaghost"
-    ],
-    "Karakurt": [
-        "karakurt",
-        "karakurt lair"
-    ],
-    "Keymous+": [
-        "keymous",
-        "keymous plus",
-        "keymous+"
-    ],
-    "Kinsing": [
-        "kinsing",
-        "money libra"
-    ],
-    "Lamashtu": [
-        "lamashtu"
-    ],
-    "Larva-26002": [
-        "larva-26002"
-    ],
-    "Libyan Scorpions": [
-        "libyan scorpions"
-    ],
-    "Lifting Zmiy": [
-        "lifting zmiy"
-    ],
-    "LightBasin": [
-        "cl-cri-0025",
-        "lightbasin",
-        "unc1945"
-    ],
-    "Lilac Typhoon": [
-        "dev-0234",
-        "lilac typhoon"
-    ],
-    "LIMINAL PANDA": [
-        "liminal panda"
-    ],
-    "LofyGang": [
-        "lofygang"
-    ],
-    "Longhorn": [
-        "apt-c-39",
-        "lamberts",
-        "longhorn",
-        "platinum terminal",
-        "the lamberts"
-    ],
-    "Lucky Cat": [
-        "lucky cat",
-        "ta413",
-        "white dev 9"
-    ],
-    "LulzIntel": [
-        "lulzintel"
-    ],
-    "LulzSec Black": [
-        "lulzsec black"
-    ],
-    "Luna Moth": [
-        "luna moth",
-        "silent ransom",
-        "tg2729"
-    ],
-    "LUNAR SPIDER": [
-        "gold swathmore",
-        "lunar spider"
-    ],
-    "luoxk": [
-        "luoxk"
-    ],
-    "MageCart": [
-        "magecart"
-    ],
-    "Magic Kitten": [
-        "group 42",
-        "magic kitten",
-        "voyeur"
-    ],
-    "MAGNETIC SPIDER": [
-        "magnetic spider"
-    ],
-    "MalKamak": [
-        "malkamak"
-    ],
-    "MALLARD SPIDER": [
-        "gold lagoon",
-        "mallard spider"
-    ],
-    "Malsmoke": [
-        "malsmoke"
-    ],
-    "MoneyTaker": [
-        "moneytaker"
-    ],
-    "Mora_001": [
-        "mora 001",
-        "mora_001"
-    ],
-    "Moskalvzapoe": [
-        "man1",
-        "moskalvzapoe",
-        "ta511"
-    ],
-    "MUMMY SPIDER": [
-        "gold crestwood",
-        "mummy spider",
-        "ta542"
-    ],
-    "N4ughtysecTU": [
-        "n4ughtysectu"
-    ],
-    "Natohub": [
-        "natohub"
-    ],
-    "NB65": [
-        "nb65",
-        "network battalion 65"
-    ],
-    "NewsPenguin": [
-        "newspenguin"
-    ],
-    "NightEagle": [
-        "apt-q-95",
-        "nighteagle"
-    ],
-    "NOTROBIN": [
-        "notrobin"
-    ],
-    "OilAlpha": [
-        "oilalpha"
-    ],
-    "Opal Sleet": [
-        "konni",
-        "opal sleet",
-        "osmium",
-        "vedalia"
-    ],
-    "Operation Cobalt Whisper": [
-        "operation cobalt whisper"
-    ],
-    "Operation Emmental": [
-        "operation emmental",
-        "retefe gang",
-        "retefe group"
-    ],
-    "Operation Kabar Cobra": [
-        "operation kabar cobra"
-    ],
-    "Operation ShadowHammer": [
-        "operation shadowhammer"
-    ],
-    "Operation Triangulation": [
-        "operation triangulation"
-    ],
-    "OverFlame": [
-        "overflame"
-    ],
-    "PARINACOTA": [
-        "parinacota",
-        "wadhrama",
-        "wine tempest"
-    ],
-    "Pearl Sleet": [
-        "dev-0215",
-        "lawrencium",
-        "pearl sleet"
-    ],
-    "People's Cyber Army of Russia": [
-        "people's cyber army of russia"
-    ],
-    "Pickaxe": [
-        "pickaxe",
-        "prying libra"
-    ],
-    "POISONUS PANDA": [
-        "poisonus panda"
-    ],
-    "PowerPool": [
-        "iamtheking",
-        "powerpool"
-    ],
-    "ProCC": [
-        "procc"
-    ],
-    "puNK-003": [
-        "punk-003"
-    ],
-    "RaHDit": [
-        "rahdit",
-        "russian angry hackers did it"
-    ],
-    "RansomHub": [
-        "ransomhub"
-    ],
-    "Rebel Jackal": [
-        "fallagateam",
-        "rebel jackal"
-    ],
-    "Reckless Rabbit": [
-        "reckless rabbit"
-    ],
-    "Red Dev 17": [
-        "red dev 17"
-    ],
-    "Red Menshen": [
-        "earth bluecrow",
-        "red dev 18",
-        "red menshen"
-    ],
-    "Red Nue": [
-        "luoyu",
-        "red nue"
-    ],
-    "RedAlpha": [
-        "deepcliff",
-        "red dev 3",
-        "redalpha"
-    ],
-    "Redfly": [
-        "redfly"
-    ],
-    "RedJuliett": [
-        "redjuliett"
-    ],
-    "RedKitten": [
-        "redkitten"
-    ],
-    "REF5961": [
-        "ref5961"
-    ],
-    "REF7707": [
-        "cl-sta-0049",
-        "jewelbug",
-        "ref7707"
-    ],
-    "ResumeLooters": [
-        "resumelooters"
-    ],
-    "Returned Libra": [
-        "8220 mining group",
-        "returned libra"
-    ],
-    "RevengeHotels": [
-        "revengehotels"
-    ],
-    "RGB-TEAM": [
-        "rgb-team"
-    ],
-    "RipperSec": [
-        "rippersec"
-    ],
-    "Roaming Mantis": [
-        "roaming mantis",
-        "roaming mantis group"
-    ],
-    "Ruby Sleet": [
-        "cerium",
-        "ruby sleet"
-    ],
-    "RUBYCARP": [
-        "rubycarp"
-    ],
-    "RuskiNet": [
-        "ruskinet"
-    ],
-    "Ruthless Rabbit": [
-        "ruthless rabbit"
-    ],
-    "Saad Tycoon": [
-        "saad tycoon"
-    ],
-    "SALTY SPIDER": [
-        "salty spider"
-    ],
-    "Scarred Manticore": [
-        "scarred manticore"
-    ],
-    "ScreamedJungle": [
-        "screamedjungle"
-    ],
-    "Shadow-Earth-053": [
-        "shadow-earth-053"
-    ],
-    "Shahid Hemmat": [
-        "shahid hemmat"
-    ],
-    "SILKFIN AGENCY": [
-        "silkfin agency"
-    ],
-    "SkidSec": [
-        "skidsec",
-        "skidsec leaks"
-    ],
-    "SLIME29": [
-        "slime29"
-    ],
-    "SlopAds": [
-        "slopads"
-    ],
-    "SMOKY SPIDER": [
-        "smoky spider"
-    ],
-    "SmugX": [
-        "smugx"
-    ],
-    "SneakyChef": [
-        "sneakychef"
-    ],
-    "SOLAR SPIDER": [
-        "solar spider"
-    ],
-    "Solntsepek": [
-        "solntsepek"
-    ],
-    "Sp1d3r": [
-        "sp1d3r"
-    ],
-    "SPICY PANDA": [
-        "spicy panda"
-    ],
-    "Starry Addax": [
-        "starry addax"
-    ],
-    "Storm-0381": [
-        "dev-0381",
-        "storm-0381"
-    ],
-    "Storm-0473": [
-        "storm-0473",
-        "unc2849"
-    ],
-    "Storm-0494": [
-        "storm-0494"
-    ],
-    "Storm-0530": [
-        "dev-0530",
-        "h0lygh0st",
-        "storm-0530"
-    ],
-    "Storm-0835": [
-        "storm-0835"
-    ],
-    "Storm-0867": [
-        "dev-0867",
-        "storm-0867"
-    ],
-    "Storm-1084": [
-        "dev-1084",
-        "storm-1084"
-    ],
-    "Storm-1152": [
-        "storm-1152"
-    ],
-    "Storm-1175": [
-        "storm-1175"
-    ],
-    "Storm-1516": [
-        "copycop",
-        "storm-1516"
-    ],
-    "Storm-1674": [
-        "storm-1674"
-    ],
-    "Storm-1849": [
-        "storm-1849",
-        "uat4356"
-    ],
-    "Storm-2139": [
-        "storm-2139"
-    ],
-    "Storm-2372": [
-        "storm-2372"
-    ],
-    "Storm-2460": [
-        "storm-2460"
-    ],
-    "Storm-2561": [
-        "storm-2561"
-    ],
-    "Storm-2603": [
-        "storm-2603"
-    ],
-    "Storm-2657": [
-        "storm-2657"
-    ],
-    "Storm Cloud": [
-        "storm cloud"
-    ],
-    "StucxTeam": [
-        "stucxteam"
-    ],
-    "Sunglow Blizzard": [
-        "dev-0665",
-        "sunglow blizzard"
-    ],
-    "Swan Vector": [
-        "swan vector"
-    ],
-    "SWEED": [
-        "sweed"
-    ],
-    "TA2101": [
-        "dev-0216",
-        "gold village",
-        "maze team",
-        "storm-0216",
-        "ta2101",
-        "tunnel spider",
-        "twisted spider",
-        "unc2198"
-    ],
-    "TA2536": [
-        "ta2536"
-    ],
-    "TA2552": [
-        "ta2552"
-    ],
-    "TA2719": [
-        "ta2719"
-    ],
-    "TA2722": [
-        "balikbayan foxes",
-        "ta2722"
-    ],
-    "TA406": [
-        "ta406"
-    ],
-    "TA410": [
-        "ta410"
-    ],
-    "TA444": [
-        "ta444"
-    ],
-    "TA455": [
-        "ta455"
-    ],
-    "TA482": [
-        "ta482"
-    ],
-    "TA4903": [
-        "ta4903"
-    ],
-    "TA499": [
-        "lexus",
-        "ta499",
-        "vovan"
-    ],
-    "TA558": [
-        "ta558"
-    ],
-    "TA575": [
-        "ta575"
-    ],
-    "TA579": [
-        "ta579"
-    ],
-    "TA829": [
-        "ta829"
-    ],
-    "TAG-124": [
-        "landupdate808",
-        "tag-124"
-    ],
-    "TAG-56": [
-        "tag-56"
-    ],
-    "Team46": [
-        "taxoff",
-        "team46"
-    ],
-    "TeamSpy Crew": [
-        "anger bear",
-        "iron lyric",
-        "team bear",
-        "teamspy",
-        "teamspy crew"
-    ],
-    "Teleboyi": [
-        "teleboyi"
-    ],
-    "Threat Actor 888": [
-        "threat actor 888"
-    ],
-    "Threatsec": [
-        "threatsec"
-    ],
-    "TIDRONE": [
-        "earth ammit",
-        "tidrone",
-        "venom"
-    ],
-    "Anonymous64": [
-        "anonymous 64",
-        "anonymous64"
-    ],
-    "Anonymous Sudan": [
-        "anonymous sudan"
-    ],
-    "ANTHROPOID SPIDER": [
-        "anthropoid spider",
-        "cobaltgoblin",
-        "empire monkey"
-    ],
-    "Antlion": [
-        "antlion"
-    ],
-    "AppMilad": [
-        "appmilad"
-    ],
-    "APT-C-27": [
-        "apt-c-27",
-        "atk80",
-        "golden rat",
-        "goldmouse"
-    ],
-    "APT-C-34": [
-        "apt-c-34",
-        "golden falcon"
-    ],
-    "APT.3102": [
-        "apt.3102"
-    ],
-    "APT14": [
-        "aluminum",
-        "anchor panda",
-        "apt14",
-        "qazteam"
-    ],
-    "APT21": [
-        "apt21",
-        "hammer panda",
-        "nettraveler",
-        "temp.zhenbao"
-    ],
-    "APT26": [
-        "apt26",
-        "bronze express",
-        "jerseymikes",
-        "taffeta typhoon",
-        "technetium",
-        "turbine panda"
-    ],
-    "APT45": [
-        "apt45"
-    ],
-    "APT6": [
-        "1.php group",
-        "apt6"
-    ],
-    "APT73": [
-        "apt73",
-        "eraleig"
-    ],
-    "APT9": [
-        "apt9",
-        "group 27",
-        "nightshade panda",
-        "red pegasus"
-    ],
-    "ArcaneDoor": [
-        "arcanedoor"
-    ],
-    "Asnarök": [
-        "asnarök",
-        "personal panda"
-    ],
-    "AtlasCross": [
-        "atlascross"
-    ],
-    "Attor": [
-        "attor"
-    ],
-    "Awaken Likho": [
-        "awaken likho",
-        "core werewolf"
-    ],
-    "Ayyıldız Tim": [
-        "ayyıldız tim",
-        "crescent and star"
-    ],
-    "BadRory": [
-        "badrory"
-    ],
-    "BAMBOO SPIDER": [
-        "bamboo spider"
-    ],
-    "BazarCall": [
-        "bazacall",
-        "bazarcall",
-        "bazzarcall"
-    ],
-    "Bearlyfy": [
-        "bearlyfy",
-        "labubu"
-    ],
-    "Belsen Group": [
-        "belsen group"
-    ],
-    "BiBiGun": [
-        "bibigun"
-    ],
-    "Bignosa": [
-        "bignosa"
-    ],
-    "BITWISE SPIDER": [
-        "bitwise spider"
-    ],
-    "Blackatom": [
-        "blackatom"
-    ],
-    "DOPPEL SPIDER": [
-        "doppel spider",
-        "gold heron"
-    ],
-    "Dragonbridge": [
-        "dragonbridge",
-        "spamouflage dragon"
-    ],
-    "DragonForce": [
-        "dragonforce"
-    ],
-    "DragonRank": [
-        "dragonrank"
-    ],
-    "DriftingCloud": [
-        "driftingcloud"
-    ],
-    "DUNGEON SPIDER": [
-        "dungeon spider"
-    ],
-    "Earth Alux": [
-        "earth alux"
-    ],
-    "Earth Baxia": [
-        "earth baxia"
-    ],
-    "Earth Estries": [
-        "earth estries"
-    ],
-    "Earth Freybug": [
-        "earth freybug"
-    ],
-    "Earth Kitsune": [
-        "earth kitsune"
-    ],
-    "Earth Krahang": [
-        "earth krahang"
-    ],
-    "Earth Kurma": [
-        "earth kurma"
-    ],
-    "Earth Longzhi": [
-        "earth longzhi",
-        "snakecharmer"
-    ],
-    "Earth Naga": [
-        "earth naga"
-    ],
-    "Earth Wendigo": [
-        "earth wendigo"
-    ],
-    "EC2 Grouper": [
-        "ec2 grouper"
-    ],
-    "Edalat-e Ali": [
-        "edalat-e ali"
-    ],
-    "Educated Manticore": [
-        "educated manticore"
-    ],
-    "ELOQUENT PANDA": [
-        "eloquent panda"
-    ],
-    "ELUSIVE COMET": [
-        "elusive comet"
-    ],
-    "Evilbyte": [
-        "evilbyte"
-    ],
-    "EvilPost": [
-        "evilpost"
-    ],
-    "EvilTraffic": [
-        "eviltraffic",
-        "operation eviltraffic"
-    ],
-    "EvilWeb": [
-        "evilweb"
-    ],
-    "Femwar02": [
-        "femwar02"
-    ],
-    "Fishing Elephant": [
-        "fishing elephant",
-        "outrider tiger"
-    ],
-    "FishMedley": [
-        "fishmedley"
-    ],
-    "FOXY PANDA": [
-        "foxy panda"
-    ],
-    "FunkSec": [
-        "funksec"
-    ],
-    "FusionCore": [
-        "fusioncore"
-    ],
-    "GhostSec": [
-        "ghost security",
-        "ghostsec"
-    ],
-    "GOBLIN PANDA": [
-        "conimes",
-        "cycldek",
-        "goblin panda"
-    ],
-    "GOFFEE": [
-        "goffee"
-    ],
-    "GOLD DUPONT": [
-        "gold dupont",
-        "sprite spider"
-    ],
-    "GOLD EVERGREEN": [
-        "gold evergreen"
-    ],
-    "GOLD FAIRFAX": [
-        "gold fairfax"
-    ],
-    "GOLD FLANDERS": [
-        "gold flanders"
-    ],
-    "GOLD GALLEON": [
-        "gold galleon"
-    ],
-    "GOLD GARDEN": [
-        "gold garden"
-    ],
-    "GOLD MANSARD": [
-        "gold mansard"
-    ],
-    "GOLD NORTHFIELD": [
-        "gold northfield"
-    ],
-    "GOLD RIVERVIEW": [
-        "gold riverview"
-    ],
-    "Massgrave": [
-        "massgrave"
-    ],
-    "MIMIC SPIDER": [
-        "mimic spider"
-    ],
-    "Mirage Tiger": [
-        "mirage tiger"
-    ],
-    "Mocha Manakin": [
-        "mocha manakin"
-    ],
-    "ModifiedElephant": [
-        "modifiedelephant"
-    ],
-    "Mogilevich": [
-        "mogilevich"
-    ],
-    "MORH4x": [
-        "morh4x"
-    ],
-    "Moshen Dragon": [
-        "moshen dragon"
-    ],
-    "Mythic Likho": [
-        "arcane werewolf",
-        "mythic likho"
-    ],
-    "Nam3L3ss": [
-        "nam3l3ss"
-    ],
-    "NARWHAL SPIDER": [
-        "gold essex",
-        "narwhal spider",
-        "storm-0302",
-        "ta544"
-    ],
-    "Nazar": [
-        "nazar",
-        "sig37"
-    ],
-    "Nexus Zeta": [
-        "nexus zeta"
-    ],
-    "Nickel Alley": [
-        "nickel alley"
-    ],
-    "Nitro": [
-        "covert grove",
-        "nitro"
-    ],
-    "NOCTURNAL SPIDER": [
-        "nocturnal spider"
-    ],
-    "NOMAD PANDA": [
-        "nomad panda"
-    ],
-    "NoName057(16)": [
-        "05716nnm",
-        "nnm05716",
-        "noname057",
-        "noname057(16)",
-        "noname05716"
-    ],
-    "Nullbulge": [
-        "nullbulge"
-    ],
-    "NyxarGroup": [
-        "nyxargroup"
-    ],
-    "OldGremlin": [
-        "oldgremlin"
-    ],
-    "OnionDog": [
-        "oniondog"
-    ],
-    "Operation BugDrop": [
-        "operation bugdrop"
-    ],
-    "Operation ForumTroll": [
-        "operation forumtroll"
-    ],
-    "Operation Poison Needles": [
-        "operation poison needles"
-    ],
-    "Operation Shadow Force": [
-        "larva-24013",
-        "operation shadow force",
-        "ta-shadowcricket"
-    ],
-    "Operation Sharpshooter": [
-        "operation sharpshooter"
-    ],
-    "Operation WizardOpium": [
-        "operation wizardopium"
-    ],
-    "OurMine": [
-        "ourmine"
-    ],
-    "OUTLAW SPIDER": [
-        "outlaw spider"
-    ],
-    "OVERLORD SPIDER": [
-        "overlord spider"
-    ],
-    "Pacha Group": [
-        "pacha group"
-    ],
-    "Packrat": [
-        "packrat"
-    ],
-    "PALE PANDA": [
-        "pale panda"
-    ],
-    "PerSwaysion": [
-        "perswaysion"
-    ],
-    "PhantomControl": [
-        "phantomcontrol"
-    ],
-    "Phlox Tempest": [
-        "dev-0796",
-        "phlox tempest"
-    ],
-    "PlushDaemon": [
-        "plushdaemon"
-    ],
-    "POISON CARP": [
-        "earth empusa",
-        "evil eye",
-        "poison carp",
-        "red dev 16"
-    ],
-    "PoisonSeed": [
-        "poisonseed"
-    ],
-    "PREDATOR PANDA": [
-        "predator panda"
-    ],
-    "Predatory Sparrow": [
-        "gonjeshke darande",
-        "indra",
-        "predatory sparrow"
-    ],
-    "Prolific Puma": [
-        "prolific puma"
-    ],
-    "Prophet Spider": [
-        "gold melody",
-        "prophet spider",
-        "unc961"
-    ],
-    "Storm-0829": [
-        "dev-0829",
-        "nwgen team",
-        "storm-0829"
-    ],
-    "Storm-0940": [
-        "covertnetwork-1658",
-        "orb07",
-        "storm-0940"
-    ],
-    "Storm-1044": [
-        "dev-1044",
-        "storm-1044"
-    ],
-    "Storm-1099": [
-        "storm-1099"
-    ],
-    "Storm-1101": [
-        "dev-1101",
-        "storm-1101"
-    ],
-    "Storm-1113": [
-        "apothecary spider",
-        "storm-1113"
-    ],
-    "Storm-1133": [
-        "storm-1133"
-    ],
-    "Storm-1167": [
-        "dev-1167",
-        "storm-1167"
-    ],
-    "Storm-1283": [
-        "storm-1283"
-    ],
-    "Storm-1286": [
-        "storm-1286"
-    ],
-    "Storm-1295": [
-        "dev-1295",
-        "storm-1295"
-    ],
-    "Storm-1575": [
-        "storm-1575"
-    ],
-    "Storm-1977": [
-        "storm-1977"
-    ],
-    "Storm-2077": [
-        "rednovember",
-        "storm-2077",
-        "tag-100"
-    ],
-    "SYLHET GANG-SG": [
-        "sylhet gang-sg"
-    ],
-    "TA2723": [
-        "ta2723"
-    ],
-    "TA2725": [
-        "ta2725"
-    ],
-    "TA402": [
-        "ta402"
-    ],
-    "TA428": [
-        "bronze dudley",
-        "colourful panda",
-        "ta428"
-    ],
-    "TA516": [
-        "ta516"
-    ],
-    "TA530": [
-        "ta530"
-    ],
-    "TA547": [
-        "ta547"
-    ],
-    "TA554": [
-        "ta554",
-        "th-163"
-    ],
-    "TA555": [
-        "ta555"
-    ],
-    "TA570": [
-        "dev-0450",
-        "ta570"
-    ],
-    "TA584": [
-        "storm-0900",
-        "ta584"
-    ],
-    "TA800": [
-        "ta800"
-    ],
-    "TA866": [
-        "ta866"
-    ],
-    "TAG-112": [
-        "tag-112"
-    ],
-    "TAG-140": [
-        "tag-140"
-    ],
-    "TaskMasters": [
-        "bluetraveller",
-        "taskmasters"
-    ],
-    "TEMP.Hermit": [
-        "temp.hermit"
-    ],
-    "TEMP_Heretic": [
-        "temp heretic",
-        "temp_heretic"
-    ],
-    "TempTick": [
-        "temptick"
-    ],
-    "TERBIUM": [
-        "terbium"
-    ],
-    "TEST PANDA": [
-        "test panda"
-    ],
-    "TetrisPhantom": [
-        "tetrisphantom"
-    ],
-    "The Big Bang": [
-        "the big bang"
-    ],
-    "The Gentlemen": [
-        "the gentlemen"
-    ],
-    "The Shadow Brokers": [
-        "shadow brokers",
-        "shadowbrokers",
-        "the shadow brokers",
-        "the shadowbrokers",
-        "tsb"
-    ],
-    "TianWu": [
-        "tianwu"
-    ],
-    "TINY SPIDER": [
-        "tiny spider"
-    ],
-    "TOXCAR CYBER TEAM": [
-        "toxcar cyber team"
-    ],
-    "TOXIC PANDA": [
-        "toxic panda"
-    ],
-    "TRACER KITTEN": [
-        "tracer kitten"
-    ],
-    "TraderTraitor": [
-        "jade sleet",
-        "pukchong",
-        "tradertraitor",
-        "unc4899"
-    ],
-    "TRAVELING SPIDER": [
-        "traveling spider"
-    ],
-    "TridentLocker": [
-        "tridentlocker"
-    ],
-    "TRIPLESTRENGTH": [
-        "triplestrength"
-    ],
-    "UNC6485": [
-        "unc6485"
-    ],
-    "UNC6692": [
-        "unc6692"
-    ],
-    "UNC6748": [
-        "unc6748"
-    ],
-    "Unfading Sea Haze": [
-        "unfading sea haze"
-    ],
-    "UNG0002": [
-        "ung0002"
-    ],
-    "UNG0901": [
-        "operation cargotalon",
-        "ung0901",
-        "unknown-group-901"
-    ],
-    "UNION PANDA": [
-        "union panda"
-    ],
-    "UNION SPIDER": [
-        "union spider"
-    ],
-    "Unit 8200": [
-        "duqu group",
-        "unit 8200"
-    ],
-    "UNK_AcademicFlare": [
-        "unk academicflare",
-        "unk_academicflare"
-    ],
-    "UNK_DropPitch": [
-        "unk droppitch",
-        "unk_droppitch"
-    ],
-    "UNK_FistBump": [
-        "unk fistbump",
-        "unk_fistbump"
-    ],
-    "UNK_RemoteRogue": [
-        "unk remoterogue",
-        "unk_remoterogue"
-    ],
-    "UnsolicitedBooker": [
-        "unsolicitedbooker"
-    ],
-    "Urpage": [
-        "urpage"
-    ],
-    "USDoD": [
-        "usdod"
-    ],
-    "UserSec": [
-        "usersec"
-    ],
-    "UTA0388": [
-        "uta0388"
-    ],
-    "UTG-Q-008": [
-        "utg-q-008"
-    ],
-    "UTG-Q-010": [
-        "utg-q-010"
-    ],
-    "Vanilla Tempest": [
-        "dev-0832",
-        "vanilla tempest",
-        "vice society"
-    ],
-    "Velvet Tempest": [
-        "dev-0504",
-        "velvet tempest"
-    ],
-    "VENOM SPIDER": [
-        "badbullz",
-        "badbullzvenom",
-        "venom spider"
-    ],
-    "VICE SPIDER": [
-        "vice spider"
-    ],
-    "ViceLeaker": [
-        "viceleaker"
-    ],
-    "Vicious Panda": [
-        "sixlittlemonkeys",
-        "vicious panda"
-    ],
-    "ViciousTrap": [
-        "vicioustrap"
-    ],
-    "Viking Jackal": [
-        "viking jackal",
-        "vikingdom"
-    ],
-    "VIKING SPIDER": [
-        "viking spider"
-    ],
-    "Void Arachne": [
-        "silver fox",
-        "void arachne"
-    ],
-    "Void Balaur": [
-        "void balaur"
-    ],
-    "Void Banshee": [
-        "void banshee"
-    ],
-    "Void Blizzard": [
-        "laundry bear",
-        "uac-0190",
-        "void blizzard"
-    ],
-    "Void Rabisu": [
-        "tropical scorpius",
-        "void rabisu"
-    ],
-    "VulzSecTeam": [
-        "vulzsec",
-        "vulzsecteam"
-    ],
-    "WARP PANDA": [
-        "warp panda"
-    ],
-    "Wassonite": [
-        "wassonite"
-    ],
-    "Watchdog": [
-        "thief libra",
-        "watchdog"
-    ],
-    "Water Bakunawa": [
-        "water bakunawa"
-    ],
-    "Water Barghest": [
-        "water barghest"
-    ],
-    "Water Curupira": [
-        "water curupira"
-    ],
-    "Water Gamayun": [
-        "water gamayun"
-    ],
-    "Water Saci": [
-        "water saci"
-    ],
-    "Webworm": [
-        "space pirates",
-        "webworm"
-    ],
-    "WeedSec": [
-        "weedsec"
-    ],
-    "WeRedEvils": [
-        "weredevils"
-    ],
-    "WET PANDA": [
-        "red chimera",
-        "wet panda"
-    ],
-    "White Bear": [
-        "skipper turla",
-        "white bear"
-    ],
-    "WhiteCobra": [
-        "whitecobra"
-    ],
-    "WildCard": [
-        "wildcard"
-    ],
-    "WildPressure": [
-        "wildpressure"
-    ],
-    "WIP19": [
-        "wip19"
-    ],
-    "BlackJack": [
-        "blackjack"
-    ],
-    "Blackmeta": [
-        "blackmeta",
-        "sn blackmeta"
-    ],
-    "Blacktail": [
-        "blacktail"
-    ],
-    "Blackwood": [
-        "blackwood"
-    ],
-    "BladeHawk": [
-        "bladehawk"
-    ],
-    "Blue Tsunami": [
-        "black cube",
-        "blue tsunami"
-    ],
-    "BlueBottle": [
-        "bluebottle"
-    ],
-    "BlueHornet": [
-        "againstthewest",
-        "apt49",
-        "bluehornet"
-    ],
-    "Bondnet": [
-        "bondnet"
-    ],
-    "Boolka": [
-        "boolka"
-    ],
-    "BOSS SPIDER": [
-        "boss spider",
-        "gold lowell"
-    ],
-    "Boulder Bear": [
-        "boulder bear"
-    ],
-    "BrazenBamboo": [
-        "brazenbamboo"
-    ],
-    "BRONZE EDGEWOOD": [
-        "bronze edgewood",
-        "red hariasa"
-    ],
-    "BRONZE SPRING": [
-        "bronze spring",
-        "unc302"
-    ],
-    "BRONZE VAPOR": [
-        "bronze vapor"
-    ],
-    "BuhTrap": [
-        "buhtrap"
-    ],
-    "Cadelle": [
-        "cadelle"
-    ],
-    "Caliente Bandits": [
-        "caliente bandits",
-        "ta2721"
-    ],
-    "Caracal Kitten": [
-        "apt-q-58",
-        "caracal kitten"
-    ],
-    "Carderbee": [
-        "carderbee"
-    ],
-    "CardinalLizard": [
-        "cardinallizard"
-    ],
-    "Careto": [
-        "careto",
-        "mask",
-        "the mask",
-        "ugly face"
-    ],
-    "CashRewindo": [
-        "cashrewindo"
-    ],
-    "CeranaKeeper": [
-        "ceranakeeper"
-    ],
-    "CIRCUS SPIDER": [
-        "circus spider"
-    ],
-    "CL-STA-0043": [
-        "cl-sta-0043",
-        "tgr-sta-0043"
-    ],
-    "Cold River": [
-        "cold river",
-        "nahr el bared",
-        "nahr elbard"
-    ],
-    "ComicForm": [
-        "comicform"
-    ],
-    "Common Raven": [
-        "common raven",
-        "desktop-group",
-        "nxsms",
-        "opera1er"
-    ],
-    "Copy-Paste": [
-        "copy-paste"
-    ],
-    "CoralRaider": [
-        "coralraider"
-    ],
-    "Corsair Jackal": [
-        "corsair jackal",
-        "tunisiancyberarmy"
-    ],
-    "Cosmic Lynx": [
-        "cosmic lynx"
-    ],
-    "CosmicBeetle": [
-        "cosmicbeetle"
-    ],
-    "Cotton Sandstorm": [
-        "cotton sandstorm",
-        "emennet pasargad",
-        "haywire kitten",
-        "holy souls",
-        "marnanbridge",
-        "neptunium"
-    ],
-    "CoughingDown": [
-        "coughingdown"
-    ],
-    "Crimson Collective": [
-        "crimson collective"
-    ],
-    "CryptoChameleon": [
-        "cryptochameleon",
-        "unc5356"
-    ],
-    "CRYSTALRAY": [
-        "crystalray"
-    ],
-    "Curious Gorge": [
-        "curious gorge",
-        "unc3742"
-    ],
-    "Curly COMrades": [
-        "curly comrades"
-    ],
-    "Cutting Kitten": [
-        "cutting kitten",
-        "itsecteam"
-    ],
-    "Cyber Alliance": [
-        "cyber alliance"
-    ],
-    "Cyber Av3ngers": [
-        "cyber av3ngers"
-    ],
-    "Cyber Berkut": [
-        "cyber berkut"
-    ],
-    "Cyber Caliphate Army": [
-        "cca",
-        "cyber caliphate army",
-        "cybercaliphate",
-        "islamic state hacking division",
-        "united cyber caliphate",
-        "uuc"
-    ],
-    "Cyber fighters of Izz Ad-Din Al Qassam": [
-        "cyber fighters of izz ad-din al qassam",
-        "fraternal jackal"
-    ],
-    "Cyber Islamic Resistance": [
-        "cyber islamic resistance"
-    ],
-    "Cyber Partisans": [
-        "cyber partisans"
-    ],
-    "Cyber Toufan": [
-        "cyber toufan"
-    ],
-    "Kasablanka": [
-        "kasablanka"
-    ],
-    "Kazu": [
-        "kazu"
-    ],
-    "Keksec": [
-        "keksec"
-    ],
-    "KelvinSecurity": [
-        "kelvinsecurity"
-    ],
-    "Kiss-a-Dog": [
-        "kiss-a-dog"
-    ],
-    "KromSec": [
-        "kromsec"
-    ],
-    "Krybit": [
-        "krybit"
-    ],
-    "LabHost": [
-        "labhost"
-    ],
-    "Lancefly": [
-        "lancefly"
-    ],
-    "Larva-208": [
-        "encrypthub",
-        "larva-208"
-    ],
-    "Larva-24005": [
-        "larva-24005"
-    ],
-    "Larva-24010": [
-        "larva-24010"
-    ],
-    "Larva‑25012": [
-        "larva‑25012"
-    ],
-    "LilacSquid": [
-        "lilacsquid"
-    ],
-    "LinkC Pub": [
-        "linkc",
-        "linkc pub"
-    ],
-    "Mr_Rot13": [
-        "mr rot13",
-        "mr_rot13"
-    ],
-    "MurenShark": [
-        "actor210426",
-        "murenshark"
-    ],
-    "NetRunnerPR": [
-        "netrunnerpr"
-    ],
-    "Operation Comando": [
-        "operation comando"
-    ],
-    "Operation DRBControl": [
-        "operation drbcontrol"
-    ],
-    "Operation Ghoul": [
-        "operation ghoul"
-    ],
-    "Operation Parliament": [
-        "operation parliament"
-    ],
-    "Operation Red Signature": [
-        "operation red signature"
-    ],
-    "PassCV": [
-        "passcv"
-    ],
-    "Patched Lightning": [
-        "patched lightning",
-        "storm-0113"
-    ],
-    "PayTool": [
-        "paytool"
-    ],
-    "PIZZO SPIDER": [
-        "ambiorx",
-        "dd4bc",
-        "pizzo spider"
-    ],
-    "PurpleHaze": [
-        "purplehaze"
-    ],
-    "R00tK1T": [
-        "r00tk1t"
-    ],
-    "RansomHouse": [
-        "ransomhouse"
-    ],
-    "RATPAK SPIDER": [
-        "ratpak spider"
-    ],
-    "Red-Lili": [
-        "red-lili"
-    ],
-    "Red Charon": [
-        "red charon"
-    ],
-    "RedGolf": [
-        "redgolf"
-    ],
-    "RedStinger": [
-        "bad magic",
-        "redstinger"
-    ],
-    "REF2924": [
-        "ref2924"
-    ],
-    "RIDDLE SPIDER": [
-        "riddle spider"
-    ],
-    "Roaming Tiger": [
-        "bronze woodland",
-        "roaming tiger",
-        "rotten tomato"
-    ],
-    "SABRE PANDA": [
-        "sabre panda"
-    ],
-    "SAMBASPIDER": [
-        "sambaspider"
-    ],
-    "SandCat": [
-        "sandcat"
-    ],
-    "Sandman APT": [
-        "sandman apt"
-    ],
-    "Sands Casino": [
-        "sands casino"
-    ],
-    "Sath-ı Müdafaa": [
-        "sath-ı müdafaa"
-    ],
-    "ScamClub": [
-        "scamclub"
-    ],
-    "Scarab": [
-        "scarab"
-    ],
-    "SCARLETEEL": [
-        "scarleteel"
-    ],
-    "UAC-0050": [
-        "uac-0050"
-    ],
-    "UAC-0063": [
-        "uac-0063"
-    ],
-    "UAC-0094": [
-        "uac-0094"
-    ],
-    "UAC-0099": [
-        "uac-0099"
-    ],
-    "UAC-0154": [
-        "uac-0154"
-    ],
-    "UAC-0184": [
-        "uac-0184"
-    ],
-    "UAC-0185": [
-        "uac-0185",
-        "unc4221"
-    ],
-    "UAC-0194": [
-        "uac-0194"
-    ],
-    "UAC-0215": [
-        "uac-0215"
-    ],
-    "UAC-0219": [
-        "uac-0219"
-    ],
-    "UAC-0226": [
-        "uac-0226"
-    ],
-    "UAC-0227": [
-        "uac-0227"
-    ],
-    "UAC-0239": [
-        "uac-0239"
-    ],
-    "UAC-0241": [
-        "uac-0241"
-    ],
-    "UAC-0245": [
-        "uac-0245"
-    ],
-    "UAT-7237": [
-        "uat-7237"
-    ],
-    "UAT-8099": [
-        "uat-8099"
-    ],
-    "UAT-8302": [
-        "uat-8302"
-    ],
-    "UAT-8616": [
-        "uat-8616"
-    ],
-    "UAT-8837": [
-        "uat-8837"
-    ],
-    "UAT-9244": [
-        "uat-9244"
-    ],
-    "UAT-9686": [
-        "uat-9686"
-    ],
-    "UAT-9921": [
-        "uat-9921",
-        "voidlink operator"
-    ],
-    "Ukrainian Cyber Alliance": [
-        "uca",
-        "ukrainian cyber alliance"
-    ],
-    "UNC1549": [
-        "nimbus manticore",
-        "unc1549"
-    ],
-    "UNC1860": [
-        "unc1860"
-    ],
-    "UNC215": [
-        "unc215"
-    ],
-    "UNC2447": [
-        "unc2447"
-    ],
-    "UNC2465": [
-        "unc2465"
-    ],
-    "UNC2565": [
-        "hive0127",
-        "unc2565"
-    ],
-    "UNC2659": [
-        "unc2659"
-    ],
-    "UNC2717": [
-        "unc2717"
-    ],
-    "UNC2814": [
-        "unc2814"
-    ],
-    "UNC2970": [
-        "unc2970"
-    ],
-    "UNC3890": [
-        "unc3890"
-    ],
-    "UNC3973": [
-        "unc3973"
-    ],
-    "UNC4191": [
-        "unc4191"
-    ],
-    "UNC4990": [
-        "unc4990"
-    ],
-    "UNC5174": [
-        "unc5174",
-        "uteus"
-    ],
-    "UNC5330": [
-        "unc5330"
-    ],
-    "UNC5337": [
-        "unc5337"
-    ],
-    "UNC5342": [
-        "unc5342"
-    ],
-    "UNC5820": [
-        "unc5820"
-    ],
-    "UNC6032": [
-        "unc6032"
-    ],
-    "UNC6040": [
-        "unc6040"
-    ],
-    "UNC6148": [
-        "unc6148"
-    ],
-    "UNC6201": [
-        "unc6201"
-    ],
-    "UNC6293": [
-        "unc6293"
-    ],
-    "UNC6353": [
-        "unc6353"
-    ],
-    "UNC6395": [
-        "unc6395"
-    ],
-    "UNC6426": [
-        "unc6426"
-    ],
-    "UNC6619": [
-        "shadow campaigns",
-        "tgr-sta-1030",
-        "unc6619"
-    ],
-    "UNC6671": [
-        "unc6671"
-    ],
-    "CyberNiggers": [
-        "cyberniggers"
-    ],
-    "Dalbit": [
-        "dalbit"
-    ],
-    "Dancing Salome": [
-        "dancing salome"
-    ],
-    "DangerousSavanna": [
-        "dangeroussavanna"
-    ],
-    "Dark Basin": [
-        "dark basin"
-    ],
-    "DarkCasino": [
-        "darkcasino"
-    ],
-    "DarkGaboon": [
-        "darkgaboon",
-        "room155",
-        "vengeful wolf"
-    ],
-    "DarkPink": [
-        "darkpink",
-        "saaiwc"
-    ],
-    "DarkSpectre": [
-        "darkspectre"
-    ],
-    "DefrayX": [
-        "defrayx",
-        "hive0091"
-    ],
-    "Denim Tsunami": [
-        "denim tsunami",
-        "dsirf",
-        "knotweed"
-    ],
-    "Desorden Group": [
-        "desorden group"
-    ],
-    "DEV-0147": [
-        "dev-0147"
-    ],
-    "DEV-0270": [
-        "dev-0270",
-        "nemesis kitten",
-        "storm-0270"
-    ],
-    "DEV-0928": [
-        "dev-0928"
-    ],
-    "DEXTOROUS SPIDER": [
-        "dextorous spider"
-    ],
-    "DiceyF": [
-        "diceyf"
-    ],
-    "DieNet": [
-        "dienet",
-        "shiite_harvest"
-    ],
-    "DIZZY PANDA": [
-        "dizzy panda",
-        "ladyboyle"
-    ],
-    "Domestic Kitten": [
-        "apt-c-50",
-        "bouncing golf",
-        "domestic kitten"
-    ],
-    "Fail0verflow": [
-        "fail0verflow",
-        "team twiizer"
-    ],
-    "Ghostwriter": [
-        "dev-0257",
-        "ghostwriter",
-        "pushcha",
-        "storm-0257",
-        "ta445",
-        "uac-0057",
-        "unc1151"
-    ],
-    "GIBBERISH PANDA": [
-        "gibberish panda"
-    ],
-    "Gnosticplayers": [
-        "gnosticplayers"
-    ],
-    "GOLD SYMPHONY": [
-        "gold symphony"
-    ],
-    "GOLD WATERFALL": [
-        "gold waterfall"
-    ],
-    "GoldenJackal": [
-        "goldenjackal"
-    ],
-    "GoldFactory": [
-        "goldfactory"
-    ],
-    "Gorilla": [
-        "gorilla"
-    ],
-    "GozNym": [
-        "goznym"
-    ],
-    "GrayBravo": [
-        "graybravo",
-        "tag-150"
-    ],
-    "GrayCharlie": [
-        "graycharlie"
-    ],
-    "Grayling": [
-        "grayling"
-    ],
-    "GreedyBear": [
-        "greedybear"
-    ],
-    "GreenSpot": [
-        "apt-q-20",
-        "greenspot",
-        "poisonvine"
-    ],
-    "GreyEnergy": [
-        "greyenergy"
-    ],
-    "Groundbait": [
-        "groundbait"
-    ],
-    "GTFire": [
-        "gtfire"
-    ],
-    "GTG-1002": [
-        "gtg-1002"
-    ],
-    "GURU SPIDER": [
-        "guru spider"
-    ],
-    "Hacking Team": [
-        "hacking team"
-    ],
-    "Hagga": [
-        "aggah",
-        "hagga",
-        "th-157"
-    ],
-    "Handala": [
-        "handala"
-    ],
-    "Head Mare": [
-        "head mare"
-    ],
-    "HellHounds": [
-        "hellhounds"
-    ],
-    "HenBox": [
-        "henbox"
-    ],
-    "HexagonalRodent": [
-        "hexagonalrodent"
-    ],
-    "Hezb": [
-        "hezb",
-        "mimo"
-    ],
-    "Storm-1679": [
-        "storm-1679"
-    ],
-    "TA571": [
-        "ta571"
-    ],
-    "TAG-28": [
-        "tag-28"
-    ],
-    "Team-Xecuter": [
-        "team-xecuter"
-    ],
-    "TeamXRat": [
-        "corporacaoxrat",
-        "corporationxrat",
-        "teamxrat"
-    ],
-    "Tstark": [
-        "tstark"
-    ],
-    "TunnelSnake": [
-        "tunnelsnake"
-    ],
-    "TurkHackTeam": [
-        "turk hack team",
-        "turkhackteam"
-    ],
-    "TwoSail Junk": [
-        "operation poisoned news",
-        "twosail junk"
-    ],
-    "UAC-0006": [
-        "uac-0006"
-    ],
-    "UAC-0020": [
-        "sicksync",
-        "uac-0020",
-        "vermin"
-    ],
-    "UAC-0102": [
-        "uac-0102"
-    ],
-    "UAC-0118": [
-        "fromrussiawithlove",
-        "frwl",
-        "uac-0118"
-    ],
-    "UAC-0149": [
-        "uac-0149"
-    ],
-    "UAT-10362": [
-        "uat-10362"
-    ],
-    "UAT-10608": [
-        "uat-10608"
-    ],
-    "UAT-5394": [
-        "uat-5394"
-    ],
-    "UAT-5918": [
-        "uat-5918"
-    ],
-    "UAT-6382": [
-        "uat-6382"
-    ],
-    "UNC3569": [
-        "unc3569"
-    ],
-    "UNC4487": [
-        "unc4487"
-    ],
-    "UNC4536": [
-        "unc4536"
-    ],
-    "UNC4540": [
-        "unc4540"
-    ],
-    "UNC4841": [
-        "slime57",
-        "unc4841"
-    ],
-    "UNC5266": [
-        "unc5266"
-    ],
-    "UNC5291": [
-        "unc5291"
-    ],
-    "UNC5325": [
-        "unc5325"
-    ],
-    "UNC5537": [
-        "unc5537"
-    ],
-    "UNC6691": [
-        "unc6691"
-    ],
-    "UNK_SparkyCarp": [
-        "unk sparkycarp",
-        "unk_sparkycarp"
-    ],
-    "Unnamed Actor": [
-        "unnamed actor"
-    ],
-    "UTA0178": [
-        "red dev 61",
-        "unc5221",
-        "uta0178"
-    ],
-    "UTA0218": [
-        "uta0218"
-    ],
-    "UTA0352": [
-        "uta0352"
-    ],
-    "UTA0355": [
-        "uta0355"
-    ],
-    "Water Kurita": [
-        "water kurita"
-    ],
-    "Water Labbu": [
-        "water labbu"
-    ],
-    "Water Makara": [
-        "water makara"
-    ],
-    "Water Orthrus": [
-        "water orthrus"
-    ],
-    "Water Sigbin": [
-        "8220 gang",
-        "water sigbin"
-    ],
-    "WildNeutron": [
-        "butterfly",
-        "morpho",
-        "sphinx moth",
-        "wildneutron"
-    ],
-    "Witchetty": [
-        "lookingfrog",
-        "witchetty"
-    ],
-    "Worok": [
-        "worok"
-    ],
-    "XakNet": [
-        "uac-0100",
-        "uac-0106",
-        "xaknet"
-    ],
-    "Xcatze": [
-        "xcatze"
-    ],
-    "XDSpy": [
-        "xdspy"
-    ],
-    "Xiaoqiying": [
-        "genesis day",
-        "teng snake",
-        "xiaoqiying"
-    ],
-    "XinXin": [
-        "black technology",
-        "changqixinyun",
-        "xinxin"
-    ],
-    "Yanbian Gang": [
-        "yanbian gang"
-    ],
-    "YoroTrooper": [
-        "cavalry werewolf",
-        "comrade saiga",
-        "salted earth",
-        "shadowsilk",
-        "silent lynx",
-        "sturgeon fisher",
-        "sturgeonphisher",
-        "yorotrooper"
-    ],
-    "Z-Pentest Alliance": [
-        "z-pentest",
-        "z-pentest alliance"
-    ],
-    "Zarya": [
-        "uac-0109",
-        "zarya"
-    ],
-    "ZeroSevenGroup": [
-        "zerosevengroup"
-    ],
-    "HiddenArt": [
-        "hiddenart"
-    ],
-    "HikkI-Chan": [
-        "hikki-chan"
-    ],
-    "Hive0117": [
-        "hive0117"
-    ],
-    "Hive0137": [
-        "hive0137"
-    ],
-    "HollowQuill": [
-        "hollowquill"
-    ],
-    "HookAds": [
-        "hookads"
-    ],
-    "HOUND SPIDER": [
-        "hound spider"
-    ],
-    "HummingBad": [
-        "hummingbad"
-    ],
-    "Hunt3r Kill3rs": [
-        "hunt3r kill3rs"
-    ],
-    "HURRICANE PANDA": [
-        "hurricane panda"
-    ],
-    "IMPERSONATING PANDA": [
-        "impersonating panda"
-    ],
-    "INDOHAXSEC TEAM": [
-        "indohaxsec team"
-    ],
-    "Infrastructure Destruction Squad": [
-        "dark engine",
-        "infrastructure destruction squad"
-    ],
-    "Infy": [
-        "foudre",
-        "infy",
-        "operation mermaid",
-        "prince of persia"
-    ],
-    "IntelBroker": [
-        "intelbroker"
-    ],
-    "InvisiMole": [
-        "invisimole"
-    ],
-    "Iron Group": [
-        "iron cyber group",
-        "iron group"
-    ],
-    "IronErn440": [
-        "ironern440"
-    ],
-    "IronHusky": [
-        "ironhusky"
-    ],
-    "JINX-0126": [
-        "jinx-0126"
-    ],
-    "JuiceLedger": [
-        "juiceledger"
-    ],
-    "Kairos": [
-        "kairos"
-    ],
-    "Karkadann": [
-        "karkadann",
-        "piwiks"
-    ],
-    "KAX17": [
-        "kax17"
-    ],
-    "Killnet": [
-        "killnet"
-    ],
-    "LongNosedGoblin": [
-        "longnosedgoblin"
-    ],
-    "Mana Team": [
-        "mana team"
-    ],
-    "Markopolo": [
-        "markopolo"
-    ],
-    "Molatori": [
-        "molatori"
-    ],
-    "RADIO PANDA": [
-        "radio panda",
-        "shrouded crossbow"
-    ],
-    "RansomVC": [
-        "ransomed.vc",
-        "ransomvc"
-    ],
-    "Scattered Canary": [
-        "scattered canary"
-    ],
-    "Scripted Sparrow": [
-        "scripted sparrow"
-    ],
-    "SCULLY SPIDER": [
-        "scully spider"
-    ],
-    "SEXi": [
-        "sexi"
-    ],
-    "SHADOW-AETHER-015": [
-        "shadow-aether-015"
-    ],
-    "SHADOW-VOID-042": [
-        "shadow-void-042"
-    ],
-    "Shadow Network": [
-        "shadow network"
-    ],
-    "ShadowSyndicate": [
-        "shadowsyndicate"
-    ],
-    "ShadyPanda": [
-        "shadypanda"
-    ],
-    "ShaggyPanther": [
-        "shaggypanther"
-    ],
-    "Shamoon Group": [
-        "cutting sword of justice",
-        "shamoon group"
-    ],
-    "SHARK SPIDER": [
-        "shark spider"
-    ],
-    "SharpPanda": [
-        "sharp dragon",
-        "sharppanda"
-    ],
-    "ShroudedSnooper": [
-        "shroudedsnooper"
-    ],
-    "SiegedSec": [
-        "siegedsec"
-    ],
-    "Siesta": [
-        "siesta"
-    ],
-    "SilitNetwork": [
-        "silitnetwork"
-    ],
-    "SilkSpecter": [
-        "silkspecter"
-    ],
-    "SilverFish": [
-        "silverfish"
-    ],
-    "Sima": [
-        "sima"
-    ],
-    "SINGING SPIDER": [
-        "singing spider"
-    ],
-    "SingularityMD": [
-        "singularitymd"
-    ],
-    "Sinobi": [
-        "sinobi"
-    ],
-    "Slingshot": [
-        "slingshot"
-    ],
-    "SloppyLemming": [
-        "sloppylemming"
-    ],
-    "Smishing Triad": [
-        "smishing triad"
-    ],
-    "Snake Wine": [
-        "snake wine"
-    ],
-    "SNOWGLOBE": [
-        "animal farm",
-        "atk8",
-        "snowglobe"
-    ],
-    "SongXY": [
-        "songxy"
-    ],
-    "SpaceBears": [
-        "spacebears"
-    ],
-    "SparklingGoblin": [
-        "sparklinggoblin"
-    ],
-    "SPIKEDWINE": [
-        "spikedwine"
-    ],
-    "STAC5143": [
-        "stac5143"
-    ],
-    "Stargazer Goblin": [
-        "stargazer goblin"
-    ],
-    "Storm-0062": [
-        "darkshadow",
-        "oro0lxy",
-        "storm-0062"
-    ],
-    "Storm-0249": [
-        "dev-0249",
-        "storm-0249"
-    ],
-    "Storm-0324": [
-        "dev-0324",
-        "sagrid",
-        "storm-0324",
-        "ta543"
-    ],
-    "Storm-0506": [
-        "storm-0506"
-    ],
-    "Storm-0539": [
-        "storm-0539"
-    ],
-    "Storm-0558": [
-        "storm-0558"
-    ],
-    "Storm-0826": [
-        "storm-0826"
-    ],
-    "Storm-1747": [
-        "storm-1747"
-    ],
-    "TheDarkOverlord": [
-        "thedarkoverlord"
-    ],
-    "TheWizards": [
-        "thewizards"
-    ],
-    "ZOMBIE SPIDER": [
-        "zombie spider"
-    ],
-    "ZooPark": [
-        "zoopark"
-    ],
-    "Chronus Group": [
-        "chronus group"
-    ],
-    "CL-STA-1020": [
-        "cl-sta-1020"
-    ],
-    "CL-UNK-1068": [
-        "cl-unk-1068"
-    ],
-    "DriveSurge": [
-        "drivesurge"
-    ],
-    "GHOST STADIUM": [
-        "ghost stadium"
-    ],
-    "GreyVibe": [
-        "greyvibe"
-    ],
-    "Inteid": [
-        "inteid"
-    ],
-    "JINX-0164": [
-        "jinx-0164"
-    ],
-    "Narketing163": [
-        "narketing163"
-    ],
-    "SHADOW-WATER-063": [
-        "shadow-water-063"
-    ],
-    "SnowSoul": [
-        "snowsoul"
-    ],
-    "Storm-2949": [
-        "storm-2949"
-    ],
-    "ZeffSec": [
-        "zeff security",
-        "zeffsec"
-    ],
-    "BlackMaskers": [
-        "blackmaskers",
-        "blackmaskers team"
-    ],
-    "SLIME88": [
-        "slime88"
-    ],
-    "TA4922": [
-        "ta4922"
-    ],
-    "FulcrumSec": [
-        "fulcrumsec"
-    ],
-    "UNC6508": [
-        "unc6508"
-    ],
-    "Houndstooth Typhoon": [
-        "deepclif",
-        "dragnet panda",
-        "hassium",
-        "houndstooth typhoon",
-        "isoon"
-    ],
-    "Storm-0252": [
-        "chatty spider",
-        "storm-0252"
-    ],
-    "Wisteria Tsunami": [
-        "cyberroot",
-        "dev-0605",
-        "mintedsoil",
-        "wisteria tsunami"
-    ],
-    "Mysterious Elephant": [
-        "mysterious elephant"
-    ],
-    "Armored Likho": [
-        "armored likho",
-        "eagle werewolf"
-    ],
-    "Cavern Manticore": [
-        "cavern manticore"
-    ],
-    "Hyadina": [
-        "hyadina"
-    ],
-    "JACKPOT PANDA": [
-        "jackpot panda"
-    ],
-    "JadePuffer": [
-        "jadepuffer"
-    ],
-    "Scattered Lapsus Hunters": [
-        "scattered lapsus hunters",
-        "scattered lapsus$ hunters"
-    ],
-    "UAT-11795": [
-        "uat-11795"
-    ],
-    "UAT-7810": [
-        "uat-7810"
-    ],
-    "UNC2529": [
-        "unc2529"
-    ],
-    "UTA0533": [
-        "uta0533"
-    ],
-    "Booba Project": [
-        "booba project"
-    ],
-    "Conference Crew": [
-        "conference castle",
-        "conference crew"
-    ],
-    "ExfilSquad": [
-        "exfilsquad"
-    ],
-    "Fox Tempest": [
-        "fox tempest"
-    ],
-    "Gammax": [
-        "gammax"
-    ],
-    "GlobalSecretGroup": [
-        "globalsecretgroup"
-    ],
-    "Larva-24009": [
-        "larva-24009"
-    ],
-    "Larva-26005": [
-        "larva-26005"
-    ],
-    "Larva-26009": [
-        "larva-26009"
-    ],
-    "ModernStealer": [
-        "modernstealer"
-    ],
-    "Orova": [
-        "orova"
-    ],
-    "Storm-2945": [
-        "storm-2945"
-    ],
-    "UNC1088": [
-        "ravine castle",
-        "unc1088"
-    ],
-    "Larva-26010": [
-        "larva-26010"
-    ],
-    "SilkParasite": [
-        "silkparasite"
-    ],
-    "ZeroBytes": [
-        "zerobytes"
-    ],
-    "BREEZE COMET": [
-        "breeze comet",
-        "unc5669"
-    ],
-    "Exilware": [
-        "exilware"
-    ],
-    "QTFY": [
-        "qtfy"
-    ],
-    "TheHatman": [
-        "thehatman"
-    ],
-    "CRPxO": [
-        "crpxo"
-    ],
-    "VantaCore": [
-        "thor",
-        "vantacore"
-    ]
+  "Lazarus / Hidden Cobra": [
+    "G0032",
+    "G0082",
+    "G0138",
+    "alluring pisces",
+    "andariel",
+    "appleworm",
+    "apt 38",
+    "apt-38",
+    "apt-c-26",
+    "apt38",
+    "atk117",
+    "atk3",
+    "beagleboyz",
+    "black artemis",
+    "bluenoroff",
+    "bureau 121",
+    "cageychameleon",
+    "citrine sleet",
+    "copernicium",
+    "covellite",
+    "cryptocore",
+    "dark seoul",
+    "dev-0139",
+    "dev-1222",
+    "diamond sleet",
+    "g0032",
+    "g0082",
+    "g0138",
+    "genie spider",
+    "guardian of peace",
+    "guardians of peace",
+    "hastati group",
+    "hidden cobra",
+    "hidden-cobra",
+    "labyrinth chollima",
+    "lazarus",
+    "lazarus group",
+    "masan",
+    "moonstone sleet",
+    "newromanic cyber army team",
+    "nickel academy",
+    "nickel gladstone",
+    "onyx sleet",
+    "operation applejeus",
+    "operation darkseoul",
+    "operation ghostsecret",
+    "operation troy",
+    "operationtroy",
+    "plutonium",
+    "sapphire sleet",
+    "silent chollima",
+    "stardust chollima",
+    "subgroup: andariel",
+    "subgroup: bluenoroff",
+    "ta404",
+    "unc1069",
+    "unit 121",
+    "whois hacking team",
+    "whois team",
+    "zinc"
+  ],
+  "APT28 / Fancy Bear": [
+    "4hcrew",
+    "G0007",
+    "apt 28",
+    "apt-28",
+    "apt-c-20",
+    "apt28",
+    "atg2",
+    "atk5",
+    "atk7",
+    "blue athena",
+    "bluebravo",
+    "bluedelta",
+    "crisisfour",
+    "fancy bear",
+    "fancybear",
+    "fighting ursa",
+    "forest blizzard",
+    "frozenlake",
+    "g0007",
+    "grey-cloud",
+    "grizzly steppe",
+    "group-4127",
+    "gruesomelarch",
+    "hellfire",
+    "iron twilight",
+    "itg05",
+    "itg11",
+    "operation pawn storm",
+    "pawn storm",
+    "searchfire",
+    "sednit",
+    "sig40",
+    "snakemackerel",
+    "sofacy",
+    "solar phoenix",
+    "strontium",
+    "sulphur",
+    "swallowtail",
+    "t-apt-12",
+    "ta421",
+    "ta422",
+    "tg-4127",
+    "tg-6952",
+    "threat group-4127",
+    "tsar team",
+    "tsarteam",
+    "uac-0001",
+    "uac-0028",
+    "uac-0029",
+    "z-lom team"
+  ],
+  "APT29 / Cozy Bear": [
+    "G0016",
+    "apt-29",
+    "apt29",
+    "blue kitsune",
+    "cozy bear",
+    "cozybear",
+    "cozyduke",
+    "dark halo",
+    "g0016",
+    "iron hemlock",
+    "iron ritual",
+    "midnight blizzard",
+    "nobelium",
+    "noblebaron",
+    "solarstorm",
+    "the dukes",
+    "unc2452",
+    "unc3524",
+    "yttrium"
+  ],
+  "Winnti / APT41": [
+    "G0096",
+    "amoeba",
+    "apt-41",
+    "apt18",
+    "apt4",
+    "apt41",
+    "barium",
+    "blackfly",
+    "brass typhoon",
+    "bronze atlas",
+    "bronze edison",
+    "bronze export",
+    "double dragon",
+    "dynamite panda",
+    "earth baku",
+    "g0026",
+    "g0044",
+    "g0096",
+    "grayfly",
+    "hoodoo",
+    "lead",
+    "leopard typhoon",
+    "maverick panda",
+    "pla navy",
+    "red kelpie",
+    "salmon typhoon",
+    "samurai panda",
+    "satin typhoon",
+    "scandium",
+    "sodium",
+    "ta415",
+    "tg-0416",
+    "tg-2633",
+    "wekby",
+    "wicked panda",
+    "wicked spider",
+    "winnti",
+    "wisp team"
+  ],
+  "Gamaredon": [
+    "G0047",
+    "actinium",
+    "aqua blizzard",
+    "blue otso",
+    "bluealpha",
+    "dev-0157",
+    "g0047",
+    "gamaredon",
+    "gamaredon group",
+    "iron tilden",
+    "nastyshrew",
+    "primitive bear",
+    "sectorc08",
+    "shuckworm",
+    "trident ursa",
+    "uac-0010",
+    "unc530",
+    "winterflounder"
+  ],
+  "Kimsuky": [
+    "G0094",
+    "apt43",
+    "black banshee",
+    "earth kumiho",
+    "emerald sleet",
+    "g0086",
+    "g0094",
+    "greendinosa",
+    "kimsuky",
+    "operation stolen pencil",
+    "patheticslug",
+    "rgb-d5",
+    "sparkling pisces",
+    "springtail",
+    "ta427",
+    "thallium",
+    "velvet cholima",
+    "velvet chollima"
+  ],
+  "SideWinder": [
+    "G0121",
+    "apt-c-17",
+    "g0121",
+    "rattlesnake",
+    "razor tiger",
+    "sidewinder",
+    "t-apt-04"
+  ],
+  "MuddyWater": [
+    "G0069",
+    "atk51",
+    "boggy serpens",
+    "cobalt ulster",
+    "earth vetala",
+    "g0069",
+    "mango sandstorm",
+    "mercury",
+    "muddykrill",
+    "muddywater",
+    "seedworm",
+    "static kitten",
+    "ta450",
+    "temp.zagros"
+  ],
+  "APT34 / OilRig": [
+    "G0049",
+    "apt 34",
+    "apt-34",
+    "apt34",
+    "atk40",
+    "brocade typhoon",
+    "bronze mayfair",
+    "chrysene",
+    "cobalt gypsy",
+    "crambus",
+    "earth simnavaz",
+    "europium",
+    "evasive serpens",
+    "g0049",
+    "hazel sandstorm",
+    "helix kitten",
+    "irn2",
+    "itg13",
+    "oilrig",
+    "red sylvan",
+    "ta452",
+    "tarh andishan",
+    "tg-0110",
+    "tg-2889",
+    "threat group-0110",
+    "twisted kitten"
+  ],
+  "Turla": [
+    "G0010",
+    "atg26",
+    "atk13",
+    "belugasturgeon",
+    "blue python",
+    "g0010",
+    "hippo team",
+    "iron hunter",
+    "itg12",
+    "krypton",
+    "makersmark",
+    "pacifier apt",
+    "pfinet",
+    "popeye",
+    "secret blizzard",
+    "sig23",
+    "snake",
+    "summit",
+    "tag_0530",
+    "turla",
+    "uac-0003",
+    "uac-0024",
+    "uac-0144",
+    "unc4210",
+    "uroburos",
+    "venomous bear",
+    "waterbug",
+    "whitebear",
+    "wraith"
+  ],
+  "Carbanak / Anunak": [
+    "G0008",
+    "G0046",
+    "anunak",
+    "atk32",
+    "calcium",
+    "carbanak",
+    "carbon spider",
+    "coreid",
+    "elbrus",
+    "fin-7",
+    "fin7",
+    "g0008",
+    "g0046",
+    "gold niagara",
+    "itg14",
+    "jokerstash",
+    "sangria tempest"
+  ],
+  "APT35 / Charming Kitten": [
+    "G0059",
+    "agent serpens",
+    "apt-35",
+    "apt35",
+    "charming kitten",
+    "charmingcypress",
+    "cobalt illusion",
+    "cobalt mirage",
+    "g0058",
+    "g0059",
+    "ikittens",
+    "itg18",
+    "magic hound",
+    "mint sandstorm",
+    "newsbeef",
+    "newscaster",
+    "newscaster team",
+    "parastoo",
+    "phosphorus",
+    "ta453",
+    "tunnelvision"
+  ],
+  "Sandworm": [
+    "G0034",
+    "apt-44",
+    "apt44",
+    "blackenergy (group)",
+    "blackenergy lite",
+    "blue echidna",
+    "electrum",
+    "frozenbarents",
+    "g0034",
+    "iridium",
+    "iron viking",
+    "phantom",
+    "quedagh",
+    "sandworm",
+    "sandworm team",
+    "seashell blizzard",
+    "telebots",
+    "temp.noble",
+    "uac-0082",
+    "uac-0113",
+    "voodoo bear"
+  ],
+  "LockBit": [
+    "lockbit"
+  ],
+  "DarkHotel": [
+    "G0012",
+    "apt-c-06",
+    "apt-c-60",
+    "atk52",
+    "dark hotel",
+    "darkhotel",
+    "dubnium",
+    "egobot",
+    "fallout team",
+    "g0012",
+    "karba",
+    "luder",
+    "nemim",
+    "nemin",
+    "paladin",
+    "pioneer",
+    "purple pygmy",
+    "shadow crane",
+    "sig25",
+    "t-apt-02",
+    "tapaoux",
+    "templar",
+    "tieonjoe",
+    "tungsten bridge",
+    "zigzag hail"
+  ],
+  "Mustang Panda": [
+    "G0129",
+    "basin",
+    "bronze president",
+    "bronzelychee",
+    "camaro dragon",
+    "clumsytoad",
+    "earth preta",
+    "fireant",
+    "g0129",
+    "hive0154",
+    "honeymyte",
+    "luminous moth",
+    "luminousmoth",
+    "mustang panda",
+    "red lich",
+    "reddelta",
+    "stately taurus",
+    "ta416",
+    "tantalum",
+    "temp.hex",
+    "twill typhoon",
+    "unc6384",
+    "vertigo panda"
+  ],
+  "Transparent Tribe / APT36": [
+    "G0134",
+    "apt 36",
+    "apt-36",
+    "apt36",
+    "c-major",
+    "copper fieldstone",
+    "earth karkaddan",
+    "g0134",
+    "green havildar",
+    "mythic leopard",
+    "operation c-major",
+    "projectm",
+    "storm-0156",
+    "tmp.lapis",
+    "transparent tribe"
+  ],
+  "Patchwork": [
+    "G0040",
+    "apt-c-09",
+    "apt-c-35",
+    "atk11",
+    "chinastrats",
+    "donot team",
+    "drooping elephant",
+    "dropping elephant",
+    "g0040",
+    "hangover group",
+    "monsoon",
+    "operation hangover",
+    "orange athos",
+    "orange kala",
+    "patchwork",
+    "quilted tiger",
+    "sarit",
+    "sectore02",
+    "thirsty gemini",
+    "viceroy tiger",
+    "zinc emerson"
+  ],
+  "APT33": [
+    "G0064",
+    "apt 33",
+    "apt-33",
+    "apt33",
+    "atk35",
+    "cobalt trinity",
+    "elfin",
+    "g0064",
+    "holmium",
+    "magnallium",
+    "peach sandstorm",
+    "refined kitten",
+    "ta451"
+  ],
+  "Naikon": [
+    "G0019",
+    "bronze geneva",
+    "bronze sterling",
+    "camerashy",
+    "g0013",
+    "g0019",
+    "naikon",
+    "override panda",
+    "pla unit 78020"
+  ],
+  "BlackTech": [
+    "G0098",
+    "blacktech",
+    "canary typhoon",
+    "circuit panda",
+    "earth hundun",
+    "g0098",
+    "huapi",
+    "manga taurus",
+    "mobwork",
+    "palmerworm",
+    "red djinn",
+    "t-apt-03",
+    "temp.overboard"
+  ],
+  "BlackCat / ALPHV": [
+    "alphv",
+    "blackcat"
+  ],
+  "Cobalt Group": [
+    "G0080",
+    "cobalt gang",
+    "cobalt group",
+    "cobalt spider",
+    "g0080",
+    "gold kingswood",
+    "mule libra"
+  ],
+  "Scattered Spider": [
+    "0ktapus",
+    "G1015",
+    "dev-0971",
+    "g1015",
+    "muddled libra",
+    "octo tempest",
+    "oktapus",
+    "roasted 0ktapus",
+    "scatter swine",
+    "scattered spider",
+    "scattered swine",
+    "starfraud",
+    "storm-0875",
+    "storm-0971",
+    "unc3944"
+  ],
+  "APT32 / OceanLotus": [
+    "G0050",
+    "apt 32",
+    "apt-32",
+    "apt-c-00",
+    "apt32",
+    "atk17",
+    "bismuth",
+    "canvas cyclone",
+    "cobalt kitty",
+    "g0050",
+    "ocean buffalo",
+    "ocean lotus",
+    "oceanlotus",
+    "oceanlotus group",
+    "pond loach",
+    "sea lotus",
+    "sealotus",
+    "tin woodlawn"
+  ],
+  "Donot / DonotGroup": [
+    "donot group",
+    "donotgroup"
+  ],
+  "StrongPity": [
+    "G0056",
+    "g0056",
+    "promethium",
+    "strong pity",
+    "strongpity"
+  ],
+  "Chafer": [
+    "G0087",
+    "apt39",
+    "burgundy sandstorm",
+    "chafer",
+    "cobalt hickman",
+    "g0087",
+    "itg07",
+    "radio serpens",
+    "remix kitten",
+    "ta454"
+  ],
+  "LotusBlossom": [
+    "G0030",
+    "G0076",
+    "apt30",
+    "atk1",
+    "atk78",
+    "bilbug",
+    "billbug",
+    "bronze elgin",
+    "dragonfish",
+    "g0013",
+    "g0030",
+    "g0076",
+    "lotus blossom",
+    "lotus panda",
+    "lotusblossom",
+    "radium",
+    "raspberry typhoon",
+    "red salamander",
+    "spring dragon",
+    "st group",
+    "thrip"
+  ],
+  "RomCom": [
+    "romcom",
+    "storm-0978",
+    "uat-5647"
+  ],
+  "Volatile Cedar": [
+    "G0123",
+    "amethyst rain",
+    "defttorero",
+    "g0123",
+    "lebanese cedar",
+    "volatile cedar",
+    "volatilecedar",
+    "volcanictimber"
+  ],
+  "ScarCruft": [
+    "G0067",
+    "apt 37",
+    "apt-c-28",
+    "apt37",
+    "atk4",
+    "g0067",
+    "group123",
+    "inkysquid",
+    "moldy pisces",
+    "operation daybreak",
+    "operation erebus",
+    "reaper",
+    "reaper group",
+    "red eyes",
+    "ricochet chollima",
+    "scarcruft",
+    "temp.reaper",
+    "venus 121"
+  ],
+  "Platinum": [
+    "G0068",
+    "atk33",
+    "g0068",
+    "platinum",
+    "twoforone"
+  ],
+  "Taidoor": [
+    "G0015",
+    "earth aughisky",
+    "g0015",
+    "taidoor"
+  ],
+  "RampantKitten": [
+    "rampant kitten",
+    "rampantkitten"
+  ],
+  "LuckyMouse": [
+    "G0027",
+    "apt-27",
+    "apt27",
+    "bronze union",
+    "budworm",
+    "circle typhoon",
+    "dev-0322",
+    "earth smilodon",
+    "emissary panda",
+    "g0027",
+    "greedytaotie",
+    "iron taurus",
+    "iron tiger",
+    "linen typhoon",
+    "lucky mouse",
+    "luckymouse",
+    "red phoenix",
+    "temp.hippo",
+    "tg-3390",
+    "threat group-3390",
+    "tiltedtemple",
+    "ziptoken"
+  ],
+  "Equation Group": [
+    "G0020",
+    "eqgrp",
+    "equation",
+    "equation group",
+    "equationgroup",
+    "g0020",
+    "tilded team"
+  ],
+  "Molerats": [
+    "G0021",
+    "aluminum saratoga",
+    "blackstem",
+    "extreme jackal",
+    "g0021",
+    "gaza cybergang",
+    "gaza hackers team",
+    "mole rats",
+    "molerats",
+    "moonlight",
+    "operation molerats"
+  ],
+  "DarkHydrus": [
+    "G0079",
+    "dark hydrus",
+    "darkhydrus",
+    "g0079",
+    "lazymeerkat",
+    "obscure serpens"
+  ],
+  "Inception / Cloud Atlas": [
+    "G0100",
+    "atk116",
+    "blue odin",
+    "clean ursa",
+    "cloud atlas",
+    "cloudatlas",
+    "g0100",
+    "inception",
+    "inception framework",
+    "oxygen"
+  ],
+  "APT1 / CommentCrew": [
+    "G0006",
+    "apt-1",
+    "apt1",
+    "brown fox",
+    "byzantine candor",
+    "comment crew",
+    "comment group",
+    "comment panda",
+    "comment_crew",
+    "commentcrew",
+    "g0006",
+    "gif89a",
+    "pla unit 61398",
+    "shadyrat",
+    "tg-8223"
+  ],
+  "Icefog": [
+    "dagger panda",
+    "ice fog",
+    "icefog",
+    "pla unit 69010",
+    "red foxtrot",
+    "red wendigo",
+    "redfoxtrot",
+    "trident",
+    "uat-7290"
+  ],
+  "Hades": [
+    "hades"
+  ],
+  "Indrik Spider": [
+    "G0119",
+    "dev-0243",
+    "evil corp",
+    "evilcorp",
+    "g0119",
+    "gold drake",
+    "indrik spider",
+    "manatee tempest",
+    "unc2165"
+  ],
+  "NEODYMIUM": [
+    "G0055",
+    "g0055",
+    "neodymium"
+  ],
+  "BlackByte": [
+    "G1043",
+    "blackbyte",
+    "g1043",
+    "hecamede"
+  ],
+  "Elderwood": [
+    "G0066",
+    "beijing group",
+    "elderwood",
+    "elderwood gang",
+    "g0066",
+    "sig22",
+    "sneaky panda"
+  ],
+  "SideCopy": [
+    "G1008",
+    "g1008",
+    "sidecopy"
+  ],
+  "GALLIUM": [
+    "G0093",
+    "alloy taurus",
+    "g0093",
+    "gallium",
+    "granite typhoon",
+    "operation soft cell",
+    "phantom panda",
+    "red dev 4"
+  ],
+  "APT17": [
+    "G0025",
+    "apt17",
+    "aurora panda",
+    "axiom",
+    "bronze keystone",
+    "deputy dog",
+    "dogfish",
+    "g0001",
+    "g0025",
+    "heart typhoon",
+    "helium",
+    "hidden lynx",
+    "tailgater team"
+  ],
+  "Mustard Tempest": [
+    "G1020",
+    "dev-0206",
+    "g1020",
+    "gold prelude",
+    "mustard tempest",
+    "purple vallhund",
+    "ta569",
+    "unc1543"
+  ],
+  "GCMAN": [
+    "G0036",
+    "g0036",
+    "gcman"
+  ],
+  "EXOTIC LILY": [
+    "G1011",
+    "dev-0413",
+    "exotic lily",
+    "g1011"
+  ],
+  "TA577": [
+    "G1037",
+    "g1037",
+    "hive0118",
+    "ta577"
+  ],
+  "AppleJeus": [
+    "G1049",
+    "applejeus",
+    "citrine sleet",
+    "g1049",
+    "gleaming pisces",
+    "unc1720",
+    "unc4736"
+  ],
+  "admin@338": [
+    "G0018",
+    "admin338",
+    "admin@338",
+    "g0018",
+    "magnesium",
+    "team338",
+    "temper panda"
+  ],
+  "Volt Typhoon": [
+    "G1017",
+    "bronze silhouette",
+    "dazedtoad",
+    "dev-0391",
+    "g1017",
+    "insidious taurus",
+    "unc3236",
+    "vanguard panda",
+    "volt typhoon",
+    "voltzite"
+  ],
+  "Salt Typhoon": [
+    "G1045",
+    "famoussparrow",
+    "g1045",
+    "ghostemperor",
+    "operator panda",
+    "redmike",
+    "salt typhoon",
+    "unc2286"
+  ],
+  "Dragonfly": [
+    "G0035",
+    "allanite",
+    "atk6",
+    "berserk bear",
+    "blue kraken",
+    "bromine",
+    "castle",
+    "crouching yeti",
+    "dragonfly",
+    "dymalloy",
+    "energetic bear",
+    "g0035",
+    "ghost blizzard",
+    "havex",
+    "iron liberty",
+    "itg15",
+    "koala team",
+    "temp.isotope",
+    "tg-4192"
+  ],
+  "Evilnum": [
+    "G0120",
+    "deathstalker",
+    "evilnum",
+    "g0120",
+    "jointworm",
+    "knockout spider",
+    "ta4563"
+  ],
+  "Gorgon Group": [
+    "G0078",
+    "atk92",
+    "g0078",
+    "gorgon group",
+    "pasty gemini",
+    "subaat",
+    "the gorgon group"
+  ],
+  "menuPass": [
+    "G0045",
+    "apt10",
+    "atk41",
+    "bronze riverside",
+    "cicada",
+    "cloud hopper",
+    "cvnx",
+    "g0045",
+    "granite taurus",
+    "happyyongzi",
+    "hogfish",
+    "menupass",
+    "menupass team",
+    "potassium",
+    "purple typhoon",
+    "red apollo",
+    "stone panda",
+    "ta429"
+  ],
+  "Night Dragon": [
+    "G0014",
+    "g0014",
+    "night dragon"
+  ],
+  "HAFNIUM": [
+    "G0125",
+    "atk233",
+    "g0125",
+    "hafnium",
+    "murky panda",
+    "operation exchange marauder",
+    "red dev 13",
+    "silk typhoon",
+    "timmy"
+  ],
+  "Strider": [
+    "G0041",
+    "g0041",
+    "project sauron",
+    "projectsauron",
+    "sauron",
+    "strider"
+  ],
+  "Operation Wocao": [
+    "G0116",
+    "g0116",
+    "operation wocao"
+  ],
+  "FIN6": [
+    "G0037",
+    "atk88",
+    "camouflage tempest",
+    "fin6",
+    "g0037",
+    "gold franklin",
+    "itg08",
+    "magecart group 6",
+    "skeleton spider",
+    "storm-0538",
+    "ta4557",
+    "taal",
+    "white giant"
+  ],
+  "RedEcho": [
+    "G1042",
+    "g1042",
+    "redecho"
+  ],
+  "Moafee": [
+    "G0002",
+    "bronze overbrook",
+    "dragonok",
+    "g0002",
+    "g0017",
+    "moafee",
+    "shallow taurus"
+  ],
+  "Gallmaker": [
+    "G0084",
+    "g0084",
+    "gallmaker"
+  ],
+  "Storm-1811": [
+    "G1046",
+    "cardinal",
+    "curly spider",
+    "g1046",
+    "stac5777",
+    "storm-1811",
+    "unc4393"
+  ],
+  "Leafminer": [
+    "G0077",
+    "g0077",
+    "leafminer",
+    "raspite"
+  ],
+  "TeamTNT": [
+    "G0139",
+    "adept libra",
+    "g0139",
+    "teamtnt"
+  ],
+  "Machete": [
+    "G0095",
+    "apt-c-43",
+    "el machete",
+    "g0095",
+    "machete",
+    "machete-apt"
+  ],
+  "APT18": [
+    "G0026",
+    "apt18",
+    "dynamite panda",
+    "g0026",
+    "tg-0416",
+    "threat group-0416"
+  ],
+  "CURIUM": [
+    "G1012",
+    "crimson sandstorm",
+    "cuboid sandstorm",
+    "curium",
+    "dev-0228",
+    "dustycave",
+    "g1012",
+    "imperial kitten",
+    "smoke sandstorm",
+    "ta456",
+    "tortoise shell",
+    "tortoiseshell",
+    "yellow liderc"
+  ],
+  "ZIRCONIUM": [
+    "G0128",
+    "apt31",
+    "bronze vinewood",
+    "chameleon",
+    "g0128",
+    "judgment panda",
+    "red keres",
+    "ta412",
+    "violet typhoon",
+    "webfans",
+    "zirconium"
+  ],
+  "Rocke": [
+    "G0106",
+    "aged libra",
+    "g0106",
+    "rocke"
+  ],
+  "UNC3886": [
+    "G1048",
+    "g1048",
+    "unc3886"
+  ],
+  "Contagious Interview": [
+    "G1052",
+    "contagious interview",
+    "deceptivedevelopment",
+    "dev#popper",
+    "famous chollima",
+    "g1052",
+    "gwisin gang",
+    "nickel tapestry",
+    "purplebravo",
+    "storm-1877",
+    "tag-121",
+    "tenacious pungsan",
+    "unc5267",
+    "void dokkaebi",
+    "wagemole",
+    "waterplum"
+  ],
+  "TA2541": [
+    "G1018",
+    "g1018",
+    "ta2541"
+  ],
+  "Akira": [
+    "G1024",
+    "akira",
+    "g1024",
+    "gold sahara",
+    "howling scorpius",
+    "punk spider",
+    "storm-1567"
+  ],
+  "Moses Staff": [
+    "G1009",
+    "dev-0500",
+    "dev-500",
+    "g1009",
+    "marigold sandstorm",
+    "moses staff",
+    "mosesstaff",
+    "vengeful kitten"
+  ],
+  "Windigo": [
+    "G0124",
+    "g0124",
+    "windigo"
+  ],
+  "Higaisa": [
+    "G0126",
+    "g0126",
+    "higaisa"
+  ],
+  "Tropic Trooper": [
+    "G0081",
+    "apt23",
+    "bronze hobart",
+    "earth centaur",
+    "g0081",
+    "keyboy",
+    "pirate panda",
+    "red orthrus",
+    "tropic trooper"
+  ],
+  "Orangeworm": [
+    "G0071",
+    "g0071",
+    "orangeworm"
+  ],
+  "Sea Turtle": [
+    "G1041",
+    "cosmic wolf",
+    "g1041",
+    "marbled dust",
+    "sea turtle",
+    "silicon",
+    "teal kurma",
+    "unc1326"
+  ],
+  "Suckfly": [
+    "G0039",
+    "apt22",
+    "bronze olive",
+    "g0039",
+    "suckfly"
+  ],
+  "Putter Panda": [
+    "G0024",
+    "apt2",
+    "g0024",
+    "msupdater",
+    "putter panda"
+  ],
+  "Sharpshooter": [
+    "G0104",
+    "g0104",
+    "sharpshooter"
+  ],
+  "POLONIUM": [
+    "G1005",
+    "g1005",
+    "greatrift",
+    "incendiary jackal",
+    "plaid rain",
+    "polonium",
+    "unc4453"
+  ],
+  "TA459": [
+    "G0062",
+    "g0062",
+    "ta459"
+  ],
+  "Aquatic Panda": [
+    "G0143",
+    "aquatic panda",
+    "bountyglad",
+    "bronze university",
+    "charcoal typhoon",
+    "controlx",
+    "earth lusca",
+    "fishmonger",
+    "g0143",
+    "red dev 10",
+    "red scylla",
+    "redhotel",
+    "tag-22"
+  ],
+  "Aoqin Dragon": [
+    "G1007",
+    "aoqin dragon",
+    "g1007",
+    "unc94"
+  ],
+  "Ferocious Kitten": [
+    "G0137",
+    "ferocious kitten",
+    "g0137"
+  ],
+  "The White Company": [
+    "G0089",
+    "g0089",
+    "the white company"
+  ],
+  "Ke3chang": [
+    "G0004",
+    "apt15",
+    "bronze davenport",
+    "bronze idlewood",
+    "bronze palace",
+    "g0004",
+    "gref",
+    "ke3chang",
+    "lurid",
+    "metushy",
+    "mirage",
+    "nickel",
+    "nylon typhoon",
+    "playful dragon",
+    "red vulture",
+    "redriver",
+    "royal apt",
+    "royalapt",
+    "social network team",
+    "vixen panda"
+  ],
+  "Saint Bear": [
+    "G1003",
+    "G1031",
+    "bleeding bear",
+    "cadet blizzard",
+    "dev-0586",
+    "dev-0587",
+    "ember bear",
+    "frozenvista",
+    "g1003",
+    "g1031",
+    "lorec bear",
+    "lorec53",
+    "nascent ursa",
+    "nodaria",
+    "ruinous ursa",
+    "saint bear",
+    "saintbear",
+    "storm-0587",
+    "ta471",
+    "uac-0056",
+    "unc2589"
+  ],
+  "Frankenstein": [
+    "G0101",
+    "frankenstein",
+    "g0101"
+  ],
+  "Confucius": [
+    "G0142",
+    "confucius",
+    "confucius apt",
+    "g0142"
+  ],
+  "Leviathan": [
+    "G0065",
+    "apt40",
+    "atk29",
+    "bronze mohawk",
+    "feverdream",
+    "g0065",
+    "gadolinium",
+    "gingham typhoon",
+    "islanddreams",
+    "itg09",
+    "jjdoor",
+    "kryptonite panda",
+    "leviathan",
+    "mudcarp",
+    "red ladon",
+    "ta423",
+    "temp.jumper",
+    "temp.periscope"
+  ],
+  "MoustachedBouncer": [
+    "G1019",
+    "g1019",
+    "moustachedbouncer"
+  ],
+  "Group5": [
+    "G0043",
+    "g0043",
+    "group5"
+  ],
+  "Blue Mockingbird": [
+    "G0108",
+    "blue mockingbird",
+    "g0108"
+  ],
+  "Winter Vivern": [
+    "G1035",
+    "g1035",
+    "ta-473",
+    "ta473",
+    "tag-70",
+    "uac-0114",
+    "winter vivern"
+  ],
+  "SilverTerrier": [
+    "G0083",
+    "g0083",
+    "silverterrier"
+  ],
+  "Storm-0501": [
+    "G1053",
+    "g1053",
+    "storm-0501"
+  ],
+  "Poseidon Group": [
+    "G0033",
+    "g0033",
+    "poseidon group"
+  ],
+  "TA505": [
+    "G0092",
+    "atk103",
+    "chimborazo",
+    "dev-0950",
+    "dudear",
+    "fin11",
+    "g0092",
+    "gold tahoe",
+    "graceful spider",
+    "hive0065",
+    "lace tempest",
+    "monty spider",
+    "sectorj04",
+    "sectorj04 group",
+    "spandex tempest",
+    "ta505",
+    "temp.warlock",
+    "unc902"
+  ],
+  "BITTER": [
+    "G1002",
+    "apt-c-08",
+    "bitter",
+    "g1002",
+    "hazy tiger",
+    "orange yali",
+    "t-apt-17",
+    "ta397"
+  ],
+  "DarkVishnya": [
+    "G0105",
+    "darkvishnya",
+    "g0105"
+  ],
+  "RedCurl": [
+    "G1039",
+    "earth kapre",
+    "g1039",
+    "gold blade",
+    "red wolf",
+    "redcurl"
+  ],
+  "APT-C-23": [
+    "G1028",
+    "apt-c-23",
+    "arid viper",
+    "aridviper",
+    "bearded barbie",
+    "big bang apt",
+    "desert falcon",
+    "desert falcons",
+    "g1028",
+    "grey karkadann",
+    "mantis",
+    "niobium",
+    "pinstripe lightning",
+    "renegade jackal",
+    "scimitar",
+    "tag-63",
+    "two-tailed scorpion"
+  ],
+  "FIN5": [
+    "G0053",
+    "fin5",
+    "g0053"
+  ],
+  "Mofang": [
+    "G0103",
+    "bronze walker",
+    "g0103",
+    "mofang",
+    "superman"
+  ],
+  "Stealth Falcon": [
+    "G0038",
+    "fruityarmor",
+    "g0038",
+    "stealth falcon"
+  ],
+  "Dark Caracal": [
+    "G0070",
+    "dark caracal",
+    "g0070"
+  ],
+  "Cinnamon Tempest": [
+    "G1021",
+    "bronze starlight",
+    "cinnamon tempest",
+    "dev-0401",
+    "emperor dragonfly",
+    "g1021",
+    "highground",
+    "slime34"
+  ],
+  "Chimera": [
+    "G0114",
+    "chimera",
+    "g0114"
+  ],
+  "MirrorFace": [
+    "G1054",
+    "earth kasha",
+    "g1054",
+    "mirrorface"
+  ],
+  "Cleaver": [
+    "G0003",
+    "cleaver",
+    "g0003",
+    "tg-2889",
+    "threat group 2889"
+  ],
+  "Silent Librarian": [
+    "G0122",
+    "cobalt dickens",
+    "g0122",
+    "mabna institute",
+    "mabna institute group",
+    "silent librarian",
+    "ta407",
+    "ta4900",
+    "yellow nabu"
+  ],
+  "Medusa Group": [
+    "G1051",
+    "g1051",
+    "medusa group"
+  ],
+  "BRONZE BUTLER": [
+    "G0060",
+    "bronze butler",
+    "g0060",
+    "nian",
+    "pla unit 61419",
+    "redbaldknight",
+    "stalker panda",
+    "stalker taurus",
+    "swirl typhoon",
+    "tick group"
+  ],
+  "TA551": [
+    "G0127",
+    "atk236",
+    "g0127",
+    "gold cabin",
+    "monster libra",
+    "shakthak",
+    "shathak",
+    "ta551"
+  ],
+  "TEMP.Veles": [
+    "G0088",
+    "atk91",
+    "g0088",
+    "temp.veles",
+    "xenotime"
+  ],
+  "BackdoorDiplomacy": [
+    "G0135",
+    "backdip",
+    "backdoordiplomacy",
+    "cloudcomputating",
+    "g0135",
+    "quarian"
+  ],
+  "Gelsemium": [
+    "G0141",
+    "g0141",
+    "gelsemium",
+    "狼毒草"
+  ],
+  "Star Blizzard": [
+    "G1033",
+    "blue callisto",
+    "bluecharlie",
+    "callisto",
+    "callisto group",
+    "coldriver",
+    "g1033",
+    "gossamer bear",
+    "iron frontier",
+    "seaborgium",
+    "star blizzard",
+    "ta446",
+    "tag-53",
+    "unc4057"
+  ],
+  "Axiom": [
+    "G0001",
+    "axiom",
+    "g0001"
+  ],
+  "TA578": [
+    "G1038",
+    "g1038",
+    "ta578"
+  ],
+  "Deep Panda": [
+    "G0009",
+    "apt19",
+    "black vine",
+    "bronze firestone",
+    "checkered typhoon",
+    "codoso",
+    "deep panda",
+    "g0009",
+    "g0073",
+    "kungfu kittens",
+    "pinkpanther",
+    "pupa",
+    "shell crew",
+    "sunshop group",
+    "temp.avengers",
+    "webmasters"
+  ],
+  "LazyScripter": [
+    "G0140",
+    "g0140",
+    "lazyscripter"
+  ],
+  "Dust Storm": [
+    "G0031",
+    "dust storm",
+    "g0031"
+  ],
+  "Windshift": [
+    "G0112",
+    "bahamut",
+    "g0112",
+    "windshift",
+    "windy phoenix"
+  ],
+  "ToddyCat": [
+    "G1022",
+    "g1022",
+    "toddycat",
+    "websiic"
+  ],
+  "Whitefly": [
+    "G0107",
+    "g0107",
+    "whitefly"
+  ],
+  "LuminousMoth": [
+    "G1014",
+    "g1014",
+    "luminousmoth"
+  ],
+  "Agrius": [
+    "G1030",
+    "agonizing serpens",
+    "agrius",
+    "americium",
+    "black shadow",
+    "blackshadow",
+    "dev-0022",
+    "g1030",
+    "pink sandstorm",
+    "spectral kitten",
+    "unc2428"
+  ],
+  "CostaRicto": [
+    "G0132",
+    "costaricto",
+    "g0132"
+  ],
+  "Water Galura": [
+    "G1050",
+    "g1050",
+    "gold feather",
+    "water galura"
+  ],
+  "Malteiro": [
+    "G1026",
+    "g1026",
+    "malteiro"
+  ],
+  "Metador": [
+    "G1013",
+    "g1013",
+    "metador"
+  ],
+  "APT42": [
+    "G1044",
+    "apt42",
+    "calanque",
+    "g1044",
+    "unc788"
+  ],
+  "APT5": [
+    "G1023",
+    "apt12",
+    "apt5",
+    "atg48",
+    "auriga",
+    "backdoor-dpd",
+    "beebus",
+    "bottle",
+    "bronze fleetwood",
+    "bronze globe",
+    "calc team",
+    "covenant",
+    "crimson iron",
+    "cyservice",
+    "dnscalc",
+    "dyncalc",
+    "g1023",
+    "hexagon typhoon",
+    "ixeshe",
+    "keyhole panda",
+    "manganese",
+    "mulberry typhoon",
+    "numbered panda",
+    "poisoned flight",
+    "red horus",
+    "red naga",
+    "tabcteng",
+    "temp.bottle",
+    "tg-2754",
+    "unc2630"
+  ],
+  "Fox Kitten": [
+    "G0117",
+    "fox kitten",
+    "g0117",
+    "lemon sandstorm",
+    "parisite",
+    "pioneer kitten",
+    "pioneerkitten",
+    "rubidium",
+    "unc757"
+  ],
+  "RTM": [
+    "G0048",
+    "g0048",
+    "rtm"
+  ],
+  "APT12": [
+    "G0005",
+    "apt12",
+    "dnscalc",
+    "dyncalc",
+    "g0005",
+    "ixeshe",
+    "numbered panda"
+  ],
+  "APT-C-36": [
+    "G0099",
+    "aguilaciega",
+    "apt-c-36",
+    "apt-q-98",
+    "blind eagle",
+    "g0099",
+    "tag-144"
+  ],
+  "Scarlet Mimic": [
+    "G0029",
+    "g0029",
+    "golfing taurus",
+    "scarlet mimic"
+  ],
+  "Winnti Group": [
+    "G0044",
+    "blackfly",
+    "g0044",
+    "winnti group"
+  ],
+  "Tonto Team": [
+    "G0131",
+    "bronze huntley",
+    "cactuspete",
+    "copper",
+    "earth akhlut",
+    "g0131",
+    "karma panda",
+    "pla unit 65017",
+    "red beifang",
+    "tag-74",
+    "tonto team"
+  ],
+  "GOLD SOUTHFIELD": [
+    "G0115",
+    "g0115",
+    "gold southfield",
+    "pinchy spider"
+  ],
+  "INC Ransom": [
+    "G1032",
+    "g1032",
+    "gold ionic",
+    "inc ransom"
+  ],
+  "Earth Lusca": [
+    "G1006",
+    "charcoal typhoon",
+    "controlx",
+    "earth lusca",
+    "g1006",
+    "tag-22"
+  ],
+  "FIN4": [
+    "G0085",
+    "fin4",
+    "g0085",
+    "wolf spider"
+  ],
+  "Silence": [
+    "G0091",
+    "g0091",
+    "silence",
+    "silence group",
+    "whisper spider"
+  ],
+  "Sowbug": [
+    "G0054",
+    "g0054",
+    "sowbug"
+  ],
+  "Threat Group-1314": [
+    "G0028",
+    "g0028",
+    "tg-1314",
+    "threat group-1314"
+  ],
+  "APT16": [
+    "G0023",
+    "apt16",
+    "g0023",
+    "svcmondr"
+  ],
+  "LAPSUS$": [
+    "G1004",
+    "dev-0537",
+    "g1004",
+    "lapsus",
+    "lapsus$",
+    "slippy spider",
+    "strawberry tempest",
+    "unc3661"
+  ],
+  "BlackOasis": [
+    "G0063",
+    "blackoasis",
+    "g0063"
+  ],
+  "CopyKittens": [
+    "G0052",
+    "copykittens",
+    "g0052",
+    "slayer kitten"
+  ],
+  "Wizard Spider": [
+    "G0102",
+    "dev-0193",
+    "dev-0237",
+    "fin12",
+    "g0102",
+    "gold blackburn",
+    "gold ulrick",
+    "grim spider",
+    "itg23",
+    "periwinkle tempest",
+    "pistachio tempest",
+    "storm-0193",
+    "storm-0230",
+    "temp.mixmaster",
+    "trickbot llc",
+    "unc1878",
+    "unc2053",
+    "wizard spider"
+  ],
+  "Velvet Ant": [
+    "G1047",
+    "g1047",
+    "velvet ant"
+  ],
+  "IndigoZebra": [
+    "G0136",
+    "g0136",
+    "indigozebra"
+  ],
+  "Moonstone Sleet": [
+    "G1036",
+    "g1036",
+    "moonstone sleet",
+    "storm-1789"
+  ],
+  "Honeybee": [
+    "G0072",
+    "g0072",
+    "honeybee"
+  ],
+  "VOID MANTICORE": [
+    "G1055",
+    "banished kitten",
+    "cobalt mystique",
+    "dune",
+    "g1055",
+    "handala hack",
+    "homeland justice",
+    "karma",
+    "karmabelow80",
+    "red sandstorm",
+    "storm-0842",
+    "void manticore"
+  ],
+  "Play": [
+    "G1040",
+    "g1040",
+    "play ransomware",
+    "play crypt",
+    "playcrypt"
+  ],
+  "APT30": [
+    "G0013",
+    "apt30",
+    "g0013"
+  ],
+  "HEXANE": [
+    "G1001",
+    "chrono kitten",
+    "cobalt lyceum",
+    "g1001",
+    "hexane",
+    "lyceum",
+    "mysticdome",
+    "siamesekitten",
+    "spirlin",
+    "storm-0133",
+    "unc1530"
+  ],
+  "DragonOK": [
+    "G0017",
+    "dragonok",
+    "g0017"
+  ],
+  "Daggerfly": [
+    " daggerfly",
+    "G1034",
+    "bronze highland",
+    "daggerfly",
+    "evasive panda",
+    "g1034"
+  ],
+  "Rancor": [
+    "G0075",
+    "g0075",
+    "rancor",
+    "rancor group",
+    "rancor taurus"
+  ],
+  "WIRTE": [
+    "G0090",
+    "ashen lepus",
+    "g0090",
+    "wirte"
+  ],
+  "Ajax Security Team": [
+    "G0130",
+    "ajax security team",
+    "ajaxsecurityteam",
+    "ajaxtm",
+    "flying kitten",
+    "g0130",
+    "operation saffron rose",
+    "operation woolen goldfish",
+    "operation woolen-goldfish",
+    "rocket kitten",
+    "saffron rose",
+    "saffronrose",
+    "sayad",
+    "temp.beanie",
+    "thamar reservoir",
+    "timberworm"
+  ],
+  "FIN10": [
+    "G0051",
+    "fin1",
+    "fin10",
+    "g0051"
+  ],
+  "FIN8": [
+    "G0061",
+    "atk113",
+    "fin8",
+    "g0061",
+    "syssphinx"
+  ],
+  "FIN13": [
+    "G1016",
+    "elephant beetle",
+    "fin13",
+    "g1016",
+    "tg2003"
+  ],
+  "APT19": [
+    "G0073",
+    "apt19",
+    "c0d0so0",
+    "codoso",
+    "codoso team",
+    "g0073",
+    "sunshop group"
+  ],
+  "PittyTiger": [
+    "G0011",
+    "apt24",
+    "g0011",
+    "pitty panda",
+    "pittytiger",
+    "temp.pittytiger"
+  ],
+  "Nomadic Octopus": [
+    "G0133",
+    "dustsquad",
+    "g0133",
+    "madi",
+    "nomadic octopus"
+  ],
+  "TeamPCP": [
+    "G1056",
+    "deadcatx3",
+    "g1056",
+    "pcpcat",
+    "shadow-water-058",
+    "shellforce",
+    "teampcp",
+    "unc6780"
+  ],
+  "ShinyHunters": [
+    "G1057",
+    "bling libra",
+    "g1057",
+    "shinyhunters",
+    "unc6240"
+  ],
+  "1937CN": [
+    "1937cn"
+  ],
+  "313 Team": [
+    "313 team"
+  ],
+  "[Unnamed group]": [
+    "[unnamed group]"
+  ],
+  "[Vault 7/8]": [
+    "[vault 7 8]",
+    "[vault 7/8]"
+  ],
+  " Stealth Mango and Tangelo ": [
+    " stealth mango and tangelo "
+  ],
+  "Ababil of Minab": [
+    "ababil of minab"
+  ],
+  "Actor240524": [
+    "actor240524"
+  ],
+  "Adrastea": [
+    "adrastea"
+  ],
+  "AeroBlade": [
+    "aeroblade"
+  ],
+  "Aggressive Inventory Zombies": [
+    "aggressive inventory zombies",
+    "aiz"
+  ],
+  "ALLANITE": [
+    "allanite",
+    "palmetto fusion"
+  ],
+  "Alpha Spider": [
+    "alpha spider",
+    "alphv ransomware group"
+  ],
+  "Altahrea Team": [
+    "altahrea team"
+  ],
+  "ALTDOS": [
+    "altdos"
+  ],
+  "Altoufan Team": [
+    "altoufan team"
+  ],
+  "Amaranth-Dragon": [
+    "amaranth-dragon"
+  ],
+  "ANDROMEDA SPIDER": [
+    "andromeda spider"
+  ],
+  "Angry Likho": [
+    "angry likho",
+    "sticky werewolf"
+  ],
+  "Anonymous KSA": [
+    "anonymous ksa"
+  ],
+  "APT-C-12": [
+    "apt-c-12",
+    "blue mushroom",
+    "nuclearcrisis",
+    "sapphire mushroom"
+  ],
+  "APT-C-60": [
+    "apt-c-60",
+    "apt-q-12"
+  ],
+  "APT20": [
+    "apt20",
+    "crawling taurus",
+    "th3bug",
+    "violin panda"
+  ],
+  "APTIran": [
+    "aptiran"
+  ],
+  "Aslan Neferler Tim": [
+    "aslan neferler tim",
+    "lion soldiers team",
+    "phantom turk"
+  ],
+  "Avivore": [
+    "avivore"
+  ],
+  "AzzaSec": [
+    "azzasec"
+  ],
+  "BatShadow": [
+    "batshadow"
+  ],
+  "BelialDemon": [
+    "belialdemon",
+    "matanbuchus"
+  ],
+  "BIG PANDA": [
+    "big panda"
+  ],
+  "Blackgear": [
+    "blackgear",
+    "comnie",
+    "topgear"
+  ],
+  "BladedFeline": [
+    "bladedfeline"
+  ],
+  "Blue Termite": [
+    "blue termite",
+    "cloudy omega",
+    "emdivi"
+  ],
+  "Bohrium": [
+    "bohrium",
+    "imperial kitten",
+    "smoke sandstorm"
+  ],
+  "BOSON SPIDER": [
+    "boson spider"
+  ],
+  "BreachLaboratory": [
+    "breachlaboratory"
+  ],
+  "BRONZE SPIRAL": [
+    "bronze spiral"
+  ],
+  "Budminer": [
+    "budminer",
+    "budminer cyberespionage group"
+  ],
+  "ByteToBreach": [
+    "bytetobreach"
+  ],
+  "Calypso": [
+    "bronze medley",
+    "calypso"
+  ],
+  "Caramel Tsunami": [
+    "candiru",
+    "caramel tsunami",
+    "sourgum"
+  ],
+  "Carmine Tsunami": [
+    "carmine tsunami",
+    "dev-0196",
+    "quadream"
+  ],
+  "ChainedShark": [
+    "actor240820",
+    "chainedshark"
+  ],
+  "Chamelgang": [
+    "camofei",
+    "chamelgang"
+  ],
+  "Chaya_004": [
+    "chaya 004",
+    "chaya_004"
+  ],
+  "Chernovite": [
+    "chernovite"
+  ],
+  "CiberInteligenciaSV": [
+    "ciberinteligenciasv"
+  ],
+  "CL-STA-0048": [
+    "cl sta 0048",
+    "cl-sta-0048"
+  ],
+  "CL-STA-1009": [
+    "cl-sta-1009"
+  ],
+  "CL-STA-1087": [
+    "cl-sta-1087"
+  ],
+  "Clever Kitten": [
+    "clever kitten"
+  ],
+  "CLOCKWORK SPIDER": [
+    "clockwork spider"
+  ],
+  "CloudSorcerer": [
+    "cloudsorcerer"
+  ],
+  "COBALT JUNO": [
+    "apt-c-38 (qianxin)",
+    "cobalt juno",
+    "saber lion",
+    "tg-2884 (scwx ctu)"
+  ],
+  "COBALT KATANA": [
+    "cobalt katana",
+    "hive0081 (ibm)",
+    "hunter serpens",
+    "sectord01 (nhsc)",
+    "xhunt campaign (palo alto)"
+  ],
+  "Codefinger": [
+    "codefinger"
+  ],
+  "Coinbase Cartel": [
+    "coinbase cartel"
+  ],
+  "Confucious": [
+    "confucious"
+  ],
+  "Conquerors Electronic Army": [
+    "conquerors electronic army"
+  ],
+  "Cyber.Anarchy.Squad": [
+    "cyber anarchy squad",
+    "cyber.anarchy.squad"
+  ],
+  "Cyber Army of Russia Reborn": [
+    "cyber army of russia reborn"
+  ],
+  "Cyber Serp": [
+    "cyber serp",
+    "uac-0255"
+  ],
+  "Daixin Team": [
+    "daixin team"
+  ],
+  "Danti": [
+    "danti"
+  ],
+  "DarkRaaS": [
+    "darkraas"
+  ],
+  "Deadeye Jackal": [
+    "deadeye jackal",
+    "sea",
+    "syrianelectronicarmy"
+  ],
+  "DEV-0569": [
+    "dev-0569",
+    "storm-0569"
+  ],
+  "DEV-1028": [
+    "dev-1028"
+  ],
+  "DNSpionage": [
+    "cobalt edgewater",
+    "dnspionage"
+  ],
+  "DragonBreath": [
+    "apt-q-27,",
+    "dragonbreath",
+    "golden eye dog"
+  ],
+  "DragonSpark": [
+    "dragonspark"
+  ],
+  "Earth Berberoka": [
+    "earth berberoka",
+    "gamblingpuppet"
+  ],
+  "Earth Lamia": [
+    "earth lamia",
+    "unc5454"
+  ],
+  "Earth Yako": [
+    "earth yako",
+    "enelink",
+    "operation restylink"
+  ],
+  "ELECTRIC PANDA": [
+    "electric panda"
+  ],
+  "ExCobalt": [
+    "excobalt"
+  ],
+  "FASTCash": [
+    "fastcash"
+  ],
+  "Flash Kitten": [
+    "flash kitten"
+  ],
+  "Flax Typhoon": [
+    "ethereal panda",
+    "flax typhoon",
+    "storm-0919"
+  ],
+  "FlowerStorm": [
+    "flowerstorm"
+  ],
+  "FlyingYeti": [
+    "flying yeti",
+    "flyingyeti",
+    "storm-1837"
+  ],
+  "FrostyNeighbor": [
+    "frostyneighbor"
+  ],
+  "Fxmsp": [
+    "fxmsp"
+  ],
+  "GamaCopy": [
+    "gamacopy"
+  ],
+  "GambleForce": [
+    "gambleforce"
+  ],
+  "GC01": [
+    "gc01",
+    "gc02",
+    "golden chickens",
+    "golden chickens 01",
+    "golden chickens 02",
+    "golden chickens01",
+    "golden chickens02"
+  ],
+  "Ghost Jackal": [
+    "ghost jackal"
+  ],
+  "GhostNet": [
+    "ghostnet",
+    "snooping dragon"
+  ],
+  "GhostRedirector": [
+    "ghostr",
+    "ghostredirector"
+  ],
+  "Gitloker": [
+    "gitloker"
+  ],
+  "GOLD BURLAP": [
+    "cyborg spider",
+    "gold burlap"
+  ],
+  "GOLD REBELLION": [
+    "dark scorpius",
+    "gold rebellion",
+    "wandering spider",
+    "white dev 115"
+  ],
+  "GOLD SKYLINE": [
+    "gold skyline"
+  ],
+  "GOLD WINTER": [
+    "gold winter"
+  ],
+  "GopherWhisper": [
+    "gopherwhisper"
+  ],
+  "Gray Sandstorm": [
+    "dev-0343",
+    "gray sandstorm"
+  ],
+  "Greenbug": [
+    "greenbug"
+  ],
+  "Guacamaya": [
+    "guacamaya"
+  ],
+  "Hellsing": [
+    "hellsing"
+  ],
+  "HIVE-0145": [
+    "hive-0145",
+    "hive0145"
+  ],
+  "Hive0163": [
+    "hive0163"
+  ],
+  "Houken": [
+    "houken"
+  ],
+  "IcePeony": [
+    "icepeony"
+  ],
+  "INJ3CTOR3": [
+    "inj3ctor3"
+  ],
+  "IRLeaks": [
+    "irleaks"
+  ],
+  "ItaDuke": [
+    "darkuniverse",
+    "itaduke",
+    "sig27"
+  ],
+  "Jabaroot": [
+    "jabaroot",
+    "jabaroot dz"
+  ],
+  "JavaGhost": [
+    "javaghost"
+  ],
+  "Karakurt": [
+    "karakurt",
+    "karakurt lair"
+  ],
+  "Keymous+": [
+    "keymous",
+    "keymous plus",
+    "keymous+"
+  ],
+  "Kinsing": [
+    "kinsing",
+    "money libra"
+  ],
+  "Lamashtu": [
+    "lamashtu"
+  ],
+  "Larva-26002": [
+    "larva-26002"
+  ],
+  "Libyan Scorpions": [
+    "libyan scorpions"
+  ],
+  "Lifting Zmiy": [
+    "lifting zmiy"
+  ],
+  "LightBasin": [
+    "cl-cri-0025",
+    "lightbasin",
+    "unc1945"
+  ],
+  "Lilac Typhoon": [
+    "dev-0234",
+    "lilac typhoon"
+  ],
+  "LIMINAL PANDA": [
+    "liminal panda"
+  ],
+  "LofyGang": [
+    "lofygang"
+  ],
+  "Longhorn": [
+    "apt-c-39",
+    "lamberts",
+    "longhorn",
+    "platinum terminal",
+    "the lamberts"
+  ],
+  "Lucky Cat": [
+    "lucky cat",
+    "ta413",
+    "white dev 9"
+  ],
+  "LulzIntel": [
+    "lulzintel"
+  ],
+  "LulzSec Black": [
+    "lulzsec black"
+  ],
+  "Luna Moth": [
+    "luna moth",
+    "silent ransom",
+    "tg2729"
+  ],
+  "LUNAR SPIDER": [
+    "gold swathmore",
+    "lunar spider"
+  ],
+  "luoxk": [
+    "luoxk"
+  ],
+  "MageCart": [
+    "magecart"
+  ],
+  "Magic Kitten": [
+    "magic kitten",
+    "voyeur"
+  ],
+  "MAGNETIC SPIDER": [
+    "magnetic spider"
+  ],
+  "MalKamak": [
+    "malkamak"
+  ],
+  "MALLARD SPIDER": [
+    "gold lagoon",
+    "mallard spider"
+  ],
+  "Malsmoke": [
+    "malsmoke"
+  ],
+  "MoneyTaker": [
+    "moneytaker"
+  ],
+  "Mora_001": [
+    "mora 001",
+    "mora_001"
+  ],
+  "Moskalvzapoe": [
+    "man1",
+    "moskalvzapoe",
+    "ta511"
+  ],
+  "MUMMY SPIDER": [
+    "gold crestwood",
+    "mummy spider",
+    "ta542"
+  ],
+  "N4ughtysecTU": [
+    "n4ughtysectu"
+  ],
+  "Natohub": [
+    "natohub"
+  ],
+  "NB65": [
+    "nb65",
+    "network battalion 65"
+  ],
+  "NewsPenguin": [
+    "newspenguin"
+  ],
+  "NightEagle": [
+    "apt-q-95",
+    "nighteagle"
+  ],
+  "NOTROBIN": [
+    "notrobin"
+  ],
+  "OilAlpha": [
+    "oilalpha"
+  ],
+  "Opal Sleet": [
+    "konni",
+    "opal sleet",
+    "osmium",
+    "vedalia"
+  ],
+  "Operation Cobalt Whisper": [
+    "operation cobalt whisper"
+  ],
+  "Operation Emmental": [
+    "operation emmental",
+    "retefe gang",
+    "retefe group"
+  ],
+  "Operation Kabar Cobra": [
+    "operation kabar cobra"
+  ],
+  "Operation ShadowHammer": [
+    "operation shadowhammer"
+  ],
+  "Operation Triangulation": [
+    "operation triangulation"
+  ],
+  "OverFlame": [
+    "overflame"
+  ],
+  "PARINACOTA": [
+    "parinacota",
+    "wadhrama",
+    "wine tempest"
+  ],
+  "Pearl Sleet": [
+    "dev-0215",
+    "lawrencium",
+    "pearl sleet"
+  ],
+  "People's Cyber Army of Russia": [
+    "people's cyber army of russia"
+  ],
+  "Pickaxe": [
+    "pickaxe",
+    "prying libra"
+  ],
+  "POISONUS PANDA": [
+    "poisonus panda"
+  ],
+  "PowerPool": [
+    "iamtheking",
+    "powerpool"
+  ],
+  "ProCC": [
+    "procc"
+  ],
+  "puNK-003": [
+    "punk-003"
+  ],
+  "RaHDit": [
+    "rahdit",
+    "russian angry hackers did it"
+  ],
+  "RansomHub": [
+    "ransomhub"
+  ],
+  "Rebel Jackal": [
+    "fallagateam",
+    "rebel jackal"
+  ],
+  "Reckless Rabbit": [
+    "reckless rabbit"
+  ],
+  "Red Dev 17": [
+    "red dev 17"
+  ],
+  "Red Menshen": [
+    "earth bluecrow",
+    "red dev 18",
+    "red menshen"
+  ],
+  "Red Nue": [
+    "luoyu",
+    "red nue"
+  ],
+  "RedAlpha": [
+    "deepcliff",
+    "red dev 3",
+    "redalpha"
+  ],
+  "Redfly": [
+    "redfly"
+  ],
+  "RedJuliett": [
+    "redjuliett"
+  ],
+  "RedKitten": [
+    "redkitten"
+  ],
+  "REF5961": [
+    "ref5961"
+  ],
+  "REF7707": [
+    "cl-sta-0049",
+    "jewelbug",
+    "ref7707"
+  ],
+  "ResumeLooters": [
+    "resumelooters"
+  ],
+  "Returned Libra": [
+    "8220 mining group",
+    "returned libra"
+  ],
+  "RevengeHotels": [
+    "revengehotels"
+  ],
+  "RGB-TEAM": [
+    "rgb-team"
+  ],
+  "RipperSec": [
+    "rippersec"
+  ],
+  "Roaming Mantis": [
+    "roaming mantis",
+    "roaming mantis group"
+  ],
+  "Ruby Sleet": [
+    "cerium",
+    "ruby sleet"
+  ],
+  "RUBYCARP": [
+    "rubycarp"
+  ],
+  "RuskiNet": [
+    "ruskinet"
+  ],
+  "Ruthless Rabbit": [
+    "ruthless rabbit"
+  ],
+  "Saad Tycoon": [
+    "saad tycoon"
+  ],
+  "SALTY SPIDER": [
+    "salty spider"
+  ],
+  "Scarred Manticore": [
+    "scarred manticore"
+  ],
+  "ScreamedJungle": [
+    "screamedjungle"
+  ],
+  "Shadow-Earth-053": [
+    "shadow-earth-053"
+  ],
+  "Shahid Hemmat": [
+    "shahid hemmat"
+  ],
+  "SILKFIN AGENCY": [
+    "silkfin agency"
+  ],
+  "SkidSec": [
+    "skidsec",
+    "skidsec leaks"
+  ],
+  "SLIME29": [
+    "slime29"
+  ],
+  "SlopAds": [
+    "slopads"
+  ],
+  "SMOKY SPIDER": [
+    "smoky spider"
+  ],
+  "SmugX": [
+    "smugx"
+  ],
+  "SneakyChef": [
+    "sneakychef"
+  ],
+  "SOLAR SPIDER": [
+    "solar spider"
+  ],
+  "Solntsepek": [
+    "solntsepek"
+  ],
+  "Sp1d3r": [
+    "sp1d3r"
+  ],
+  "SPICY PANDA": [
+    "spicy panda"
+  ],
+  "Starry Addax": [
+    "starry addax"
+  ],
+  "Storm-0381": [
+    "dev-0381",
+    "storm-0381"
+  ],
+  "Storm-0473": [
+    "storm-0473",
+    "unc2849"
+  ],
+  "Storm-0494": [
+    "storm-0494"
+  ],
+  "Storm-0530": [
+    "dev-0530",
+    "h0lygh0st",
+    "storm-0530"
+  ],
+  "Storm-0835": [
+    "storm-0835"
+  ],
+  "Storm-0867": [
+    "dev-0867",
+    "storm-0867"
+  ],
+  "Storm-1084": [
+    "dev-1084",
+    "storm-1084"
+  ],
+  "Storm-1152": [
+    "storm-1152"
+  ],
+  "Storm-1175": [
+    "storm-1175"
+  ],
+  "Storm-1516": [
+    "copycop",
+    "storm-1516"
+  ],
+  "Storm-1674": [
+    "storm-1674"
+  ],
+  "Storm-1849": [
+    "storm-1849",
+    "uat4356"
+  ],
+  "Storm-2139": [
+    "storm-2139"
+  ],
+  "Storm-2372": [
+    "storm-2372"
+  ],
+  "Storm-2460": [
+    "storm-2460"
+  ],
+  "Storm-2561": [
+    "storm-2561"
+  ],
+  "Storm-2603": [
+    "storm-2603"
+  ],
+  "Storm-2657": [
+    "storm-2657"
+  ],
+  "Storm Cloud": [
+    "storm cloud"
+  ],
+  "StucxTeam": [
+    "stucxteam"
+  ],
+  "Sunglow Blizzard": [
+    "dev-0665",
+    "sunglow blizzard"
+  ],
+  "Swan Vector": [
+    "swan vector"
+  ],
+  "SWEED": [
+    "sweed"
+  ],
+  "TA2101": [
+    "dev-0216",
+    "gold village",
+    "maze team",
+    "storm-0216",
+    "ta2101",
+    "tunnel spider",
+    "twisted spider",
+    "unc2198"
+  ],
+  "TA2536": [
+    "ta2536"
+  ],
+  "TA2552": [
+    "ta2552"
+  ],
+  "TA2719": [
+    "ta2719"
+  ],
+  "TA2722": [
+    "balikbayan foxes",
+    "ta2722"
+  ],
+  "TA406": [
+    "ta406"
+  ],
+  "TA410": [
+    "ta410"
+  ],
+  "TA444": [
+    "ta444"
+  ],
+  "TA455": [
+    "ta455"
+  ],
+  "TA482": [
+    "ta482"
+  ],
+  "TA4903": [
+    "ta4903"
+  ],
+  "TA499": [
+    "lexus",
+    "ta499",
+    "vovan"
+  ],
+  "TA558": [
+    "ta558"
+  ],
+  "TA575": [
+    "ta575"
+  ],
+  "TA579": [
+    "ta579"
+  ],
+  "TA829": [
+    "ta829"
+  ],
+  "TAG-124": [
+    "landupdate808",
+    "tag-124"
+  ],
+  "TAG-56": [
+    "tag-56"
+  ],
+  "Team46": [
+    "taxoff",
+    "team46"
+  ],
+  "TeamSpy Crew": [
+    "anger bear",
+    "iron lyric",
+    "team bear",
+    "teamspy",
+    "teamspy crew"
+  ],
+  "Teleboyi": [
+    "teleboyi"
+  ],
+  "Threat Actor 888": [
+    "threat actor 888"
+  ],
+  "Threatsec": [
+    "threatsec"
+  ],
+  "TIDRONE": [
+    "earth ammit",
+    "tidrone",
+    "venom"
+  ],
+  "Anonymous64": [
+    "anonymous 64",
+    "anonymous64"
+  ],
+  "Anonymous Sudan": [
+    "anonymous sudan"
+  ],
+  "ANTHROPOID SPIDER": [
+    "anthropoid spider",
+    "cobaltgoblin",
+    "empire monkey"
+  ],
+  "Antlion": [
+    "antlion"
+  ],
+  "AppMilad": [
+    "appmilad"
+  ],
+  "APT-C-27": [
+    "apt-c-27",
+    "atk80",
+    "golden rat",
+    "goldmouse"
+  ],
+  "APT-C-34": [
+    "apt-c-34",
+    "golden falcon"
+  ],
+  "APT.3102": [
+    "apt.3102"
+  ],
+  "APT14": [
+    "aluminum",
+    "anchor panda",
+    "apt14",
+    "qazteam"
+  ],
+  "APT21": [
+    "apt21",
+    "hammer panda",
+    "nettraveler",
+    "temp.zhenbao"
+  ],
+  "APT26": [
+    "apt26",
+    "bronze express",
+    "jerseymikes",
+    "taffeta typhoon",
+    "technetium",
+    "turbine panda"
+  ],
+  "APT45": [
+    "apt45"
+  ],
+  "APT6": [
+    "1.php group",
+    "apt6"
+  ],
+  "APT73": [
+    "apt73",
+    "eraleig"
+  ],
+  "APT9": [
+    "apt9",
+    "nightshade panda",
+    "red pegasus"
+  ],
+  "ArcaneDoor": [
+    "arcanedoor"
+  ],
+  "Asnarök": [
+    "asnarök",
+    "personal panda"
+  ],
+  "AtlasCross": [
+    "atlascross"
+  ],
+  "Attor": [
+    "attor"
+  ],
+  "Awaken Likho": [
+    "awaken likho",
+    "core werewolf"
+  ],
+  "Ayyıldız Tim": [
+    "ayyıldız tim",
+    "crescent and star"
+  ],
+  "BadRory": [
+    "badrory"
+  ],
+  "BAMBOO SPIDER": [
+    "bamboo spider"
+  ],
+  "BazarCall": [
+    "bazacall",
+    "bazarcall",
+    "bazzarcall"
+  ],
+  "Bearlyfy": [
+    "bearlyfy",
+    "labubu"
+  ],
+  "Belsen Group": [
+    "belsen group"
+  ],
+  "BiBiGun": [
+    "bibigun"
+  ],
+  "Bignosa": [
+    "bignosa"
+  ],
+  "BITWISE SPIDER": [
+    "bitwise spider"
+  ],
+  "Blackatom": [
+    "blackatom"
+  ],
+  "DOPPEL SPIDER": [
+    "doppel spider",
+    "gold heron"
+  ],
+  "Dragonbridge": [
+    "dragonbridge",
+    "spamouflage dragon"
+  ],
+  "DragonForce": [
+    "dragonforce"
+  ],
+  "DragonRank": [
+    "dragonrank"
+  ],
+  "DriftingCloud": [
+    "driftingcloud"
+  ],
+  "DUNGEON SPIDER": [
+    "dungeon spider"
+  ],
+  "Earth Alux": [
+    "earth alux"
+  ],
+  "Earth Baxia": [
+    "earth baxia"
+  ],
+  "Earth Estries": [
+    "earth estries"
+  ],
+  "Earth Freybug": [
+    "earth freybug"
+  ],
+  "Earth Kitsune": [
+    "earth kitsune"
+  ],
+  "Earth Krahang": [
+    "earth krahang"
+  ],
+  "Earth Kurma": [
+    "earth kurma"
+  ],
+  "Earth Longzhi": [
+    "earth longzhi",
+    "snakecharmer"
+  ],
+  "Earth Naga": [
+    "earth naga"
+  ],
+  "Earth Wendigo": [
+    "earth wendigo"
+  ],
+  "EC2 Grouper": [
+    "ec2 grouper"
+  ],
+  "Edalat-e Ali": [
+    "edalat-e ali"
+  ],
+  "Educated Manticore": [
+    "educated manticore"
+  ],
+  "ELOQUENT PANDA": [
+    "eloquent panda"
+  ],
+  "ELUSIVE COMET": [
+    "elusive comet"
+  ],
+  "Evilbyte": [
+    "evilbyte"
+  ],
+  "EvilPost": [
+    "evilpost"
+  ],
+  "EvilTraffic": [
+    "eviltraffic",
+    "operation eviltraffic"
+  ],
+  "EvilWeb": [
+    "evilweb"
+  ],
+  "Femwar02": [
+    "femwar02"
+  ],
+  "Fishing Elephant": [
+    "fishing elephant",
+    "outrider tiger"
+  ],
+  "FishMedley": [
+    "fishmedley"
+  ],
+  "FOXY PANDA": [
+    "foxy panda"
+  ],
+  "FunkSec": [
+    "funksec"
+  ],
+  "FusionCore": [
+    "fusioncore"
+  ],
+  "GhostSec": [
+    "ghost security",
+    "ghostsec"
+  ],
+  "GOBLIN PANDA": [
+    "conimes",
+    "cycldek",
+    "goblin panda"
+  ],
+  "GOFFEE": [
+    "goffee"
+  ],
+  "GOLD DUPONT": [
+    "gold dupont",
+    "sprite spider"
+  ],
+  "GOLD EVERGREEN": [
+    "gold evergreen"
+  ],
+  "GOLD FAIRFAX": [
+    "gold fairfax"
+  ],
+  "GOLD FLANDERS": [
+    "gold flanders"
+  ],
+  "GOLD GALLEON": [
+    "gold galleon"
+  ],
+  "GOLD GARDEN": [
+    "gold garden"
+  ],
+  "GOLD MANSARD": [
+    "gold mansard"
+  ],
+  "GOLD NORTHFIELD": [
+    "gold northfield"
+  ],
+  "GOLD RIVERVIEW": [
+    "gold riverview"
+  ],
+  "Massgrave": [
+    "massgrave"
+  ],
+  "MIMIC SPIDER": [
+    "mimic spider"
+  ],
+  "Mirage Tiger": [
+    "mirage tiger"
+  ],
+  "Mocha Manakin": [
+    "mocha manakin"
+  ],
+  "ModifiedElephant": [
+    "modifiedelephant"
+  ],
+  "Mogilevich": [
+    "mogilevich"
+  ],
+  "MORH4x": [
+    "morh4x"
+  ],
+  "Moshen Dragon": [
+    "moshen dragon"
+  ],
+  "Mythic Likho": [
+    "arcane werewolf",
+    "mythic likho"
+  ],
+  "Nam3L3ss": [
+    "nam3l3ss"
+  ],
+  "NARWHAL SPIDER": [
+    "gold essex",
+    "narwhal spider",
+    "storm-0302",
+    "ta544"
+  ],
+  "Nazar": [
+    "nazar",
+    "sig37"
+  ],
+  "Nexus Zeta": [
+    "nexus zeta"
+  ],
+  "Nickel Alley": [
+    "nickel alley"
+  ],
+  "Nitro": [
+    "covert grove",
+    "nitro"
+  ],
+  "NOCTURNAL SPIDER": [
+    "nocturnal spider"
+  ],
+  "NOMAD PANDA": [
+    "nomad panda"
+  ],
+  "NoName057(16)": [
+    "05716nnm",
+    "nnm05716",
+    "noname057",
+    "noname057(16)",
+    "noname05716"
+  ],
+  "Nullbulge": [
+    "nullbulge"
+  ],
+  "NyxarGroup": [
+    "nyxargroup"
+  ],
+  "OldGremlin": [
+    "oldgremlin"
+  ],
+  "OnionDog": [
+    "oniondog"
+  ],
+  "Operation BugDrop": [
+    "operation bugdrop"
+  ],
+  "Operation ForumTroll": [
+    "operation forumtroll"
+  ],
+  "Operation Poison Needles": [
+    "operation poison needles"
+  ],
+  "Operation Shadow Force": [
+    "larva-24013",
+    "operation shadow force",
+    "ta-shadowcricket"
+  ],
+  "Operation Sharpshooter": [
+    "operation sharpshooter"
+  ],
+  "Operation WizardOpium": [
+    "operation wizardopium"
+  ],
+  "OurMine": [
+    "ourmine"
+  ],
+  "OUTLAW SPIDER": [
+    "outlaw spider"
+  ],
+  "OVERLORD SPIDER": [
+    "overlord spider"
+  ],
+  "Pacha Group": [
+    "pacha group"
+  ],
+  "Packrat": [
+    "packrat"
+  ],
+  "PALE PANDA": [
+    "pale panda"
+  ],
+  "PerSwaysion": [
+    "perswaysion"
+  ],
+  "PhantomControl": [
+    "phantomcontrol"
+  ],
+  "Phlox Tempest": [
+    "dev-0796",
+    "phlox tempest"
+  ],
+  "PlushDaemon": [
+    "plushdaemon"
+  ],
+  "POISON CARP": [
+    "earth empusa",
+    "evil eye",
+    "poison carp",
+    "red dev 16"
+  ],
+  "PoisonSeed": [
+    "poisonseed"
+  ],
+  "PREDATOR PANDA": [
+    "predator panda"
+  ],
+  "Predatory Sparrow": [
+    "gonjeshke darande",
+    "indra",
+    "predatory sparrow"
+  ],
+  "Prolific Puma": [
+    "prolific puma"
+  ],
+  "Prophet Spider": [
+    "gold melody",
+    "prophet spider",
+    "unc961"
+  ],
+  "Storm-0829": [
+    "dev-0829",
+    "nwgen team",
+    "storm-0829"
+  ],
+  "Storm-0940": [
+    "covertnetwork-1658",
+    "orb07",
+    "storm-0940"
+  ],
+  "Storm-1044": [
+    "dev-1044",
+    "storm-1044"
+  ],
+  "Storm-1099": [
+    "storm-1099"
+  ],
+  "Storm-1101": [
+    "dev-1101",
+    "storm-1101"
+  ],
+  "Storm-1113": [
+    "apothecary spider",
+    "storm-1113"
+  ],
+  "Storm-1133": [
+    "storm-1133"
+  ],
+  "Storm-1167": [
+    "dev-1167",
+    "storm-1167"
+  ],
+  "Storm-1283": [
+    "storm-1283"
+  ],
+  "Storm-1286": [
+    "storm-1286"
+  ],
+  "Storm-1295": [
+    "dev-1295",
+    "storm-1295"
+  ],
+  "Storm-1575": [
+    "storm-1575"
+  ],
+  "Storm-1977": [
+    "storm-1977"
+  ],
+  "Storm-2077": [
+    "rednovember",
+    "storm-2077",
+    "tag-100"
+  ],
+  "SYLHET GANG-SG": [
+    "sylhet gang-sg"
+  ],
+  "TA2723": [
+    "ta2723"
+  ],
+  "TA2725": [
+    "ta2725"
+  ],
+  "TA402": [
+    "ta402"
+  ],
+  "TA428": [
+    "bronze dudley",
+    "colourful panda",
+    "ta428"
+  ],
+  "TA516": [
+    "ta516"
+  ],
+  "TA530": [
+    "ta530"
+  ],
+  "TA547": [
+    "ta547"
+  ],
+  "TA554": [
+    "ta554",
+    "th-163"
+  ],
+  "TA555": [
+    "ta555"
+  ],
+  "TA570": [
+    "dev-0450",
+    "ta570"
+  ],
+  "TA584": [
+    "storm-0900",
+    "ta584"
+  ],
+  "TA800": [
+    "ta800"
+  ],
+  "TA866": [
+    "ta866"
+  ],
+  "TAG-112": [
+    "tag-112"
+  ],
+  "TAG-140": [
+    "tag-140"
+  ],
+  "TaskMasters": [
+    "bluetraveller",
+    "taskmasters"
+  ],
+  "TEMP.Hermit": [
+    "temp.hermit"
+  ],
+  "TEMP_Heretic": [
+    "temp heretic",
+    "temp_heretic"
+  ],
+  "TempTick": [
+    "temptick"
+  ],
+  "TERBIUM": [
+    "terbium"
+  ],
+  "TEST PANDA": [
+    "test panda"
+  ],
+  "TetrisPhantom": [
+    "tetrisphantom"
+  ],
+  "The Big Bang": [
+    "the big bang"
+  ],
+  "The Gentlemen": [
+    "the gentlemen"
+  ],
+  "The Shadow Brokers": [
+    "shadow brokers",
+    "shadowbrokers",
+    "the shadow brokers",
+    "the shadowbrokers"
+  ],
+  "TianWu": [
+    "tianwu"
+  ],
+  "TINY SPIDER": [
+    "tiny spider"
+  ],
+  "TOXCAR CYBER TEAM": [
+    "toxcar cyber team"
+  ],
+  "TOXIC PANDA": [
+    "toxic panda"
+  ],
+  "TRACER KITTEN": [
+    "tracer kitten"
+  ],
+  "TraderTraitor": [
+    "jade sleet",
+    "pukchong",
+    "tradertraitor",
+    "unc4899"
+  ],
+  "TRAVELING SPIDER": [
+    "traveling spider"
+  ],
+  "TridentLocker": [
+    "tridentlocker"
+  ],
+  "TRIPLESTRENGTH": [
+    "triplestrength"
+  ],
+  "UNC6485": [
+    "unc6485"
+  ],
+  "UNC6692": [
+    "unc6692"
+  ],
+  "UNC6748": [
+    "unc6748"
+  ],
+  "Unfading Sea Haze": [
+    "unfading sea haze"
+  ],
+  "UNG0002": [
+    "ung0002"
+  ],
+  "UNG0901": [
+    "operation cargotalon",
+    "ung0901",
+    "unknown-group-901"
+  ],
+  "UNION PANDA": [
+    "union panda"
+  ],
+  "UNION SPIDER": [
+    "union spider"
+  ],
+  "Unit 8200": [
+    "duqu group",
+    "unit 8200"
+  ],
+  "UNK_AcademicFlare": [
+    "unk academicflare",
+    "unk_academicflare"
+  ],
+  "UNK_DropPitch": [
+    "unk droppitch",
+    "unk_droppitch"
+  ],
+  "UNK_FistBump": [
+    "unk fistbump",
+    "unk_fistbump"
+  ],
+  "UNK_RemoteRogue": [
+    "unk remoterogue",
+    "unk_remoterogue"
+  ],
+  "UnsolicitedBooker": [
+    "unsolicitedbooker"
+  ],
+  "Urpage": [
+    "urpage"
+  ],
+  "USDoD": [
+    "usdod"
+  ],
+  "UserSec": [
+    "usersec"
+  ],
+  "UTA0388": [
+    "uta0388"
+  ],
+  "UTG-Q-008": [
+    "utg-q-008"
+  ],
+  "UTG-Q-010": [
+    "utg-q-010"
+  ],
+  "Vanilla Tempest": [
+    "dev-0832",
+    "vanilla tempest",
+    "vice society"
+  ],
+  "Velvet Tempest": [
+    "dev-0504",
+    "velvet tempest"
+  ],
+  "VENOM SPIDER": [
+    "badbullz",
+    "badbullzvenom",
+    "venom spider"
+  ],
+  "VICE SPIDER": [
+    "vice spider"
+  ],
+  "ViceLeaker": [
+    "viceleaker"
+  ],
+  "Vicious Panda": [
+    "sixlittlemonkeys",
+    "vicious panda"
+  ],
+  "ViciousTrap": [
+    "vicioustrap"
+  ],
+  "Viking Jackal": [
+    "viking jackal",
+    "vikingdom"
+  ],
+  "VIKING SPIDER": [
+    "viking spider"
+  ],
+  "Void Arachne": [
+    "silver fox",
+    "void arachne"
+  ],
+  "Void Balaur": [
+    "void balaur"
+  ],
+  "Void Banshee": [
+    "void banshee"
+  ],
+  "Void Blizzard": [
+    "laundry bear",
+    "uac-0190",
+    "void blizzard"
+  ],
+  "Void Rabisu": [
+    "tropical scorpius",
+    "void rabisu"
+  ],
+  "VulzSecTeam": [
+    "vulzsec",
+    "vulzsecteam"
+  ],
+  "WARP PANDA": [
+    "warp panda"
+  ],
+  "Wassonite": [
+    "wassonite"
+  ],
+  "Watchdog": [
+    "thief libra",
+    "watchdog"
+  ],
+  "Water Bakunawa": [
+    "water bakunawa"
+  ],
+  "Water Barghest": [
+    "water barghest"
+  ],
+  "Water Curupira": [
+    "water curupira"
+  ],
+  "Water Gamayun": [
+    "water gamayun"
+  ],
+  "Water Saci": [
+    "water saci"
+  ],
+  "Webworm": [
+    "space pirates",
+    "webworm"
+  ],
+  "WeedSec": [
+    "weedsec"
+  ],
+  "WeRedEvils": [
+    "weredevils"
+  ],
+  "WET PANDA": [
+    "red chimera",
+    "wet panda"
+  ],
+  "White Bear": [
+    "skipper turla",
+    "white bear"
+  ],
+  "WhiteCobra": [
+    "whitecobra"
+  ],
+  "WildCard": [
+    "wildcard"
+  ],
+  "WildPressure": [
+    "wildpressure"
+  ],
+  "WIP19": [
+    "wip19"
+  ],
+  "BlackJack": [
+    "blackjack"
+  ],
+  "Blackmeta": [
+    "blackmeta",
+    "sn blackmeta"
+  ],
+  "Blacktail": [
+    "blacktail"
+  ],
+  "Blackwood": [
+    "blackwood"
+  ],
+  "BladeHawk": [
+    "bladehawk"
+  ],
+  "Blue Tsunami": [
+    "black cube",
+    "blue tsunami"
+  ],
+  "BlueBottle": [
+    "bluebottle"
+  ],
+  "BlueHornet": [
+    "againstthewest",
+    "apt49",
+    "bluehornet"
+  ],
+  "Bondnet": [
+    "bondnet"
+  ],
+  "Boolka": [
+    "boolka"
+  ],
+  "BOSS SPIDER": [
+    "boss spider",
+    "gold lowell"
+  ],
+  "Boulder Bear": [
+    "boulder bear"
+  ],
+  "BrazenBamboo": [
+    "brazenbamboo"
+  ],
+  "BRONZE EDGEWOOD": [
+    "bronze edgewood",
+    "red hariasa"
+  ],
+  "BRONZE SPRING": [
+    "bronze spring",
+    "unc302"
+  ],
+  "BRONZE VAPOR": [
+    "bronze vapor"
+  ],
+  "BuhTrap": [
+    "buhtrap"
+  ],
+  "Cadelle": [
+    "cadelle"
+  ],
+  "Caliente Bandits": [
+    "caliente bandits",
+    "ta2721"
+  ],
+  "Caracal Kitten": [
+    "apt-q-58",
+    "caracal kitten"
+  ],
+  "Carderbee": [
+    "carderbee"
+  ],
+  "CardinalLizard": [
+    "cardinallizard"
+  ],
+  "Careto": [
+    "careto",
+    "the mask",
+    "ugly face"
+  ],
+  "CashRewindo": [
+    "cashrewindo"
+  ],
+  "CeranaKeeper": [
+    "ceranakeeper"
+  ],
+  "CIRCUS SPIDER": [
+    "circus spider"
+  ],
+  "CL-STA-0043": [
+    "cl-sta-0043",
+    "tgr-sta-0043"
+  ],
+  "Cold River": [
+    "cold river",
+    "nahr el bared",
+    "nahr elbard"
+  ],
+  "ComicForm": [
+    "comicform"
+  ],
+  "Common Raven": [
+    "common raven",
+    "desktop-group",
+    "nxsms",
+    "opera1er"
+  ],
+  "Copy-Paste": [
+    "copy-paste"
+  ],
+  "CoralRaider": [
+    "coralraider"
+  ],
+  "Corsair Jackal": [
+    "corsair jackal",
+    "tunisiancyberarmy"
+  ],
+  "Cosmic Lynx": [
+    "cosmic lynx"
+  ],
+  "CosmicBeetle": [
+    "cosmicbeetle"
+  ],
+  "Cotton Sandstorm": [
+    "cotton sandstorm",
+    "emennet pasargad",
+    "haywire kitten",
+    "holy souls",
+    "marnanbridge",
+    "neptunium"
+  ],
+  "CoughingDown": [
+    "coughingdown"
+  ],
+  "Crimson Collective": [
+    "crimson collective"
+  ],
+  "CryptoChameleon": [
+    "cryptochameleon",
+    "unc5356"
+  ],
+  "CRYSTALRAY": [
+    "crystalray"
+  ],
+  "Curious Gorge": [
+    "curious gorge",
+    "unc3742"
+  ],
+  "Curly COMrades": [
+    "curly comrades"
+  ],
+  "Cutting Kitten": [
+    "cutting kitten",
+    "itsecteam"
+  ],
+  "Cyber Alliance": [
+    "cyber alliance"
+  ],
+  "Cyber Av3ngers": [
+    "cyber av3ngers"
+  ],
+  "Cyber Berkut": [
+    "cyber berkut"
+  ],
+  "Cyber Caliphate Army": [
+    "cyber caliphate army",
+    "cybercaliphate",
+    "islamic state hacking division",
+    "united cyber caliphate",
+    "uuc"
+  ],
+  "Cyber fighters of Izz Ad-Din Al Qassam": [
+    "cyber fighters of izz ad-din al qassam",
+    "fraternal jackal"
+  ],
+  "Cyber Islamic Resistance": [
+    "cyber islamic resistance"
+  ],
+  "Cyber Partisans": [
+    "cyber partisans"
+  ],
+  "Cyber Toufan": [
+    "cyber toufan"
+  ],
+  "Kasablanka": [
+    "kasablanka"
+  ],
+  "Kazu": [
+    "kazu"
+  ],
+  "Keksec": [
+    "keksec"
+  ],
+  "KelvinSecurity": [
+    "kelvinsecurity"
+  ],
+  "Kiss-a-Dog": [
+    "kiss-a-dog"
+  ],
+  "KromSec": [
+    "kromsec"
+  ],
+  "Krybit": [
+    "krybit"
+  ],
+  "LabHost": [
+    "labhost"
+  ],
+  "Lancefly": [
+    "lancefly"
+  ],
+  "Larva-208": [
+    "encrypthub",
+    "larva-208"
+  ],
+  "Larva-24005": [
+    "larva-24005"
+  ],
+  "Larva-24010": [
+    "larva-24010"
+  ],
+  "Larva‑25012": [
+    "larva‑25012"
+  ],
+  "LilacSquid": [
+    "lilacsquid"
+  ],
+  "LinkC Pub": [
+    "linkc",
+    "linkc pub"
+  ],
+  "Mr_Rot13": [
+    "mr rot13",
+    "mr_rot13"
+  ],
+  "MurenShark": [
+    "actor210426",
+    "murenshark"
+  ],
+  "NetRunnerPR": [
+    "netrunnerpr"
+  ],
+  "Operation Comando": [
+    "operation comando"
+  ],
+  "Operation DRBControl": [
+    "operation drbcontrol"
+  ],
+  "Operation Ghoul": [
+    "operation ghoul"
+  ],
+  "Operation Parliament": [
+    "operation parliament"
+  ],
+  "Operation Red Signature": [
+    "operation red signature"
+  ],
+  "PassCV": [
+    "passcv"
+  ],
+  "Patched Lightning": [
+    "patched lightning",
+    "storm-0113"
+  ],
+  "PayTool": [
+    "paytool"
+  ],
+  "PIZZO SPIDER": [
+    "ambiorx",
+    "dd4bc",
+    "pizzo spider"
+  ],
+  "PurpleHaze": [
+    "purplehaze"
+  ],
+  "R00tK1T": [
+    "r00tk1t"
+  ],
+  "RansomHouse": [
+    "ransomhouse"
+  ],
+  "RATPAK SPIDER": [
+    "ratpak spider"
+  ],
+  "Red-Lili": [
+    "red-lili"
+  ],
+  "Red Charon": [
+    "red charon"
+  ],
+  "RedGolf": [
+    "redgolf"
+  ],
+  "RedStinger": [
+    "bad magic",
+    "redstinger"
+  ],
+  "REF2924": [
+    "ref2924"
+  ],
+  "RIDDLE SPIDER": [
+    "riddle spider"
+  ],
+  "Roaming Tiger": [
+    "bronze woodland",
+    "roaming tiger",
+    "rotten tomato"
+  ],
+  "SABRE PANDA": [
+    "sabre panda"
+  ],
+  "SAMBASPIDER": [
+    "sambaspider"
+  ],
+  "SandCat": [
+    "sandcat"
+  ],
+  "Sandman APT": [
+    "sandman apt"
+  ],
+  "Sands Casino": [
+    "sands casino"
+  ],
+  "Sath-ı Müdafaa": [
+    "sath-ı müdafaa"
+  ],
+  "ScamClub": [
+    "scamclub"
+  ],
+  "Scarab": [
+    "scarab"
+  ],
+  "SCARLETEEL": [
+    "scarleteel"
+  ],
+  "UAC-0050": [
+    "uac-0050"
+  ],
+  "UAC-0063": [
+    "uac-0063"
+  ],
+  "UAC-0094": [
+    "uac-0094"
+  ],
+  "UAC-0099": [
+    "uac-0099"
+  ],
+  "UAC-0154": [
+    "uac-0154"
+  ],
+  "UAC-0184": [
+    "uac-0184"
+  ],
+  "UAC-0185": [
+    "uac-0185",
+    "unc4221"
+  ],
+  "UAC-0194": [
+    "uac-0194"
+  ],
+  "UAC-0215": [
+    "uac-0215"
+  ],
+  "UAC-0219": [
+    "uac-0219"
+  ],
+  "UAC-0226": [
+    "uac-0226"
+  ],
+  "UAC-0227": [
+    "uac-0227"
+  ],
+  "UAC-0239": [
+    "uac-0239"
+  ],
+  "UAC-0241": [
+    "uac-0241"
+  ],
+  "UAC-0245": [
+    "uac-0245"
+  ],
+  "UAT-7237": [
+    "uat-7237"
+  ],
+  "UAT-8099": [
+    "uat-8099"
+  ],
+  "UAT-8302": [
+    "uat-8302"
+  ],
+  "UAT-8616": [
+    "uat-8616"
+  ],
+  "UAT-8837": [
+    "uat-8837"
+  ],
+  "UAT-9244": [
+    "uat-9244"
+  ],
+  "UAT-9686": [
+    "uat-9686"
+  ],
+  "UAT-9921": [
+    "uat-9921",
+    "voidlink operator"
+  ],
+  "Ukrainian Cyber Alliance": [
+    "uca",
+    "ukrainian cyber alliance"
+  ],
+  "UNC1549": [
+    "nimbus manticore",
+    "unc1549"
+  ],
+  "UNC1860": [
+    "unc1860"
+  ],
+  "UNC215": [
+    "unc215"
+  ],
+  "UNC2447": [
+    "unc2447"
+  ],
+  "UNC2465": [
+    "unc2465"
+  ],
+  "UNC2565": [
+    "hive0127",
+    "unc2565"
+  ],
+  "UNC2659": [
+    "unc2659"
+  ],
+  "UNC2717": [
+    "unc2717"
+  ],
+  "UNC2814": [
+    "unc2814"
+  ],
+  "UNC2970": [
+    "unc2970"
+  ],
+  "UNC3890": [
+    "unc3890"
+  ],
+  "UNC3973": [
+    "unc3973"
+  ],
+  "UNC4191": [
+    "unc4191"
+  ],
+  "UNC4990": [
+    "unc4990"
+  ],
+  "UNC5174": [
+    "unc5174",
+    "uteus"
+  ],
+  "UNC5330": [
+    "unc5330"
+  ],
+  "UNC5337": [
+    "unc5337"
+  ],
+  "UNC5342": [
+    "unc5342"
+  ],
+  "UNC5820": [
+    "unc5820"
+  ],
+  "UNC6032": [
+    "unc6032"
+  ],
+  "UNC6040": [
+    "unc6040"
+  ],
+  "UNC6148": [
+    "unc6148"
+  ],
+  "UNC6201": [
+    "unc6201"
+  ],
+  "UNC6293": [
+    "unc6293"
+  ],
+  "UNC6353": [
+    "unc6353"
+  ],
+  "UNC6395": [
+    "unc6395"
+  ],
+  "UNC6426": [
+    "unc6426"
+  ],
+  "UNC6619": [
+    "shadow campaigns",
+    "tgr-sta-1030",
+    "unc6619"
+  ],
+  "UNC6671": [
+    "unc6671"
+  ],
+  "CyberNiggers": [
+    "cyberniggers"
+  ],
+  "Dalbit": [
+    "dalbit"
+  ],
+  "Dancing Salome": [
+    "dancing salome"
+  ],
+  "DangerousSavanna": [
+    "dangeroussavanna"
+  ],
+  "Dark Basin": [
+    "dark basin"
+  ],
+  "DarkCasino": [
+    "darkcasino"
+  ],
+  "DarkGaboon": [
+    "darkgaboon",
+    "room155",
+    "vengeful wolf"
+  ],
+  "DarkPink": [
+    "darkpink",
+    "saaiwc"
+  ],
+  "DarkSpectre": [
+    "darkspectre"
+  ],
+  "DefrayX": [
+    "defrayx",
+    "hive0091"
+  ],
+  "Denim Tsunami": [
+    "denim tsunami",
+    "dsirf",
+    "knotweed"
+  ],
+  "Desorden Group": [
+    "desorden group"
+  ],
+  "DEV-0147": [
+    "dev-0147"
+  ],
+  "DEV-0270": [
+    "dev-0270",
+    "nemesis kitten",
+    "storm-0270"
+  ],
+  "DEV-0928": [
+    "dev-0928"
+  ],
+  "DEXTOROUS SPIDER": [
+    "dextorous spider"
+  ],
+  "DiceyF": [
+    "diceyf"
+  ],
+  "DieNet": [
+    "dienet",
+    "shiite_harvest"
+  ],
+  "DIZZY PANDA": [
+    "dizzy panda",
+    "ladyboyle"
+  ],
+  "Domestic Kitten": [
+    "apt-c-50",
+    "bouncing golf",
+    "domestic kitten"
+  ],
+  "Fail0verflow": [
+    "fail0verflow",
+    "team twiizer"
+  ],
+  "Ghostwriter": [
+    "dev-0257",
+    "ghostwriter",
+    "pushcha",
+    "storm-0257",
+    "ta445",
+    "uac-0057",
+    "unc1151"
+  ],
+  "GIBBERISH PANDA": [
+    "gibberish panda"
+  ],
+  "Gnosticplayers": [
+    "gnosticplayers"
+  ],
+  "GOLD SYMPHONY": [
+    "gold symphony"
+  ],
+  "GOLD WATERFALL": [
+    "gold waterfall"
+  ],
+  "GoldenJackal": [
+    "goldenjackal"
+  ],
+  "GoldFactory": [
+    "goldfactory"
+  ],
+  "Gorilla": [
+    "gorilla"
+  ],
+  "GozNym": [
+    "goznym"
+  ],
+  "GrayBravo": [
+    "graybravo",
+    "tag-150"
+  ],
+  "GrayCharlie": [
+    "graycharlie"
+  ],
+  "Grayling": [
+    "grayling"
+  ],
+  "GreedyBear": [
+    "greedybear"
+  ],
+  "GreenSpot": [
+    "apt-q-20",
+    "greenspot",
+    "poisonvine"
+  ],
+  "GreyEnergy": [
+    "greyenergy"
+  ],
+  "Groundbait": [
+    "groundbait"
+  ],
+  "GTFire": [
+    "gtfire"
+  ],
+  "GTG-1002": [
+    "gtg-1002"
+  ],
+  "GURU SPIDER": [
+    "guru spider"
+  ],
+  "Hacking Team": [
+    "hacking team"
+  ],
+  "Hagga": [
+    "aggah",
+    "hagga",
+    "th-157"
+  ],
+  "Handala": [
+    "handala"
+  ],
+  "Head Mare": [
+    "head mare"
+  ],
+  "HellHounds": [
+    "hellhounds"
+  ],
+  "HenBox": [
+    "henbox"
+  ],
+  "HexagonalRodent": [
+    "hexagonalrodent"
+  ],
+  "Hezb": [
+    "hezb",
+    "mimo"
+  ],
+  "Storm-1679": [
+    "storm-1679"
+  ],
+  "TA571": [
+    "ta571"
+  ],
+  "TAG-28": [
+    "tag-28"
+  ],
+  "Team-Xecuter": [
+    "team-xecuter"
+  ],
+  "TeamXRat": [
+    "corporacaoxrat",
+    "corporationxrat",
+    "teamxrat"
+  ],
+  "Tstark": [
+    "tstark"
+  ],
+  "TunnelSnake": [
+    "tunnelsnake"
+  ],
+  "TurkHackTeam": [
+    "turk hack team",
+    "turkhackteam"
+  ],
+  "TwoSail Junk": [
+    "operation poisoned news",
+    "twosail junk"
+  ],
+  "UAC-0006": [
+    "uac-0006"
+  ],
+  "UAC-0020": [
+    "sicksync",
+    "uac-0020",
+    "vermin"
+  ],
+  "UAC-0102": [
+    "uac-0102"
+  ],
+  "UAC-0118": [
+    "fromrussiawithlove",
+    "frwl",
+    "uac-0118"
+  ],
+  "UAC-0149": [
+    "uac-0149"
+  ],
+  "UAT-10362": [
+    "uat-10362"
+  ],
+  "UAT-10608": [
+    "uat-10608"
+  ],
+  "UAT-5394": [
+    "uat-5394"
+  ],
+  "UAT-5918": [
+    "uat-5918"
+  ],
+  "UAT-6382": [
+    "uat-6382"
+  ],
+  "UNC3569": [
+    "unc3569"
+  ],
+  "UNC4487": [
+    "unc4487"
+  ],
+  "UNC4536": [
+    "unc4536"
+  ],
+  "UNC4540": [
+    "unc4540"
+  ],
+  "UNC4841": [
+    "slime57",
+    "unc4841"
+  ],
+  "UNC5266": [
+    "unc5266"
+  ],
+  "UNC5291": [
+    "unc5291"
+  ],
+  "UNC5325": [
+    "unc5325"
+  ],
+  "UNC5537": [
+    "unc5537"
+  ],
+  "UNC6691": [
+    "unc6691"
+  ],
+  "UNK_SparkyCarp": [
+    "unk sparkycarp",
+    "unk_sparkycarp"
+  ],
+  "Unnamed Actor": [
+    "unnamed actor"
+  ],
+  "UTA0178": [
+    "red dev 61",
+    "unc5221",
+    "uta0178"
+  ],
+  "UTA0218": [
+    "uta0218"
+  ],
+  "UTA0352": [
+    "uta0352"
+  ],
+  "UTA0355": [
+    "uta0355"
+  ],
+  "Water Kurita": [
+    "water kurita"
+  ],
+  "Water Labbu": [
+    "water labbu"
+  ],
+  "Water Makara": [
+    "water makara"
+  ],
+  "Water Orthrus": [
+    "water orthrus"
+  ],
+  "Water Sigbin": [
+    "8220 gang",
+    "water sigbin"
+  ],
+  "WildNeutron": [
+    "butterfly",
+    "morpho",
+    "sphinx moth",
+    "wildneutron"
+  ],
+  "Witchetty": [
+    "lookingfrog",
+    "witchetty"
+  ],
+  "Worok": [
+    "worok"
+  ],
+  "XakNet": [
+    "uac-0100",
+    "uac-0106",
+    "xaknet"
+  ],
+  "Xcatze": [
+    "xcatze"
+  ],
+  "XDSpy": [
+    "xdspy"
+  ],
+  "Xiaoqiying": [
+    "genesis day",
+    "teng snake",
+    "xiaoqiying"
+  ],
+  "XinXin": [
+    "black technology",
+    "changqixinyun",
+    "xinxin"
+  ],
+  "Yanbian Gang": [
+    "yanbian gang"
+  ],
+  "YoroTrooper": [
+    "cavalry werewolf",
+    "comrade saiga",
+    "salted earth",
+    "shadowsilk",
+    "silent lynx",
+    "sturgeon fisher",
+    "sturgeonphisher",
+    "yorotrooper"
+  ],
+  "Z-Pentest Alliance": [
+    "z-pentest",
+    "z-pentest alliance"
+  ],
+  "Zarya": [
+    "uac-0109",
+    "zarya"
+  ],
+  "ZeroSevenGroup": [
+    "zerosevengroup"
+  ],
+  "HiddenArt": [
+    "hiddenart"
+  ],
+  "HikkI-Chan": [
+    "hikki-chan"
+  ],
+  "Hive0117": [
+    "hive0117"
+  ],
+  "Hive0137": [
+    "hive0137"
+  ],
+  "HollowQuill": [
+    "hollowquill"
+  ],
+  "HookAds": [
+    "hookads"
+  ],
+  "HOUND SPIDER": [
+    "hound spider"
+  ],
+  "HummingBad": [
+    "hummingbad"
+  ],
+  "Hunt3r Kill3rs": [
+    "hunt3r kill3rs"
+  ],
+  "HURRICANE PANDA": [
+    "hurricane panda"
+  ],
+  "IMPERSONATING PANDA": [
+    "impersonating panda"
+  ],
+  "INDOHAXSEC TEAM": [
+    "indohaxsec team"
+  ],
+  "Infrastructure Destruction Squad": [
+    "dark engine",
+    "infrastructure destruction squad"
+  ],
+  "Infy": [
+    "foudre",
+    "infy",
+    "operation mermaid",
+    "prince of persia"
+  ],
+  "IntelBroker": [
+    "intelbroker"
+  ],
+  "InvisiMole": [
+    "invisimole"
+  ],
+  "Iron Group": [
+    "iron cyber group",
+    "iron group"
+  ],
+  "IronErn440": [
+    "ironern440"
+  ],
+  "IronHusky": [
+    "ironhusky"
+  ],
+  "JINX-0126": [
+    "jinx-0126"
+  ],
+  "JuiceLedger": [
+    "juiceledger"
+  ],
+  "Kairos": [
+    "kairos"
+  ],
+  "Karkadann": [
+    "karkadann",
+    "piwiks"
+  ],
+  "KAX17": [
+    "kax17"
+  ],
+  "Killnet": [
+    "killnet"
+  ],
+  "LongNosedGoblin": [
+    "longnosedgoblin"
+  ],
+  "Mana Team": [
+    "mana team"
+  ],
+  "Markopolo": [
+    "markopolo"
+  ],
+  "Molatori": [
+    "molatori"
+  ],
+  "RADIO PANDA": [
+    "radio panda",
+    "shrouded crossbow"
+  ],
+  "RansomVC": [
+    "ransomed.vc",
+    "ransomvc"
+  ],
+  "Scattered Canary": [
+    "scattered canary"
+  ],
+  "Scripted Sparrow": [
+    "scripted sparrow"
+  ],
+  "SCULLY SPIDER": [
+    "scully spider"
+  ],
+  "SEXi": [
+    "sexi"
+  ],
+  "SHADOW-AETHER-015": [
+    "shadow-aether-015"
+  ],
+  "SHADOW-VOID-042": [
+    "shadow-void-042"
+  ],
+  "Shadow Network": [
+    "shadow network"
+  ],
+  "ShadowSyndicate": [
+    "shadowsyndicate"
+  ],
+  "ShadyPanda": [
+    "shadypanda"
+  ],
+  "ShaggyPanther": [
+    "shaggypanther"
+  ],
+  "Shamoon Group": [
+    "cutting sword of justice",
+    "shamoon group"
+  ],
+  "SHARK SPIDER": [
+    "shark spider"
+  ],
+  "SharpPanda": [
+    "sharp dragon",
+    "sharppanda"
+  ],
+  "ShroudedSnooper": [
+    "shroudedsnooper"
+  ],
+  "SiegedSec": [
+    "siegedsec"
+  ],
+  "Siesta": [
+    "siesta"
+  ],
+  "SilitNetwork": [
+    "silitnetwork"
+  ],
+  "SilkSpecter": [
+    "silkspecter"
+  ],
+  "SilverFish": [
+    "silverfish"
+  ],
+  "Sima": [
+    "sima"
+  ],
+  "SINGING SPIDER": [
+    "singing spider"
+  ],
+  "SingularityMD": [
+    "singularitymd"
+  ],
+  "Sinobi": [
+    "sinobi"
+  ],
+  "Slingshot": [
+    "slingshot"
+  ],
+  "SloppyLemming": [
+    "sloppylemming"
+  ],
+  "Smishing Triad": [
+    "smishing triad"
+  ],
+  "Snake Wine": [
+    "snake wine"
+  ],
+  "SNOWGLOBE": [
+    "animal farm",
+    "atk8",
+    "snowglobe"
+  ],
+  "SongXY": [
+    "songxy"
+  ],
+  "SpaceBears": [
+    "spacebears"
+  ],
+  "SparklingGoblin": [
+    "sparklinggoblin"
+  ],
+  "SPIKEDWINE": [
+    "spikedwine"
+  ],
+  "STAC5143": [
+    "stac5143"
+  ],
+  "Stargazer Goblin": [
+    "stargazer goblin"
+  ],
+  "Storm-0062": [
+    "darkshadow",
+    "oro0lxy",
+    "storm-0062"
+  ],
+  "Storm-0249": [
+    "dev-0249",
+    "storm-0249"
+  ],
+  "Storm-0324": [
+    "dev-0324",
+    "sagrid",
+    "storm-0324",
+    "ta543"
+  ],
+  "Storm-0506": [
+    "storm-0506"
+  ],
+  "Storm-0539": [
+    "storm-0539"
+  ],
+  "Storm-0558": [
+    "storm-0558"
+  ],
+  "Storm-0826": [
+    "storm-0826"
+  ],
+  "Storm-1747": [
+    "storm-1747"
+  ],
+  "TheDarkOverlord": [
+    "thedarkoverlord"
+  ],
+  "TheWizards": [
+    "thewizards"
+  ],
+  "ZOMBIE SPIDER": [
+    "zombie spider"
+  ],
+  "ZooPark": [
+    "zoopark"
+  ],
+  "Chronus Group": [
+    "chronus group"
+  ],
+  "CL-STA-1020": [
+    "cl-sta-1020"
+  ],
+  "CL-UNK-1068": [
+    "cl-unk-1068"
+  ],
+  "DriveSurge": [
+    "drivesurge"
+  ],
+  "GHOST STADIUM": [
+    "ghost stadium"
+  ],
+  "GreyVibe": [
+    "greyvibe"
+  ],
+  "Inteid": [
+    "inteid"
+  ],
+  "JINX-0164": [
+    "jinx-0164"
+  ],
+  "Narketing163": [
+    "narketing163"
+  ],
+  "SHADOW-WATER-063": [
+    "shadow-water-063"
+  ],
+  "SnowSoul": [
+    "snowsoul"
+  ],
+  "Storm-2949": [
+    "storm-2949"
+  ],
+  "ZeffSec": [
+    "zeff security",
+    "zeffsec"
+  ],
+  "BlackMaskers": [
+    "blackmaskers",
+    "blackmaskers team"
+  ],
+  "SLIME88": [
+    "slime88"
+  ],
+  "TA4922": [
+    "ta4922"
+  ],
+  "FulcrumSec": [
+    "fulcrumsec"
+  ],
+  "UNC6508": [
+    "unc6508"
+  ],
+  "Houndstooth Typhoon": [
+    "deepclif",
+    "dragnet panda",
+    "hassium",
+    "houndstooth typhoon",
+    "isoon"
+  ],
+  "Storm-0252": [
+    "chatty spider",
+    "storm-0252"
+  ],
+  "Wisteria Tsunami": [
+    "cyberroot",
+    "dev-0605",
+    "mintedsoil",
+    "wisteria tsunami"
+  ],
+  "Mysterious Elephant": [
+    "mysterious elephant"
+  ],
+  "Armored Likho": [
+    "armored likho",
+    "eagle werewolf"
+  ],
+  "Cavern Manticore": [
+    "cavern manticore"
+  ],
+  "Hyadina": [
+    "hyadina"
+  ],
+  "JACKPOT PANDA": [
+    "jackpot panda"
+  ],
+  "JadePuffer": [
+    "jadepuffer"
+  ],
+  "Scattered Lapsus Hunters": [
+    "scattered lapsus hunters",
+    "scattered lapsus$ hunters"
+  ],
+  "UAT-11795": [
+    "uat-11795"
+  ],
+  "UAT-7810": [
+    "uat-7810"
+  ],
+  "UNC2529": [
+    "unc2529"
+  ],
+  "UTA0533": [
+    "uta0533"
+  ],
+  "Booba Project": [
+    "booba project"
+  ],
+  "Conference Crew": [
+    "conference castle",
+    "conference crew"
+  ],
+  "ExfilSquad": [
+    "exfilsquad"
+  ],
+  "Fox Tempest": [
+    "fox tempest"
+  ],
+  "Gammax": [
+    "gammax"
+  ],
+  "GlobalSecretGroup": [
+    "globalsecretgroup"
+  ],
+  "Larva-24009": [
+    "larva-24009"
+  ],
+  "Larva-26005": [
+    "larva-26005"
+  ],
+  "Larva-26009": [
+    "larva-26009"
+  ],
+  "ModernStealer": [
+    "modernstealer"
+  ],
+  "Orova": [
+    "orova"
+  ],
+  "Storm-2945": [
+    "storm-2945"
+  ],
+  "UNC1088": [
+    "ravine castle",
+    "unc1088"
+  ],
+  "Larva-26010": [
+    "larva-26010"
+  ],
+  "SilkParasite": [
+    "silkparasite"
+  ],
+  "ZeroBytes": [
+    "zerobytes"
+  ],
+  "BREEZE COMET": [
+    "breeze comet",
+    "unc5669"
+  ],
+  "Exilware": [
+    "exilware"
+  ],
+  "QTFY": [
+    "qtfy"
+  ],
+  "TheHatman": [
+    "thehatman"
+  ],
+  "CRPxO": [
+    "crpxo"
+  ],
+  "VantaCore": [
+    "vantacore"
+  ],
+  "APT3 / Buckeye": [
+    "G0022",
+    "apt 3",
+    "apt-3",
+    "apt3",
+    "buckeye",
+    "gothic panda",
+    "pirpi",
+    "ups team",
+    "boyusec",
+    "boron"
+  ]
 }

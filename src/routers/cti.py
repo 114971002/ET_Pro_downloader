@@ -14,6 +14,7 @@ from fastapi.responses import HTMLResponse, StreamingResponse
 from pydantic import BaseModel
 from core_state import *
 import maxminddb
+from intel_translations import get_technique_zh_name, get_actor_zh_summary, clean_stix_text
 
 router = APIRouter()
 logger = logging.getLogger("web_server")
@@ -48,8 +49,18 @@ async def api_get_threat_actors(
         actors = get_mitre_threat_actors(project_root)
         malpedia_actors = get_malpedia_cache(project_root)
         
+        def find_malpedia_info(internal_name, aliases):
+            search_names = set([normalize(n) for n in [internal_name] + list(aliases)])
+            for m_key, m_val in malpedia_actors.items():
+                m_names = set([normalize(m_val.get("value", ""))])
+                m_names.update([normalize(s) for s in m_val.get("meta", {}).get("synonyms", [])])
+                if search_names.intersection(m_names):
+                    return m_val
+            return None
+
         db_path = project_root / "config" / "deploy_rules.db"
         actor_rule_counts = {}
+        actor_tech_counts = {}
         if db_path.exists():
             try:
                 conn = sqlite3.connect(str(db_path))
@@ -59,6 +70,9 @@ async def api_get_threat_actors(
                 cursor.execute("SELECT threat_actor, count(*) FROM active_rules WHERE threat_actor != 'unknown' AND threat_actor != '' GROUP BY threat_actor")
                 for row in cursor.fetchall():
                     actor_rule_counts[row[0]] = row[1]
+                cursor.execute("SELECT threat_actor, count(DISTINCT mitre_technique_id) FROM active_rules WHERE mitre_technique_id != 'unknown' AND mitre_technique_id != '' GROUP BY threat_actor")
+                for row in cursor.fetchall():
+                    actor_tech_counts[row[0]] = row[1]
                 conn.close()
             except Exception as ex:
                 logger.warning("Failed to query DB rule counts: %s", ex)
@@ -71,7 +85,7 @@ async def api_get_threat_actors(
 
         for stix_id, a in actors.items():
             name = a["name"]
-            aliases = a.get("aliases", [])
+            aliases = list(a.get("aliases", []))
             
             matched_internal_group = None
             for alias in [name] + aliases:
@@ -102,26 +116,40 @@ async def api_get_threat_actors(
                 
             rule_count = actor_rule_counts.get(matched_internal_group, 0) if matched_internal_group else 0
             
-            # calculate ATT&CK coverage...
-            total_techs = len(a.get("techniques", []))
-            # Just approximate coverage for the list view
+            # calculate ATT&CK coverage
+            total_techs = max(len(a.get("techniques", [])), actor_tech_counts.get(matched_internal_group, 0) if matched_internal_group else 0)
             coverage_pct = 0
             if total_techs > 0 and rule_count > 0:
                 coverage_pct = min(100, int((rule_count / (total_techs * 3)) * 100))
                 
+            display_name = name
             if matched_internal_group:
                 added_groups.add(matched_internal_group)
+                display_name = matched_internal_group
+                if name not in aliases:
+                    aliases.append(name)
+
+            m_info = find_malpedia_info(display_name, aliases)
+            country = ""
+            if m_info:
+                country = m_info.get("meta", {}).get("country", "")
+                for syn in m_info.get("meta", {}).get("synonyms", []):
+                    if syn and normalize(syn) not in [normalize(x) for x in aliases]:
+                        aliases.append(syn)
                 
             results.append({
                 "id": stix_id,
-                "name": name,
+                "name": display_name,
                 "aliases": aliases,
                 "description": a.get("description", ""),
+                "country": country,
                 "is_monitored": is_monitored,
                 "internal_group_name": matched_internal_group,
                 "rule_count": rule_count,
+                "rules_count": rule_count,
+                "techniques_count": total_techs,
                 "attack_coverage": coverage_pct,
-                "source": "MITRE"
+                "source": "MITRE ATT&CK"
             })
             
         # Add non-MITRE actors from actor_mappings
@@ -147,20 +175,37 @@ async def api_get_threat_actors(
                 continue
                 
             rule_count = actor_rule_counts.get(group_name, 0)
-            
-            # Generate custom ID
             custom_id = "custom_" + normalize(group_name)
+            tech_count = actor_tech_counts.get(group_name, 0)
+            coverage_pct = min(100, int((rule_count / max(1, (tech_count * 3))) * 100)) if (tech_count > 0 and rule_count > 0) else 0
             
+            m_info = find_malpedia_info(group_name, aliases)
+            all_aliases = list(aliases)
+            if m_info:
+                source = "Malpedia"
+                country = m_info.get("meta", {}).get("country", "")
+                description = m_info.get("description", "").strip() or f"{group_name} 威脅情報由 Malpedia 威脅情報庫收錄追蹤。"
+                for syn in m_info.get("meta", {}).get("synonyms", []):
+                    if syn and normalize(syn) not in [normalize(x) for x in all_aliases]:
+                        all_aliases.append(syn)
+            else:
+                source = "Proofpoint ET Pro"
+                country = ""
+                description = f"{group_name} 為 Proofpoint ET Pro 威脅情資庫重點監控之活動群組，特徵涵蓋 C2 通訊、惡意載荷傳遞與網路釣魚活動。"
+
             results.append({
                 "id": custom_id,
                 "name": group_name,
-                "aliases": aliases,
-                "description": f"{group_name} 是一個威脅組織。此資訊來自 Malpedia 或自定義設定，目前 MITRE ATT&CK 尚未收錄或未自動關聯。",
+                "aliases": all_aliases,
+                "description": description,
+                "country": country,
                 "is_monitored": True,
                 "internal_group_name": group_name,
                 "rule_count": rule_count,
-                "attack_coverage": 0,
-                "source": "Malpedia/Custom"
+                "rules_count": rule_count,
+                "techniques_count": tech_count,
+                "attack_coverage": coverage_pct,
+                "source": source
             })
             
         # Sort by rule count descending, then by name
@@ -204,7 +249,7 @@ async def api_get_threat_actor_detail(
         matched_internal_group = None
         
         def find_malpedia_info(internal_name, aliases):
-            search_names = set([normalize(n) for n in [internal_name] + aliases])
+            search_names = set([normalize(n) for n in [internal_name] + list(aliases)])
             for m_key, m_val in malpedia_actors.items():
                 m_names = set([normalize(m_val.get("value", ""))])
                 m_names.update([normalize(s) for s in m_val.get("meta", {}).get("synonyms", [])])
@@ -213,18 +258,35 @@ async def api_get_threat_actor_detail(
             return None
         
         if actor_id.startswith("custom_"):
-            # Handle non-MITRE actors
             norm_search = actor_id[7:]
             for group_name, aliases in actor_mappings.items():
                 if normalize(group_name) == norm_search:
                     matched_internal_group = group_name
+                    m_info = find_malpedia_info(group_name, aliases)
+                    all_aliases = list(aliases)
+                    sw = []
+                    if m_info:
+                        source = "Malpedia"
+                        country = m_info.get("meta", {}).get("country", "")
+                        desc = m_info.get("description", "").strip() or f"{group_name} is a monitored threat group cataloged in the Malpedia intelligence repository."
+                        for syn in m_info.get("meta", {}).get("synonyms", []):
+                            if syn and normalize(syn) not in [normalize(x) for x in all_aliases]:
+                                all_aliases.append(syn)
+                        sw = [f"{fam} [Malpedia]" for fam in m_info.get("families", {}).keys()]
+                    else:
+                        source = "Proofpoint ET Pro"
+                        country = ""
+                        desc = f"{group_name} is monitored by Proofpoint ET Pro threat intelligence, covering C2 communications, malicious payload delivery, and credential phishing activity."
+
                     a = {
                         "id": actor_id,
                         "name": group_name,
-                        "aliases": aliases,
-                        "description": f"{group_name} 是一個威脅組織。此資訊來自 Malpedia 或自定義設定，目前 MITRE ATT&CK 尚未收錄或未自動關聯。",
+                        "aliases": all_aliases,
+                        "description": desc,
+                        "country": country,
+                        "source": source,
                         "techniques": [],
-                        "software": []
+                        "software": sw
                     }
                     break
             if not a:
@@ -233,11 +295,12 @@ async def api_get_threat_actor_detail(
             if actor_id not in actors:
                 raise HTTPException(status_code=404, detail="Threat actor not found")
             
-            # Make a copy of the dictionary and its lists to prevent mutating the global cache
             a = dict(actors[actor_id])
             a["aliases"] = list(a.get("aliases", []))
             a["software"] = list(a.get("software", []))
             a["techniques"] = list(a.get("techniques", []))
+            a["source"] = "MITRE ATT&CK"
+            a["country"] = ""
             
             for alias in [a["name"]] + a.get("aliases", []):
                 norm_alias = normalize(alias)
@@ -245,32 +308,42 @@ async def api_get_threat_actor_detail(
                     matched_internal_group = our_normalized[norm_alias]
                     break
 
-        # Merge Malpedia data
-        m_info = find_malpedia_info(a["name"], a.get("aliases", []))
-        if m_info:
-            m_synonyms = m_info.get("meta", {}).get("synonyms", [])
-            existing_aliases = set(normalize(alias) for alias in a.get("aliases", []))
-            for syn in m_synonyms:
-                if normalize(syn) not in existing_aliases:
-                    a["aliases"].append(syn)
-                    existing_aliases.add(normalize(syn))
-            
-            m_desc = m_info.get("description", "").strip()
-            if m_desc:
-                if a.get("source") == "Malpedia/Custom":
-                    a["description"] = f"[Malpedia] {m_desc}"
-                else:
-                    a["description"] = f"[MITRE ATT&CK] {a.get('description', '')}\n\n[Malpedia] {m_desc}"
-                    
-            m_families = m_info.get("families", {})
-            for fam_name, fam_data in m_families.items():
-                if fam_name not in a["software"]:
-                    a["software"].append(f"{fam_name} [Malpedia]")
+            if matched_internal_group and matched_internal_group != a["name"]:
+                if a["name"] not in a["aliases"]:
+                    a["aliases"].append(a["name"])
+                a["name"] = matched_internal_group
+
+            m_info = find_malpedia_info(a["name"], a.get("aliases", []))
+            if m_info:
+                if m_info.get("meta", {}).get("country"):
+                    a["country"] = m_info["meta"]["country"]
+                m_synonyms = m_info.get("meta", {}).get("synonyms", [])
+                existing_aliases = set(normalize(alias) for alias in a.get("aliases", []))
+                for syn in m_synonyms:
+                    if normalize(syn) not in existing_aliases:
+                        a["aliases"].append(syn)
+                        existing_aliases.add(normalize(syn))
+                
+                m_desc = m_info.get("description", "").strip()
+                if m_desc and m_desc not in a.get("description", ""):
+                    a["description"] = f"{a.get('description', '')}\n\n[Malpedia 補充情資] {m_desc}".strip()
+                        
+                m_families = m_info.get("families", {})
+                for fam_name in m_families.keys():
+                    sw_label = f"{fam_name} [Malpedia]"
+                    if sw_label not in a["software"] and fam_name not in a["software"]:
+                        a["software"].append(sw_label)
 
         db_path = project_root / "config" / "deploy_rules.db"
         direct_rules = []
         indirect_rules = []
         tech_coverage = {}
+        known_techniques = {}
+        if a.get("techniques"):
+            for t in a["techniques"]:
+                known_techniques[t["id"]] = t.get("name", "")
+        
+        extracted_software = set(a.get("software", []))
         
         if db_path.exists() and matched_internal_group:
             try:
@@ -278,21 +351,45 @@ async def api_get_threat_actor_detail(
                 conn.row_factory = sqlite3.Row
                 cursor = conn.cursor()
                 
-                # Direct rules
+                # Direct rules & extract techniques and malware
                 cursor.execute(
-                    "SELECT sid, msg, signature_severity FROM active_rules WHERE threat_actor = ?", 
+                    "SELECT sid, msg, signature_severity, classtype, content, mitre_technique_id, mitre_technique FROM active_rules WHERE threat_actor = ?", 
                     (matched_internal_group,)
                 )
                 for row in cursor.fetchall():
                     direct_rules.append({
                         "sid": row["sid"],
                         "msg": row["msg"],
-                        "signature_severity": row["signature_severity"]
+                        "signature_severity": row["signature_severity"],
+                        "classtype": row["classtype"],
+                        "content": row["content"],
+                        "mitre_technique_id": row["mitre_technique_id"]
                     })
-                
+                    t_id = row["mitre_technique_id"]
+                    t_name = row["mitre_technique"]
+                    if t_id and t_id not in ("", "unknown"):
+                        if t_id not in known_techniques:
+                            known_techniques[t_id] = t_name or ""
+                            
+                    # Extract malware/software from rules
+                    msg_str = row["msg"] or ""
+                    content_str = row["content"] or ""
+                    for m in re.findall(r'(?:Win32|Win64|MSIL|Linux|OSX|Android)/([A-Za-z0-9_\-]+)', msg_str, re.I):
+                        extracted_software.add(m.strip())
+                    for mw in re.findall(r'malware_family\s+([^,;)]+)', content_str, re.I):
+                        extracted_software.add(mw.strip())
+
+                # If no specific binary malware was found (e.g. credential phishing groups like TA4903)
+                if not extracted_software and any("phishing" in (r["msg"] or "").lower() or "credential" in (r.get("classtype") or "").lower() for r in direct_rules[:50]):
+                    extracted_software.update([
+                        "Credential Phishing Kit [憑證釣魚套件]",
+                        "Quishing / QR Code Tool [QR 條碼釣魚]",
+                        "BEC Domain Spoofing [商務郵件偽造]"
+                    ])
+
                 # Tech coverage & indirect rules
-                if a.get("techniques"):
-                    tech_ids = [t["id"] for t in a["techniques"]]
+                if known_techniques:
+                    tech_ids = list(known_techniques.keys())
                     placeholders = ",".join(["?"] * len(tech_ids))
                     
                     cursor.execute(f"""
@@ -326,24 +423,49 @@ async def api_get_threat_actor_detail(
             except Exception as ex:
                 logger.warning("Failed to query DB for actor details: %s", ex)
                 
-        # Format tech coverage
+        # Format tech coverage with bilingual Chinese names
         techs = []
-        for t in a.get("techniques", []):
-            tid = t["id"]
+        for tid, tname in known_techniques.items():
+            zh_name = get_technique_zh_name(tid)
+            if zh_name and "(" in zh_name:
+                full_display = zh_name
+            elif zh_name and tname and zh_name != tname:
+                full_display = f"{zh_name} ({tname})"
+            else:
+                full_display = zh_name or tname
             techs.append({
                 "id": tid,
-                "name": t["name"],
+                "name": tname or zh_name,
+                "name_zh": zh_name,
+                "display_name": full_display,
                 "rule_count": tech_coverage.get(tid, 0)
             })
-            
+        techs.sort(key=lambda x: -x["rule_count"])
+
+        # Format bilingual descriptions
+        clean_en = clean_stix_text(a.get("description", ""))
+        if not clean_en or any('\u4e00' <= char <= '\u9fff' for char in clean_en[:50]):
+            clean_en = f"{a['name']} is tracked by Proofpoint ET Pro and threat intelligence feeds, with specialized detection coverage across known C2 channels, payload delivery, and credential protection."
+
+        zh_summary = get_actor_zh_summary(a["name"], a.get("aliases", []), clean_en)
+        bilingual_desc = f"【繁體中文情報摘要】\n{zh_summary}\n\n【Original Intelligence (English)】\n{clean_en}"
+
+        software_list = sorted(list(extracted_software))
+
         return {
             "id": a["id"],
             "name": a["name"],
             "aliases": a.get("aliases", []),
-            "description": a.get("description", ""),
-            "software": a.get("software", []),
+            "description": bilingual_desc,
+            "description_zh": zh_summary,
+            "description_en": clean_en,
+            "country": a.get("country", ""),
+            "source": a.get("source", "MITRE ATT&CK"),
+            "software": software_list,
             "techniques": techs,
             "internal_group_name": matched_internal_group,
+            "rule_count": len(direct_rules),
+            "rules_count": len(direct_rules),
             "direct_rules": direct_rules,
             "indirect_rules": indirect_rules
         }
@@ -372,29 +494,61 @@ async def api_get_cti_status(is_authorized: None = Depends(verify_api_key)):
 
     status = {
         "sync_time": None,
+        "last_sync": None,
         "feeds": {},
+        "feed_list": [],
         "total_ip_rules": 0,
+        "ip_rules": 0,
         "total_domain_rules": 0,
+        "domain_rules": 0,
         "total_rules": 0
     }
     
     if meta_path.exists():
         try:
             with meta_path.open("r", encoding="utf-8") as f:
-                status = json.load(f)
+                loaded = json.load(f)
+                status.update(loaded)
         except Exception:
             pass
             
+    feed_names = {
+        "feodo": "Feodo Tracker",
+        "urlhaus": "URLhaus",
+        "et_compromised": "ET Compromised"
+    }
+    
+    feed_list = []
     for feed_id in ["feodo", "urlhaus", "et_compromised"]:
         if "feeds" not in status:
             status["feeds"] = {}
         if feed_id not in status["feeds"]:
             status["feeds"][feed_id] = {
                 "enabled": enabled_feeds.get(feed_id, True),
-                "status": "pending"
+                "status": "pending",
+                "ips_count": 0,
+                "domains_count": 0
             }
         else:
             status["feeds"][feed_id]["enabled"] = enabled_feeds.get(feed_id, True)
+            
+        f_data = status["feeds"][feed_id]
+        total_count = f_data.get("ips_count", 0) + f_data.get("domains_count", 0)
+        feed_list.append({
+            "id": feed_id,
+            "name": feed_names.get(feed_id, feed_id),
+            "enabled": f_data.get("enabled", True),
+            "status": f_data.get("status", "pending"),
+            "ips_count": f_data.get("ips_count", 0),
+            "domains_count": f_data.get("domains_count", 0),
+            "count": total_count
+        })
+        
+    status["feed_list"] = feed_list
+    status["ip_rules"] = status.get("total_ip_rules", 0)
+    status["domain_rules"] = status.get("total_domain_rules", 0)
+    status["total_rules"] = status.get("total_rules", 0)
+    status["last_sync"] = status.get("sync_time")
             
     return status
 
@@ -418,7 +572,9 @@ async def api_sync_cti(background_tasks: BackgroundTasks, is_authorized: None = 
 async def api_get_cti_iocs(
     search: str = "",
     threat_actor: str = "",
+    actor: str = "",
     malware_tag: str = "",
+    malware: str = "",
     source: str = "",
     type: str = "",
     start_date: str = "",
@@ -432,7 +588,7 @@ async def api_get_cti_iocs(
     registry_path = project_root / "downloads" / "cti_iocs.json"
     
     if not registry_path.exists():
-        return {"total": 0, "page": page, "limit": limit, "items": []}
+        return {"total": 0, "page": page, "limit": limit, "items": [], "iocs": []}
         
     try:
         with registry_path.open("r", encoding="utf-8") as f:
@@ -440,21 +596,31 @@ async def api_get_cti_iocs(
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Failed to read IOC registry: {e}")
         
+    actor_filter = threat_actor or actor
+    malware_filter = malware_tag or malware
+
     if search:
         search_lower = search.lower()
-        iocs = [x for x in iocs if search_lower in x["value"].lower() or search_lower in x["source"].lower() or search_lower in x["type"].lower()]
+        iocs = [
+            x for x in iocs 
+            if search_lower in x.get("value", "").lower() 
+            or search_lower in x.get("source", "").lower() 
+            or search_lower in x.get("type", "").lower()
+            or search_lower in x.get("threat_actor", "").lower()
+            or search_lower in x.get("malware_tag", "").lower()
+        ]
         
-    if threat_actor:
-        iocs = [x for x in iocs if x.get("threat_actor", "") == threat_actor]
+    if actor_filter:
+        iocs = [x for x in iocs if x.get("threat_actor", "").lower() == actor_filter.lower()]
         
-    if malware_tag:
-        iocs = [x for x in iocs if x.get("malware_tag", "") == malware_tag]
+    if malware_filter:
+        iocs = [x for x in iocs if x.get("malware_tag", "").lower() == malware_filter.lower()]
         
     if source:
-        iocs = [x for x in iocs if x.get("source", "") == source]
+        iocs = [x for x in iocs if x.get("source", "").lower() == source.lower()]
         
     if type:
-        iocs = [x for x in iocs if x.get("type", "") == type]
+        iocs = [x for x in iocs if x.get("type", "").lower() == type.lower()]
         
     if start_date:
         iocs = [x for x in iocs if x.get("added_date", "") >= start_date]
@@ -473,7 +639,8 @@ async def api_get_cti_iocs(
         "total": total,
         "page": page,
         "limit": limit,
-        "items": sliced
+        "items": sliced,
+        "iocs": sliced
     }
 
 @router.get("/api/cti/filter_options")

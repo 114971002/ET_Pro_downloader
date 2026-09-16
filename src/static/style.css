@@ -967,3 +967,192 @@
 .bright-tiles {
         filter: brightness(1.6) contrast(1.2);
     }
+
+/* -------------------------------------------------------------
+   SURICATA RULE SYNTAX HIGHLIGHTING (VS Code Suricata Highlight)
+   ------------------------------------------------------------- */
+.suri-rule-container {
+  font-family: Consolas, 'Fira Code', 'Cascadia Code', 'Courier New', monospace;
+  font-size: 0.82rem;
+  line-height: 1.6;
+  background: rgba(0, 0, 0, 0.45);
+  padding: 0.65rem 0.85rem;
+  border-radius: 0.45rem;
+  border: 1px solid var(--card-border);
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-all;
+  color: #e2e8f0;
+}
+
+.suri-keyword {
+  color: #f87171 !important; /* Coral Red for action, proto, direction, and option keys */
+  font-weight: 600;
+}
+
+.suri-variable {
+  color: #fb923c !important; /* Orange/Gold for $HOME_NET, $EXTERNAL_NET, etc. */
+  font-weight: 600;
+}
+
+.suri-string {
+  color: #38bdf8 !important; /* Bright Cyan/Sky Blue for "..." quoted strings */
+}
+
+.suri-number {
+  color: #38bdf8 !important; /* Cyan for numbers */
+  font-weight: 500;
+}
+
+.suri-value {
+  color: #e2e8f0; /* Light Gray/Off-white for unquoted values */
+}
+
+.suri-punct {
+  color: #94a3b8; /* Muted gray for ( ), :, ; */
+}
+
+.suri-comment {
+  color: #64748b; /* Italic Slate Gray for # comments */
+  font-style: italic;
+}
+
+/* =============================================================
+   GEOIP THREAT FLOW MAP STYLES
+   ============================================================= */
+.geoip-container {
+  display: flex;
+  gap: 1.5rem;
+  align-items: stretch;
+  height: calc(100vh - 310px);
+  min-height: 600px;
+}
+
+.geoip-sidebar {
+  width: 380px;
+  min-width: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  overflow-y: auto;
+}
+
+.geoip-map-wrapper {
+  flex: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+  background: #0b0f19;
+}
+
+#geoip-map {
+  width: 100%;
+  height: 100%;
+  min-height: 550px;
+  background: #080c14;
+}
+
+/* Dark mode Leaflet popups */
+.leaflet-popup-content-wrapper {
+  background: rgba(15, 23, 42, 0.95) !important;
+  color: #f1f5f9 !important;
+  border: 1px solid rgba(6, 182, 212, 0.4) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6), 0 0 15px rgba(6, 182, 212, 0.2) !important;
+  backdrop-filter: blur(8px);
+}
+
+.leaflet-popup-tip {
+  background: rgba(15, 23, 42, 0.95) !important;
+  border: 1px solid rgba(6, 182, 212, 0.4) !important;
+}
+
+.leaflet-container {
+  font-family: 'Outfit', sans-serif !important;
+}
+
+/* Pulsing radar custom markers */
+.cyber-marker {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cyber-marker-pulse {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  animation: marker-pulse 2s infinite ease-out;
+  pointer-events: none;
+}
+
+.cyber-marker-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 8px currentColor;
+  z-index: 2;
+}
+
+.cyber-marker.cyan .cyber-marker-pulse { background: rgba(6, 182, 212, 0.4); }
+.cyber-marker.cyan .cyber-marker-dot { background: #06b6d4; color: #06b6d4; }
+
+.cyber-marker.red .cyber-marker-pulse { background: rgba(239, 68, 68, 0.4); }
+.cyber-marker.red .cyber-marker-dot { background: #ef4444; color: #ef4444; }
+
+.cyber-marker.amber .cyber-marker-pulse { background: rgba(245, 158, 11, 0.4); }
+.cyber-marker.amber .cyber-marker-dot { background: #f59e0b; color: #f59e0b; }
+
+.cyber-marker.purple .cyber-marker-pulse { background: rgba(168, 85, 247, 0.4); }
+.cyber-marker.purple .cyber-marker-dot { background: #a855f7; color: #a855f7; }
+
+.cyber-marker.emerald .cyber-marker-pulse { background: rgba(16, 185, 129, 0.4); }
+.cyber-marker.emerald .cyber-marker-dot { background: #10b981; color: #10b981; }
+
+.cyber-marker.blue .cyber-marker-pulse { background: rgba(59, 130, 246, 0.4); }
+.cyber-marker.blue .cyber-marker-dot { background: #3b82f6; color: #3b82f6; }
+
+.cyber-marker.pink .cyber-marker-pulse { background: rgba(236, 72, 153, 0.4); }
+.cyber-marker.pink .cyber-marker-dot { background: #ec4899; color: #ec4899; }
+
+.cyber-marker.orange .cyber-marker-pulse { background: rgba(249, 115, 22, 0.4); }
+.cyber-marker.orange .cyber-marker-dot { background: #f97316; color: #f97316; }
+
+.cyber-marker.teal .cyber-marker-pulse { background: rgba(20, 184, 166, 0.4); }
+.cyber-marker.teal .cyber-marker-dot { background: #14b8a6; color: #14b8a6; }
+
+.cyber-marker.indigo .cyber-marker-pulse { background: rgba(99, 102, 241, 0.4); }
+.cyber-marker.indigo .cyber-marker-dot { background: #6366f1; color: #6366f1; }
+
+@keyframes marker-pulse {
+  0% { transform: scale(0.4); opacity: 1; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+
+/* Chip preset tags */
+.preset-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--card-border);
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+}
+
+.preset-chip:hover {
+  background: rgba(6, 182, 212, 0.15);
+  border-color: var(--accent-cyan);
+  color: var(--accent-cyan);
+}

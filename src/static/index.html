@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/theme/darcula.min.css">
   
   
-<link rel="stylesheet" href="/static/style.css?v=2">
+<link rel="stylesheet" href="/static/style.css?v=3">
   <!-- Leaflet CSS & JS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -151,7 +151,7 @@
       <div class="dashboard-grid">
         <div class="card">
           <div class="card-header">
-            <span>情資來源狀態</span>
+            <span>已部署生效規則 (Active Rules)</span>
             <i class="fa-solid fa-shield-virus"></i>
           </div>
           <div id="stat-active-rules" class="card-value">-</div>
@@ -160,7 +160,7 @@
         
         <div class="card">
           <div class="card-header">
-            <span>情資來源狀態</span>
+            <span>語法隔離規則 (Disabled Rules)</span>
             <i class="fa-solid fa-heart-pulse"></i>
           </div>
           <div id="stat-disabled-rules" class="card-value" style="color: var(--accent-orange);">-</div>
@@ -169,7 +169,7 @@
         
         <div class="card">
           <div class="card-header">
-            <span>情資來源狀態</span>
+            <span>排程同步狀態 (Sync Status)</span>
             <i class="fa-solid fa-spinner"></i>
           </div>
           <div id="stat-run-status" class="card-value">載入中...</div>
@@ -178,7 +178,7 @@
         
         <div class="card">
           <div class="card-header">
-            <span>情資來源狀態</span>
+            <span>儲存空間用量 (Storage Usage)</span>
             <i class="fa-solid fa-hard-drive"></i>
           </div>
           <div id="stat-storage-size" class="card-value">-</div>
@@ -452,9 +452,8 @@
               <tr>
                 <th style="width: 80px;">狀態</th>
                 <th style="width: 100px;">SID</th>
-                <!-- <th style="width: 100px; text-align: center;">動作</th> -->
-                <th style="width: 160px;">來源</th>
-                <th style="width: 260px;">分類</th>
+                <th style="width: 260px;">原因 / 報錯訊息</th>
+                <th style="width: 180px;">分類</th>
                 <th>被屏蔽的 Suricata 規則內容 (已被系統加 # 註解)</th>
               </tr>
             </thead>
@@ -951,53 +950,166 @@
     </div>
     <!-- GeoIP Tab -->
     <div id="geoip-tab" class="tab-content">
-      <div class="header">
-        <h1>IP 地理追蹤與流量地圖 (GeoIP Flow Map)</h1>
+      <header>
+        <div>
+          <h1>IP 地理追蹤與威脅流量地圖 (GeoIP Flow Map)</h1>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 0.25rem;">
+            全球惡意節點定位、攻擊來源國分佈統計與端對端攻擊流量路徑視覺化
+          </p>
+        </div>
+        <div class="header-actions" style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <button class="btn btn-secondary" onclick="loadGeoIPPreset('cti')" title="載入 CTI Blocklist 當前活躍的惡意 IP">
+            <i class="fa-solid fa-shield-virus" style="color: var(--accent-cyan);"></i> 載入 CTI 活躍威脅 (Top 30)
+          </button>
+          <button class="btn btn-secondary" onclick="loadGeoIPPreset('feodo')" title="載入 Feodo Tracker 殭屍網路 C2 節點">
+            <i class="fa-solid fa-server" style="color: #f59e0b;"></i> 載入 Feodo C2
+          </button>
+          <button class="btn btn-secondary" onclick="loadGeoIPPreset('flow')" title="示範跨國攻擊連線路徑">
+            <i class="fa-solid fa-route" style="color: #a855f7;"></i> 跨國流量路徑示範
+          </button>
+          <button class="btn btn-secondary" onclick="clearGeoIPMap()" title="清除地圖上所有標記與連線">
+            <i class="fa-solid fa-trash-can"></i> 清除標記
+          </button>
+        </div>
+      </header>
+
+      <!-- Status Summary Cards -->
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-bottom: 1.5rem;">
+        <div class="card status-card">
+          <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;"><i class="fa-solid fa-location-dot"></i> 已定位節點數</div>
+          <div id="geoip-stat-nodes" style="font-size: 2rem; font-weight: bold; background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">0</div>
+        </div>
+        <div class="card status-card">
+          <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;"><i class="fa-solid fa-earth-americas"></i> 涵蓋國家 / 地區</div>
+          <div id="geoip-stat-countries" style="font-size: 2rem; font-weight: bold; color: var(--text-primary);">0</div>
+        </div>
+        <div class="card status-card">
+          <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;"><i class="fa-solid fa-network-wired"></i> 主要來源自治系統 / ISP</div>
+          <div id="geoip-stat-isp" style="font-size: 1.1rem; font-weight: bold; height: 100%; display: flex; align-items: center; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">-</div>
+        </div>
+        <div class="card status-card">
+          <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.5rem;"><i class="fa-solid fa-satellite-dish"></i> 當前分析模式</div>
+          <div id="geoip-stat-mode" style="font-size: 1.1rem; font-weight: bold; height: 100%; display: flex; align-items: center; color: var(--accent-cyan);">單點 / 多節點定位</div>
+        </div>
       </div>
-      
-      <div class="stats-grid" style="grid-template-columns: 1fr;">
-        <div class="card" style="padding: 1.5rem; display: flex; flex-direction: column; gap: 1.5rem;">
-          <div style="width: 100%;">
-            <label style="display: block; font-size: 1rem; color: var(--text-secondary); margin-bottom: 0.75rem;">追蹤模式 Mode</label>
-            <select id="geoip-mode" onchange="toggleGeoIPMode()" style="width: 100%; background: var(--bg-dark); color: var(--text-primary); border: 1px solid var(--card-border); padding: 0.8rem 1rem; border-radius: 0.5rem; font-size: 1rem;">
-              <option value="single">惡意 IP 阻斷數 (Single Node)</option>
-              <option value="flow">連線追蹤 (Source to Destination Flow)</option>
-            </select>
-          </div>
-          
-          <div id="geoip-single-input" style="display: block; width: 100%;">
-            <label style="display: block; font-size: 1rem; color: var(--text-secondary); margin-bottom: 0.75rem;">惡意 IP 阻斷數 (Target IP)</label>
-            <input type="text" id="geoip-ip" placeholder="例如: 8.8.8.8, 8.8.4.4 (可輸入多筆用逗號分隔)" style="width: 100%; background: var(--bg-dark); color: var(--text-primary); border: 1px solid var(--card-border); padding: 0.8rem 1rem; border-radius: 0.5rem; font-size: 1rem;">
-          </div>
-          
-          <div id="geoip-flow-inputs" style="display: none; width: 100%; gap: 1.5rem;">
-            <div style="flex: 1;">
-              <label style="display: block; font-size: 1rem; color: var(--accent-cyan); margin-bottom: 0.75rem;">來源 IP (Source)</label>
-              <input type="text" id="geoip-src-ip" placeholder="例如: 8.8.8.8, 8.8.4.4 (可輸入多筆用逗號分隔)" style="width: 100%; background: var(--bg-dark); color: var(--text-primary); border: 1px solid var(--card-border); padding: 0.8rem 1rem; border-radius: 0.5rem; font-size: 1rem;">
+
+      <!-- Main Layout: Controls Sidebar + Dark Map View -->
+      <div class="geoip-container">
+        <!-- Sidebar Controls & Analytics -->
+        <div class="geoip-sidebar">
+          <!-- Control Card -->
+          <div class="card" style="padding: 1.25rem; display: flex; flex-direction: column; gap: 1rem;">
+            <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--card-border); padding-bottom: 0.75rem;">
+              <h3 style="font-size: 1rem; display: flex; align-items: center; gap: 0.5rem; margin: 0;">
+                <i class="fa-solid fa-sliders" style="color: var(--accent-cyan);"></i> 追蹤設定
+              </h3>
             </div>
-            <div style="flex: 1;">
-              <label style="display: block; font-size: 1rem; color: #f87171; margin-bottom: 0.75rem;">目的 IP (Destination)</label>
-              <input type="text" id="geoip-dst-ip" placeholder="例如: 1.1.1.1, 1.0.0.1 (可輸入多筆用逗號分隔)" style="width: 100%; background: var(--bg-dark); color: var(--text-primary); border: 1px solid var(--card-border); padding: 0.8rem 1rem; border-radius: 0.5rem; font-size: 1rem;">
+
+            <div>
+              <label style="display: block; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.4rem;">追蹤模式 (Mode)</label>
+              <select id="geoip-mode" onchange="toggleGeoIPMode()" class="input-field" style="width: 100%; padding: 0.6rem 0.8rem;">
+                <option value="single">單點 / 多節點定位 (Single / Multi Node)</option>
+                <option value="flow">跨國流量路徑追蹤 (Source ➔ Destination Flow)</option>
+              </select>
             </div>
-          </div>
-          
-          <div style="width: 100%; margin-top: 0.5rem;">
-            <button onclick="runGeoIPQuery()" style="width: 100%; background: var(--accent-cyan); color: #000; font-weight: 600; font-size: 1.1rem; padding: 1rem; border: none; border-radius: 0.5rem; cursor: pointer; transition: 0.2s;">
-              <i class="fa-solid fa-satellite-dish"></i> 開始追蹤
+
+            <!-- Single / Multi Node Inputs -->
+            <div id="geoip-single-input">
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+                <label style="font-size: 0.85rem; color: var(--text-muted);">目標 IP 位址 (Target IPs)</label>
+                <span style="font-size: 0.75rem; color: var(--text-muted);">支援逗號、空格或換行</span>
+              </div>
+              <textarea id="geoip-ip" rows="3" class="input-field" placeholder="例如: 8.8.8.8, 1.1.1.1, 185.220.101.5" style="width: 100%; resize: vertical; font-family: Consolas, monospace; font-size: 0.85rem; line-height: 1.4;"></textarea>
+              
+              <!-- Quick Chips -->
+              <div style="display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 0.5rem;">
+                <span class="preset-chip" onclick="addSampleIP('8.8.8.8')"><i class="fa-solid fa-plus"></i> Google DNS</span>
+                <span class="preset-chip" onclick="addSampleIP('1.1.1.1')"><i class="fa-solid fa-plus"></i> Cloudflare</span>
+                <span class="preset-chip" onclick="addSampleIP('140.112.1.1')"><i class="fa-solid fa-plus"></i> 台灣大學</span>
+                <span class="preset-chip" onclick="addSampleIP('185.220.101.5')"><i class="fa-solid fa-plus"></i> Tor 出口節點</span>
+              </div>
+            </div>
+
+            <!-- Flow Mode Inputs -->
+            <div id="geoip-flow-inputs" style="display: none; flex-direction: column; gap: 0.85rem;">
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+                  <label style="font-size: 0.85rem; color: var(--accent-cyan); margin: 0; display: flex; align-items: center; gap: 0.35rem;">
+                    <i class="fa-solid fa-crosshairs"></i> 攻擊來源 IP (Source Nodes)
+                  </label>
+                  <span style="font-size: 0.75rem; color: var(--text-muted);">支援多筆，以逗號或空格分隔</span>
+                </div>
+                <input type="text" id="geoip-src-ip" class="input-field" placeholder="例如: 140.112.1.1, 8.8.8.8" value="140.112.1.1" style="width: 100%; font-family: Consolas, monospace;">
+              </div>
+              <div>
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.4rem;">
+                  <label style="font-size: 0.85rem; color: #f87171; margin: 0; display: flex; align-items: center; gap: 0.35rem;">
+                    <i class="fa-solid fa-bullseye"></i> 目的受害 IP (Destination Targets)
+                  </label>
+                  <span style="font-size: 0.75rem; color: var(--text-muted);">支援多筆，以逗號或空格分隔</span>
+                </div>
+                <input type="text" id="geoip-dst-ip" class="input-field" placeholder="例如: 185.220.101.5, 194.26.29.112" value="185.220.101.5" style="width: 100%; font-family: Consolas, monospace;">
+              </div>
+            </div>
+
+            <button id="geoip-run-btn" onclick="runGeoIPQuery()" class="btn btn-primary" style="margin-top: 0.25rem; width: 100%; padding: 0.75rem; justify-content: center; font-size: 0.95rem;">
+              <i class="fa-solid fa-satellite-dish"></i> 開始地理定位與路徑追蹤
             </button>
+          </div>
+
+          <!-- Country Distribution Card -->
+          <div class="card" style="padding: 1.25rem; display: flex; flex-direction: column; flex: 1; max-height: 280px; overflow: hidden;">
+            <h3 style="font-size: 0.95rem; margin: 0 0 0.75rem 0; display: flex; justify-content: space-between; align-items: center;">
+              <span><i class="fa-solid fa-chart-pie" style="color: var(--accent-purple);"></i> 國家 / 地區分佈排行</span>
+              <span id="geoip-country-count" style="font-size: 0.8rem; color: var(--text-muted);">共 0 國</span>
+            </h3>
+            <div id="geoip-country-list" style="overflow-y: auto; display: flex; flex-direction: column; gap: 0.5rem; padding-right: 0.25rem;">
+              <div style="color: var(--text-muted); font-size: 0.85rem; text-align: center; padding: 2rem 0;">尚未載入節點資料</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Dark Theme Map Panel -->
+        <div class="geoip-map-wrapper">
+          <!-- Floating Map Toolbar -->
+          <div style="position: absolute; top: 1rem; right: 1rem; z-index: 1000; display: flex; gap: 0.5rem; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(8px); padding: 0.4rem; border-radius: 0.5rem; border: 1px solid var(--card-border);">
+            <button class="btn btn-secondary" style="padding: 0.35rem 0.65rem; font-size: 0.8rem;" onclick="resetGeoIPView()" title="重置為全球視角">
+              <i class="fa-solid fa-globe"></i> 全球視角
+            </button>
+            <button class="btn btn-secondary" style="padding: 0.35rem 0.65rem; font-size: 0.8rem;" onclick="fitGeoIPBounds()" title="縮放至涵蓋所有標記">
+              <i class="fa-solid fa-expand"></i> 聚焦節點
+            </button>
+            <button class="btn btn-secondary" style="padding: 0.35rem 0.65rem; font-size: 0.8rem;" onclick="toggleMapTheme()" id="map-theme-btn" title="切換深色/淺色圖資">
+              <i class="fa-solid fa-circle-half-stroke"></i> 圖資切換
+            </button>
+          </div>
+
+          <div id="geoip-map"></div>
+
+          <!-- Bottom Status Legend -->
+          <div id="geoip-legend" style="position: absolute; bottom: 1rem; left: 1rem; z-index: 1000; display: flex; gap: 1rem; align-items: center; background: rgba(15, 23, 42, 0.85); backdrop-filter: blur(8px); padding: 0.5rem 1rem; border-radius: 0.5rem; border: 1px solid var(--card-border); font-size: 0.8rem; max-width: calc(100% - 2rem); flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; gap: 0.4rem;">
+              <span style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #06b6d4; box-shadow: 0 0 6px #06b6d4;"></span>
+              <span style="color: var(--text-secondary);">來源節點 / 一般 IP</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.4rem;">
+              <span style="display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #ef4444; box-shadow: 0 0 6px #ef4444;"></span>
+              <span style="color: var(--text-secondary);">惡意 / 威脅目標 IP</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 0.4rem;">
+              <span style="display: inline-block; width: 16px; height: 2px; background: #06b6d4;"></span>
+              <span style="color: var(--text-secondary);">跨國流量流向</span>
+            </div>
           </div>
         </div>
       </div>
-      
-      <div class="card" style="margin-top: 1rem;">
-        <div id="geoip-map" style="height: 600px; width: 100%; border-radius: 0.5rem; background: #000;"></div>
-      </div>
     </div>
+
   </main>
 
   <!-- CodeMirror Scripts -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/yaml/yaml.min.js"></script>
-  <script src="/static/app.js?v=4"></script>
+  <script src="/static/app.js?v=12"></script>
 </body>
 </html>

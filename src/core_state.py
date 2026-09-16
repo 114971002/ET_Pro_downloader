@@ -708,7 +708,11 @@ def _background_rule_update_worker(project_root: Path, mtime_deploy: float, mtim
                                 if actor_regex:
                                     msg_match = actor_regex.search(parsed["msg"])
                                     if msg_match:
-                                        matched_actor = alias_to_group.get(msg_match.group(1).lower(), "unknown")
+                                        matched_val = msg_match.group(1).lower()
+                                        if re.match(r"^group\s*\d+$", matched_val) and any(b in msg_lower for b in ["ip group", "cins", "tor ", "drop ", "dshield", "compromised"]):
+                                            pass
+                                        else:
+                                            matched_actor = alias_to_group.get(matched_val, "unknown")
                             parsed["threat_actor"] = matched_actor
                         
                         # Accumulate facets on-the-fly
@@ -905,14 +909,17 @@ def parse_deployed_rules(deploy_path: Path) -> Dict[str, Any]:
                         error_reason = "Suricata validation failed" if status_type == "VALIDATION FAILED" else "User disabled"
                         
                     rule_content = match.group(3).strip()
-                    # Parse SID from rule if possible
+                    # Parse SID and classtype from rule if possible
                     sid_match = re.search(r"sid:\s*(\d+)", rule_content, re.IGNORECASE)
                     sid = sid_match.group(1) if sid_match else "unknown"
+                    ct_match = re.search(r"classtype:\s*([^;]+);", rule_content, re.IGNORECASE)
+                    classtype = ct_match.group(1).strip() if ct_match else "-"
                     
                     result["disabled_rules"].append({
                         "line": idx,
                         "timestamp": timestamp,
                         "sid": sid,
+                        "classtype": classtype,
                         "reason": error_reason,
                         "content": rule_content
                     })
@@ -941,8 +948,10 @@ def run_pipeline_worker(project_root: Path):
     try:
         # Re-import within function to load properly in thread context
         from config import AppConfig
+        from scheduler_entry import setup_logging
         config = AppConfig.from_env(project_root)
         config.ensure_directories()
+        setup_logging(config.logs_dir / "download.log")
         
         # 1. Threat Intel Sync
         if config.intel_sync_enabled:

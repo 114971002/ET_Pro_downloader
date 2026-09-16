@@ -128,7 +128,7 @@ def run_once(
     )
 
     rules_path = export_result.output_path
-    max_heal_attempts = 10
+    max_heal_attempts = 50
     attempt = 0
     run_timestamp_dir = None
 
