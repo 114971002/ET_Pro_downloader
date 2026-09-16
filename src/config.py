@@ -28,6 +28,9 @@ FORCE_DOWNLOAD_ENV = "ETPRO_FORCE_DOWNLOAD"
 DEPLOY_ARCHIVE_ENV = "ETPRO_DEPLOY_ARCHIVE_PATH"
 DEPLOY_ARCHIVE_RETENTION_ENV = "ETPRO_DEPLOY_ARCHIVE_RETENTION_DAYS"
 
+TRANSFER_OUTPUT_DIR_ENV = "ETPRO_TRANSFER_OUTPUT_DIR"
+TRANSFER_RETENTION_ENV = "ETPRO_TRANSFER_RETENTION_DAYS"
+
 SURICATA_VERSION_DEFAULT = "8.0"
 SURICATA_EXE_DEFAULT = r"C:\Program Files\Suricata\suricata.exe"
 SURICATA_YAML_DEFAULT = r"C:\Program Files\Suricata\suricata.yaml"
@@ -54,6 +57,8 @@ class AppConfig:
     output_dir: Path
     deploy_dir: Path
     deploy_archive_dir: Path
+    transfer_output_dir: Optional[Path] = None
+    transfer_retention_days: int = 30
     deploy_archive_retention_days: int = 30
     suricata_version: str = SURICATA_VERSION_DEFAULT
     source_filename: str = SOURCE_FILENAME
@@ -128,6 +133,19 @@ class AppConfig:
         except ValueError:
             deploy_archive_retention_days = 30
 
+        transfer_output_raw = get_env_or_reg(TRANSFER_OUTPUT_DIR_ENV)
+        if transfer_output_raw:
+            transfer_output_dir = Path(transfer_output_raw).expanduser()
+            transfer_output_dir = transfer_output_dir if transfer_output_dir.is_absolute() else root / transfer_output_dir
+        else:
+            transfer_output_dir = root / "output"
+
+        transfer_retention_raw = get_env_or_reg(TRANSFER_RETENTION_ENV, "30").strip()
+        try:
+            transfer_retention_days = int(transfer_retention_raw)
+        except ValueError:
+            transfer_retention_days = 30
+
         return cls(
             project_root=root,
             etpro_oinkcode=oinkcode,
@@ -139,6 +157,8 @@ class AppConfig:
             deploy_dir=root / "deploy",
             deploy_archive_dir=deploy_archive_dir,
             deploy_archive_retention_days=deploy_archive_retention_days,
+            transfer_output_dir=transfer_output_dir,
+            transfer_retention_days=transfer_retention_days,
             suricata_version=suricata_version,
             suricata_validation_enabled=validation_enabled,
             intel_sync_enabled=intel_sync_enabled,
@@ -149,14 +169,17 @@ class AppConfig:
         )
 
     def ensure_directories(self) -> None:
-        for directory in (
+        dirs_to_create = [
             self.downloads_dir,
             self.logs_dir,
             self.reports_dir,
             self.output_dir,
             self.deploy_dir,
             self.deploy_archive_dir,
-        ):
+        ]
+        if self.transfer_output_dir is not None:
+            dirs_to_create.append(self.transfer_output_dir)
+        for directory in dirs_to_create:
             directory.mkdir(parents=True, exist_ok=True)
 
     @property
@@ -192,6 +215,10 @@ class AppConfig:
 
     def staged_deploy_rules_path(self) -> Path:
         return self.output_dir / self.deploy_filename
+
+    def transfer_path(self, now: Optional[datetime] = None) -> Path:
+        target_dir = self.transfer_output_dir or self.output_dir
+        return target_dir / f"{self.date_stamp(now)}_transfer.txt"
 
     def previous_date_stamp(self, now: Optional[datetime] = None) -> str:
         return (taipei_now(now) - timedelta(days=1)).strftime("%Y%m%d")

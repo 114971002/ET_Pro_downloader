@@ -8,7 +8,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 from fastapi import APIRouter, Request, BackgroundTasks, HTTPException, Depends
-from fastapi.responses import HTMLResponse, StreamingResponse
+from fastapi.responses import HTMLResponse, StreamingResponse, FileResponse
 from pydantic import BaseModel
 from core_state import *
 import maxminddb
@@ -665,5 +665,27 @@ async def api_rollback_deployment(req: RollbackRequest, request: Request, is_aut
             logger.warning(f"Reload failed after rollback: {reload_e}")
             
         return {"status": "success"}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@router.get("/api/rules/transfer/latest")
+async def api_get_latest_transfer_rules(request: Request, is_authorized: None = Depends(verify_api_key)):
+    """API to download or view the latest generated transfer.txt rules file."""
+    try:
+        from config import AppConfig
+        config = AppConfig.from_env(PROJECT_ROOT, require_oinkcode=False)
+        target_dir = config.transfer_output_dir or config.output_dir
+        transfer_files = sorted(list(target_dir.glob("*_transfer.txt")), key=lambda p: p.stat().st_mtime, reverse=True)
+        if not transfer_files:
+            raise HTTPException(status_code=404, detail="No transfer rules file generated yet.")
+        latest_file = transfer_files[0]
+        return FileResponse(
+            path=str(latest_file),
+            filename=latest_file.name,
+            media_type="text/plain; charset=utf-8"
+        )
+    except HTTPException:
+        raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

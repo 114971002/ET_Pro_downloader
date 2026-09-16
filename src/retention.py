@@ -15,6 +15,7 @@ class CleanupResult:
     deleted_downloads: int
     deleted_reports: int
     deleted_deploy_archives: int = 0
+    deleted_transfer_files: int = 0
 
 
 def cleanup_old_files(
@@ -25,6 +26,8 @@ def cleanup_old_files(
     report_retention_days: int,
     deploy_archive_dir: Optional[Path] = None,
     deploy_archive_retention_days: int = 30,
+    transfer_output_dir: Optional[Path] = None,
+    transfer_retention_days: int = 30,
     logger: Optional[logging.Logger] = None,
 ) -> CleanupResult:
     logger = logger or logging.getLogger(__name__)
@@ -52,10 +55,20 @@ def cleanup_old_files(
             logger=logger,
         )
 
+    deleted_transfer_files = 0
+    if transfer_output_dir is not None and transfer_output_dir.exists():
+        transfer_cutoff = current_date - timedelta(days=transfer_retention_days)
+        deleted_transfer_files = delete_older_than(
+            files=transfer_output_dir.glob("*_transfer.txt"),
+            cutoff_date=transfer_cutoff,
+            logger=logger,
+        )
+
     return CleanupResult(
         deleted_downloads=deleted_downloads,
         deleted_reports=deleted_reports,
         deleted_deploy_archives=deleted_deploy_archives,
+        deleted_transfer_files=deleted_transfer_files,
     )
 
 

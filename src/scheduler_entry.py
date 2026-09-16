@@ -15,6 +15,7 @@ from deployer import deploy_rules_file
 from downloader import Downloader
 from retention import cleanup_old_files
 from rule_exporter import export_uncommented_rules
+from rule_transformer import transform_rules_for_transfer
 from suricata_validator import RuleValidationError, validate_rules_file
 from validator import raise_if_invalid, validate_archive
 
@@ -32,6 +33,8 @@ class RunResult:
     deleted_downloads: int
     deleted_reports: int
     deleted_deploy_archives: int = 0
+    deleted_transfer_files: int = 0
+    transfer_rules_path: Optional[Path] = None
 
 
 def setup_logging(log_path: Path) -> None:
@@ -224,6 +227,26 @@ def run_once(
     from deployer import trigger_suricata_reload
     trigger_suricata_reload(config)
 
+    # Generate daily transfer rules file ($TWNIC_NETS and gid: 70;)
+    deployed_file = deployment_result.target_path or export_result.output_path
+    transfer_file = config.transfer_path(now)
+    try:
+        transfer_result = transform_rules_for_transfer(
+            source_path=deployed_file,
+            output_path=transfer_file,
+            custom_logger=logger,
+        )
+        logger.info(
+            "Transfer rules generated at %s (%d lines, %d $HOME_NET replaced, %d gid added)",
+            transfer_file,
+            transfer_result["total_lines"],
+            transfer_result["home_net_replaced"],
+            transfer_result["gid_added"],
+        )
+    except Exception as exc:
+        logger.error("Failed to generate transfer rules file: %s", exc)
+        transfer_file = None
+
     cleanup_result = cleanup_old_files(
         downloads_dir=config.downloads_dir,
         reports_dir=config.reports_dir,
@@ -232,13 +255,16 @@ def run_once(
         report_retention_days=config.report_retention_days,
         deploy_archive_dir=config.deploy_archive_dir,
         deploy_archive_retention_days=config.deploy_archive_retention_days,
+        transfer_output_dir=config.transfer_output_dir,
+        transfer_retention_days=config.transfer_retention_days,
         logger=logger,
     )
     logger.info(
-        "Retention cleanup finished: deleted_downloads=%s, deleted_reports=%s, deleted_deploy_archives=%s",
+        "Retention cleanup finished: deleted_downloads=%s, deleted_reports=%s, deleted_deploy_archives=%s, deleted_transfer_files=%s",
         cleanup_result.deleted_downloads,
         cleanup_result.deleted_reports,
         cleanup_result.deleted_deploy_archives,
+        cleanup_result.deleted_transfer_files,
     )
     logger.info("ET Pro daily job finished")
 
@@ -253,6 +279,8 @@ def run_once(
         deleted_downloads=cleanup_result.deleted_downloads,
         deleted_reports=cleanup_result.deleted_reports,
         deleted_deploy_archives=cleanup_result.deleted_deploy_archives,
+        deleted_transfer_files=cleanup_result.deleted_transfer_files,
+        transfer_rules_path=transfer_file,
     )
 
 
