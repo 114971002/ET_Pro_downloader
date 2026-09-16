@@ -1,10 +1,16 @@
 $ErrorActionPreference = "Stop"
 
 $ProjectRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
-$PythonExe = Join-Path $env:LOCALAPPDATA "Programs\Python\Python314\python.exe"
-
-if (-not (Test-Path $PythonExe)) {
-    throw "Python executable not found: $PythonExe"
+$pythonCmd = Get-Command python.exe -ErrorAction SilentlyContinue
+if ($pythonCmd) {
+    $PythonExe = $pythonCmd.Source
+} else {
+    $candidates = Get-ChildItem -Path "$env:LOCALAPPDATA\Programs\Python" -Filter "python.exe" -Recurse -ErrorAction SilentlyContinue
+    if ($candidates) {
+        $PythonExe = $candidates[0].FullName
+    } else {
+        throw "Python executable not found. Please ensure Python is installed and added to PATH."
+    }
 }
 
 $Oinkcode = [Environment]::GetEnvironmentVariable("ETPRO_OINKCODE", "User")
