@@ -170,10 +170,17 @@
         <div class="card">
           <div class="card-header">
             <span>排程同步狀態 (Sync Status)</span>
-            <i class="fa-solid fa-spinner"></i>
+            <i class="fa-solid fa-clock"></i>
           </div>
           <div id="stat-run-status" class="card-value">載入中...</div>
           <div id="stat-run-desc" class="card-desc">最後同步時間</div>
+          <div id="stat-scheduled-task-box" style="margin-top: 0.75rem; padding-top: 0.6rem; border-top: 1px solid var(--card-border); font-size: 0.78rem; display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; flex-wrap: wrap;">
+            <div id="stat-scheduled-task-info" style="display: flex; align-items: center; gap: 0.4rem; color: var(--text-secondary);">
+              <i class="fa-solid fa-calendar-check" style="color: var(--accent-cyan);"></i>
+              <span id="stat-scheduled-task-text">每日排程: 查詢中...</span>
+            </div>
+            <button id="btn-setup-task" class="btn btn-secondary" style="padding: 2px 8px; font-size: 0.72rem; display: none;" onclick="setupScheduledTask()">重新註冊</button>
+          </div>
         </div>
         
         <div class="card">

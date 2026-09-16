@@ -33,6 +33,34 @@ router = APIRouter()
 logger = logging.getLogger("web_server")
 
 
+def get_scheduled_task_info() -> Dict[str, Any]:
+    if os.name != "nt":
+        return {"configured": False, "status": "Non-Windows OS", "next_run_time": "-"}
+    try:
+        import subprocess
+        import csv
+        import io
+        res = subprocess.run(
+            ["schtasks.exe", "/query", "/tn", "ETPro_Daily_Downloader", "/fo", "CSV"],
+            capture_output=True,
+            text=True,
+            timeout=3
+        )
+        if res.returncode == 0 and res.stdout.strip():
+            reader = csv.DictReader(io.StringIO(res.stdout.strip()))
+            row = next(reader, None)
+            if row:
+                return {
+                    "configured": True,
+                    "task_name": "ETPro_Daily_Downloader",
+                    "next_run_time": row.get("Next Run Time", "-"),
+                    "status": row.get("Status", "Ready")
+                }
+    except Exception as e:
+        logger.debug(f"Failed to query schtasks: {e}")
+    return {"configured": False, "task_name": "ETPro_Daily_Downloader", "status": "未設定 (Not Registered)", "next_run_time": "-"}
+
+
 
 @router.get("/", response_class=HTMLResponse)
 
@@ -108,7 +136,9 @@ async def api_get_status(request: Request, is_authorized: None = Depends(verify_
 
         "validation_enabled": config.suricata_validation_enabled,
 
-        "deploy_target_path": str(deploy_path)
+        "deploy_target_path": str(deploy_path),
+
+        "scheduled_task": get_scheduled_task_info()
 
     }
 
@@ -510,3 +540,32 @@ async def api_trigger_pipeline(background_tasks: BackgroundTasks, is_authorized:
             return {"status": "already_running"}
     background_tasks.add_task(run_pipeline_worker, PROJECT_ROOT)
     return {"status": "started"}
+
+
+@router.post("/api/system/setup-scheduled-task")
+async def api_post_setup_scheduled_task(request: Request, is_authorized: None = Depends(verify_api_key)):
+    """Registers or re-registers the daily Windows Scheduled Task."""
+    if os.name != "nt":
+        raise HTTPException(status_code=400, detail="Windows Task Scheduler is only available on Windows OS.")
+    try:
+        import subprocess
+        ps1_script = PROJECT_ROOT / "scripts" / "setup_scheduled_task.ps1"
+        if not ps1_script.exists():
+            raise HTTPException(status_code=404, detail="scripts/setup_scheduled_task.ps1 not found.")
+        cmd = [
+            "powershell", "-NoProfile", "-ExecutionPolicy", "Bypass",
+            "-File", str(ps1_script)
+        ]
+        res = subprocess.run(cmd, capture_output=True, text=True, timeout=15)
+        if res.returncode != 0:
+            raise HTTPException(status_code=500, detail=f"Failed to register task: {res.stderr or res.stdout}")
+        return {
+            "success": True,
+            "message": "Windows 每日自動下載排程已成功註冊！",
+            "task_info": get_scheduled_task_info()
+        }
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+

@@ -158,6 +158,31 @@ async function fetchStatus() {
       runDesc.textContent = status.last_run_time ? `最後同步: ${status.last_run_time}` : "尚未進行首次下載同步";
     }
 
+    // Windows Scheduled Task Status
+    const taskInfo = status.scheduled_task;
+    const taskText = document.getElementById("stat-scheduled-task-text");
+    const taskBtn = document.getElementById("btn-setup-task");
+    if (taskText) {
+      if (!taskInfo) {
+        taskText.innerHTML = '<span style="color: var(--text-muted);">排程服務未啟用</span>';
+        if (taskBtn) taskBtn.style.display = "none";
+      } else if (taskInfo.configured) {
+        taskText.innerHTML = `<span style="color: var(--accent-green); font-weight: 500;"><i class="fa-solid fa-circle-check"></i> 每日 00:00 自動下載</span> <span style="color: var(--text-muted); font-size: 0.75rem;">(下次: ${taskInfo.next_run_time || "-"})</span>`;
+        if (taskBtn) {
+          taskBtn.style.display = "inline-flex";
+          taskBtn.textContent = "重新註冊";
+          taskBtn.title = "向 Windows 工作排程器重新整理排程設定";
+        }
+      } else {
+        taskText.innerHTML = `<span style="color: var(--accent-orange); font-weight: 500;"><i class="fa-solid fa-triangle-exclamation"></i> 尚未註冊每日排程</span>`;
+        if (taskBtn) {
+          taskBtn.style.display = "inline-flex";
+          taskBtn.textContent = "立即註冊";
+          taskBtn.title = "點擊以註冊 Windows 工作排程器 (每日 00:00 自動下載)";
+        }
+      }
+    }
+
     const storageSize = document.getElementById("stat-storage-size");
     if (storageSize) {
       storageSize.textContent = `下載: ${status.downloads_dir_size || "0 B"} | 報告: ${status.reports_dir_size || "0 B"}`;
@@ -372,6 +397,28 @@ async function triggerPipeline() {
     if (btn) {
       btn.disabled = false;
       btn.innerHTML = '<i class="fa-solid fa-play"></i> 立即執行同步與下載';
+    }
+  }
+}
+
+async function setupScheduledTask() {
+  if (!confirm("確定要向 Windows 工作排程器註冊/更新「每日 00:00 自動下載 ET Pro 規則」排程嗎？")) return;
+  const btn = document.getElementById("btn-setup-task");
+  const oldText = btn ? btn.innerHTML : "";
+  if (btn) {
+    btn.disabled = true;
+    btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> 設定中...';
+  }
+  try {
+    const res = await apiFetch("/api/system/setup-scheduled-task", { method: "POST" });
+    alert(res.message || "Windows 每日排程註冊成功！");
+    await fetchStatus();
+  } catch (e) {
+    alert("註冊排程失敗: " + e.message);
+  } finally {
+    if (btn) {
+      btn.disabled = false;
+      btn.innerHTML = oldText || "重新註冊";
     }
   }
 }
