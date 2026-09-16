@@ -16,16 +16,16 @@ def transform_rule_line(line: str) -> str:
     """
     Transforms a single Suricata rule line:
     1. Replaces all occurrences of '$HOME_NET' with '$TWNIC_NETS'.
-    2. Inserts 'gid: 70; ' right before 'sid:' if 'gid:' is not already present.
+    2. Inserts 'gid:70; ' right before 'sid:' if 'gid:' is not already present.
     """
     # 1. Replace $HOME_NET with $TWNIC_NETS
     if "$HOME_NET" in line:
         line = line.replace("$HOME_NET", "$TWNIC_NETS")
 
-    # 2. Insert 'gid: 70; ' before 'sid:'
+    # 2. Insert 'gid:70; ' before 'sid:'
     # Check if 'sid:' exists and 'gid:' is not already present in the rule
     if "sid:" in line and "gid:" not in line:
-        line = SID_PATTERN.sub(r"gid: 70; \1", line, count=1)
+        line = SID_PATTERN.sub(r"gid:70; \1", line, count=1)
 
     return line
 
@@ -64,7 +64,7 @@ def transform_rules_for_transfer(
                 home_net_replacements += line.count("$HOME_NET")
             
             transformed = transform_rule_line(line)
-            if "gid: 70;" in transformed and "gid: 70;" not in line:
+            if "gid:70;" in transformed and "gid:70;" not in line:
                 transformed_sid_count += 1
 
             outfile.write(transformed)

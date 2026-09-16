@@ -671,12 +671,16 @@ async def api_rollback_deployment(req: RollbackRequest, request: Request, is_aut
 
 @router.get("/api/rules/transfer/latest")
 async def api_get_latest_transfer_rules(request: Request, is_authorized: None = Depends(verify_api_key)):
-    """API to download or view the latest generated transfer.txt rules file."""
+    """API to download or view the latest generated transfer.rules file."""
     try:
         from config import AppConfig
         config = AppConfig.from_env(PROJECT_ROOT, require_oinkcode=False)
         target_dir = config.transfer_output_dir or config.output_dir
-        transfer_files = sorted(list(target_dir.glob("*_transfer.txt")), key=lambda p: p.stat().st_mtime, reverse=True)
+        transfer_files = sorted(
+            list(target_dir.glob("*_transfer.rules")) + list(target_dir.glob("*_transfer.txt")),
+            key=lambda p: p.stat().st_mtime,
+            reverse=True
+        )
         if not transfer_files:
             raise HTTPException(status_code=404, detail="No transfer rules file generated yet.")
         latest_file = transfer_files[0]

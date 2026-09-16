@@ -218,7 +218,7 @@ class AppConfig:
 
     def transfer_path(self, now: Optional[datetime] = None) -> Path:
         target_dir = self.transfer_output_dir or self.output_dir
-        return target_dir / f"{self.date_stamp(now)}_transfer.txt"
+        return target_dir / f"{self.date_stamp(now)}_transfer.rules"
 
     def previous_date_stamp(self, now: Optional[datetime] = None) -> str:
         return (taipei_now(now) - timedelta(days=1)).strftime("%Y%m%d")

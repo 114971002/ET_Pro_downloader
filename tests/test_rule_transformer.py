@@ -16,24 +16,24 @@ class RuleTransformerTests(unittest.TestCase):
         result = transform_rule_line(line)
         self.assertNotIn("$HOME_NET", result)
         self.assertIn("$TWNIC_NETS", result)
-        self.assertIn("gid: 70; sid:1000001;", result)
+        self.assertIn("gid:70; sid:1000001;", result)
 
     def test_multiple_home_net_replacements(self):
         line = 'alert ip $HOME_NET any -> $HOME_NET any (msg:"Internal"; sid:1000002; rev:1;)'
         result = transform_rule_line(line)
         self.assertEqual(result.count("$HOME_NET"), 0)
         self.assertEqual(result.count("$TWNIC_NETS"), 2)
-        self.assertIn("gid: 70; sid:1000002;", result)
+        self.assertIn("gid:70; sid:1000002;", result)
 
     def test_insert_gid_before_sid(self):
         line = 'alert udp any any -> any 53 (msg:"DNS query"; classtype:bad-traffic; sid:1000003; rev:2;)'
         result = transform_rule_line(line)
-        self.assertIn("; gid: 70; sid:1000003;", result)
+        self.assertIn("; gid:70; sid:1000003;", result)
 
     def test_do_not_duplicate_gid_if_already_present(self):
         line = 'alert tcp any any -> any any (msg:"Has GID"; gid:1; sid:1000004; rev:1;)'
         result = transform_rule_line(line)
-        self.assertNotIn("gid: 70;", result)
+        self.assertNotIn("gid:70;", result)
         self.assertIn("gid:1; sid:1000004;", result)
 
     def test_commented_rule_transformation(self):
@@ -41,13 +41,13 @@ class RuleTransformerTests(unittest.TestCase):
         result = transform_rule_line(line)
         self.assertIn("$TWNIC_NETS", result)
         self.assertNotIn("$HOME_NET", result)
-        self.assertIn("gid: 70; sid:1000005;", result)
+        self.assertIn("gid:70; sid:1000005;", result)
 
     def test_full_file_transformation(self):
         with tempfile.TemporaryDirectory() as tmpdir:
             tmp_path = Path(tmpdir)
             source_file = tmp_path / "deploy.rules"
-            output_file = tmp_path / "transfer.txt"
+            output_file = tmp_path / "transfer.rules"
 
             rules_content = [
                 '# Comment line without sid\n',
@@ -66,9 +66,9 @@ class RuleTransformerTests(unittest.TestCase):
             output_lines = output_file.read_text(encoding="utf-8").splitlines()
             self.assertEqual(output_lines[0], '# Comment line without sid')
             self.assertIn("$TWNIC_NETS 443", output_lines[1])
-            self.assertIn("gid: 70; sid:2000001;", output_lines[1])
-            self.assertIn("gid: 70; sid:2000002;", output_lines[2])
-            self.assertIn("gid: 70; sid:2000003;", output_lines[3])
+            self.assertIn("gid:70; sid:2000001;", output_lines[1])
+            self.assertIn("gid:70; sid:2000002;", output_lines[2])
+            self.assertIn("gid:70; sid:2000003;", output_lines[3])
 
 
 if __name__ == "__main__":

@@ -58,8 +58,9 @@ def cleanup_old_files(
     deleted_transfer_files = 0
     if transfer_output_dir is not None and transfer_output_dir.exists():
         transfer_cutoff = current_date - timedelta(days=transfer_retention_days)
+        transfer_files = list(transfer_output_dir.glob("*_transfer.rules")) + list(transfer_output_dir.glob("*_transfer.txt"))
         deleted_transfer_files = delete_older_than(
-            files=transfer_output_dir.glob("*_transfer.txt"),
+            files=transfer_files,
             cutoff_date=transfer_cutoff,
             logger=logger,
         )
