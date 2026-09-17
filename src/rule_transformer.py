@@ -12,20 +12,20 @@ logger = logging.getLogger(__name__)
 SID_PATTERN = re.compile(r"(\bsid:\s*\d+\s*;)", re.IGNORECASE)
 
 
-def transform_rule_line(line: str) -> str:
+def transform_rule_line(line: str, gid: int = 8) -> str:
     """
     Transforms a single Suricata rule line:
     1. Replaces all occurrences of '$HOME_NET' with '$TWNIC_NETS'.
-    2. Inserts 'gid:70; ' right before 'sid:' if 'gid:' is not already present.
+    2. Inserts 'gid:{gid}; ' right before 'sid:' if 'gid:' is not already present.
     """
     # 1. Replace $HOME_NET with $TWNIC_NETS
     if "$HOME_NET" in line:
         line = line.replace("$HOME_NET", "$TWNIC_NETS")
 
-    # 2. Insert 'gid:70; ' before 'sid:'
+    # 2. Insert 'gid:{gid}; ' before 'sid:'
     # Check if 'sid:' exists and 'gid:' is not already present in the rule
     if "sid:" in line and "gid:" not in line:
-        line = SID_PATTERN.sub(r"gid:70; \1", line, count=1)
+        line = SID_PATTERN.sub(rf"gid:{gid}; \1", line, count=1)
 
     return line
 
@@ -33,6 +33,7 @@ def transform_rule_line(line: str) -> str:
 def transform_rules_for_transfer(
     source_path: Path,
     output_path: Path,
+    gid: int = 8,
     custom_logger: Optional[logging.Logger] = None,
 ) -> Dict[str, Any]:
     """
@@ -53,7 +54,7 @@ def transform_rules_for_transfer(
     transformed_sid_count = 0
     home_net_replacements = 0
 
-    log.info("Starting rule transformation for transfer from %s -> %s", source_path, output_path)
+    log.info("Starting rule transformation for transfer (gid:%d) from %s -> %s", gid, source_path, output_path)
 
     with source_path.open("r", encoding="utf-8", errors="replace") as infile, \
          temp_output.open("w", encoding="utf-8", newline="\n") as outfile:
@@ -63,8 +64,8 @@ def transform_rules_for_transfer(
             if "$HOME_NET" in line:
                 home_net_replacements += line.count("$HOME_NET")
             
-            transformed = transform_rule_line(line)
-            if "gid:70;" in transformed and "gid:70;" not in line:
+            transformed = transform_rule_line(line, gid=gid)
+            if f"gid:{gid};" in transformed and f"gid:{gid};" not in line:
                 transformed_sid_count += 1
 
             outfile.write(transformed)

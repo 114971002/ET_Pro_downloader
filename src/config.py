@@ -30,6 +30,7 @@ DEPLOY_ARCHIVE_RETENTION_ENV = "ETPRO_DEPLOY_ARCHIVE_RETENTION_DAYS"
 
 TRANSFER_OUTPUT_DIR_ENV = "ETPRO_TRANSFER_OUTPUT_DIR"
 TRANSFER_RETENTION_ENV = "ETPRO_TRANSFER_RETENTION_DAYS"
+TRANSFER_GID_ENV = "ETPRO_TRANSFER_GID"
 
 SURICATA_VERSION_DEFAULT = "8.0"
 SURICATA_EXE_DEFAULT = r"C:\Program Files\Suricata\suricata.exe"
@@ -59,6 +60,7 @@ class AppConfig:
     deploy_archive_dir: Path
     transfer_output_dir: Optional[Path] = None
     transfer_retention_days: int = 30
+    transfer_gid: int = 8
     deploy_archive_retention_days: int = 30
     suricata_version: str = SURICATA_VERSION_DEFAULT
     source_filename: str = SOURCE_FILENAME
@@ -146,6 +148,12 @@ class AppConfig:
         except ValueError:
             transfer_retention_days = 30
 
+        transfer_gid_raw = get_env_or_reg(TRANSFER_GID_ENV, "8").strip()
+        try:
+            transfer_gid = int(transfer_gid_raw)
+        except ValueError:
+            transfer_gid = 8
+
         return cls(
             project_root=root,
             etpro_oinkcode=oinkcode,
@@ -159,6 +167,7 @@ class AppConfig:
             deploy_archive_retention_days=deploy_archive_retention_days,
             transfer_output_dir=transfer_output_dir,
             transfer_retention_days=transfer_retention_days,
+            transfer_gid=transfer_gid,
             suricata_version=suricata_version,
             suricata_validation_enabled=validation_enabled,
             intel_sync_enabled=intel_sync_enabled,

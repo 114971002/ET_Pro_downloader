@@ -227,13 +227,14 @@ def run_once(
     from deployer import trigger_suricata_reload
     trigger_suricata_reload(config)
 
-    # Generate daily transfer rules file ($TWNIC_NETS and gid: 70;)
+    # Generate daily transfer rules file ($TWNIC_NETS and gid: 8;)
     deployed_file = deployment_result.target_path or export_result.output_path
     transfer_file = config.transfer_path(now)
     try:
         transfer_result = transform_rules_for_transfer(
             source_path=deployed_file,
             output_path=transfer_file,
+            gid=config.transfer_gid,
             custom_logger=logger,
         )
         logger.info(
